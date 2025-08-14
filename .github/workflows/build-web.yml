@@ -1,0 +1,43 @@
+name: Build Web (Godot)
+
+on:
+  workflow_dispatch:  # Avvio manuale
+
+jobs:
+  build-web:
+    name: Build Web of Skirat-Games
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Download Godot Editor (v4.4)
+        run: |
+          wget https://github.com/godotengine/godot/releases/download/4.4-stable/Godot_v4.4-stable_linux.x86_64.zip
+          unzip Godot_v4.4-stable_linux.x86_64.zip -d godot
+          mv godot/Godot_v4.4-stable_linux.x86_64 godot/godot
+          chmod +x godot/godot
+          echo "$GITHUB_WORKSPACE/godot" >> $GITHUB_PATH
+
+      - name: Download Export Templates
+        run: |
+          wget https://github.com/godotengine/godot/releases/download/4.4-stable/Godot_v4.4-stable_export_templates.tpz
+          mkdir -p ~/.local/share/godot/export_templates/4.4.stable/
+          unzip Godot_v4.4-stable_export_templates.tpz -d ~/.local/share/godot/export_templates/4.4.stable/
+          mv ~/.local/share/godot/export_templates/4.4.stable/templates/* ~/.local/share/godot/export_templates/4.4.stable/
+
+      - name: Create export output folder
+        run: mkdir -p build/web
+
+      - name: Export HTML5 build
+        run: |
+          godot/godot --headless --export-release "Web" build/web/index.html
+        env:
+          DISPLAY: ":0"
+
+      - name: Upload artifact (Web build)
+        uses: actions/upload-artifact@v4
+        with:
+          name: godot-web-build
+          path: build/web
