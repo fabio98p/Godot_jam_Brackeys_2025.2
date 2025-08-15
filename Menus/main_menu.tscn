@@ -49,6 +49,22 @@ offset_bottom = 331.0
 theme_override_font_sizes/font_size = 32
 text = "Exit"
 
+[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://Assets/Fmod/Desktop/Master.strings.bank", "res://Assets/Fmod/Desktop/Master.bank"]
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/MainMenu"
+event_guid = "{bc93c726-9276-4f20-b691-783ca299dab3}"
+volume = 0.4
+fmod_parameters/StartGame/id = -4602645040186258582
+fmod_parameters/StartGame = 0
+fmod_parameters/StartGame/variant_type = 2
+fmod_parameters/HowToPlay/id = -7615741451518106113
+fmod_parameters/HowToPlay = 0
+fmod_parameters/HowToPlay/variant_type = 2
+
+[node name="FmodListener2D" type="FmodListener2D" parent="."]
+
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Option" to="." method="_on_option_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
