@@ -1,4 +1,5 @@
 extends Node2D
+#SCRIPT DEL CARDMANAGER
 
 const HAND_COUNT = 5
 const CARD_SCENE_PATH = "res://Cards/Card.tscn"
@@ -28,14 +29,20 @@ func update_hand_position():
 		animate_card_to_position(card, new_position)
 
 func calculate_card_position(index):
-	var total_width = (player_hand.size() -1) * CARD_WIDTH
+	var total_width = (player_hand.size() - 1) * CARD_WIDTH
 	var x_offset = center_screen_x + index * CARD_WIDTH - total_width / 2
 	return x_offset
+
 
 func animate_card_to_position(card, new_position):
 	var tween = get_tree().create_tween()
 	tween.tween_property(card, "position", new_position, 0.1)
 
+func is_in_hand_zone(pos: Vector2) -> bool:
+	var screen_size = get_viewport().size
+	var hand_rect = Rect2(Vector2(screen_size.x * 0.25, HAND_Y_POSITION - 50),
+						  Vector2(screen_size.x * 0.5, 100)) # rettangolo al centro
+	return hand_rect.has_point(pos)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,6 +1,7 @@
 extends Node2D
-
+#SCRIPT DEL CARDMANAGER
 const COLLISION_MASK_CARD = 1
+@onready var drop_zone: Area2D = $DropZone
 
 var screen_size
 var card
@@ -75,8 +76,17 @@ func start_drag(card):
 	card_being_dragged = card
 	card.scale = Vector2(1, 1)
 func finish_drag():
-	card_being_dragged.scale = Vector2(scaleX, scaleY)
+	if card_being_dragged:
+		var hand = $"PlayerHands"
+		if hand.is_in_hand_zone(card_being_dragged.position):
+			card_being_dragged.scale = Vector2(scaleX, scaleY)
+		else:
+			
+			var tween = get_tree().create_tween()
+			tween.tween_property(card_being_dragged, "position", card_being_dragged.starting_position, 0.1)
+			card_being_dragged.scale = Vector2(scaleX, scaleY)
 	card_being_dragged = null
+
 
 # Called when the node enters the scene tree for the first time. 
 func _ready() -> void:
@@ -89,3 +99,11 @@ func _process(delta: float) -> void:
 		var mouse_pos = get_global_mouse_position()
 		card_being_dragged.position = Vector2(clamp(mouse_pos.x, 0, screen_size.x), 
 		clamp(mouse_pos.y, 0, screen_size.y))
+
+
+func _on_drop_zone_area_entered(area: Area2D) -> void:
+	
+	print(area.get_parent())
+	var card_node = area.get_parent()
+	print("Distruggo la carta")
+	card_node.queue_free()
