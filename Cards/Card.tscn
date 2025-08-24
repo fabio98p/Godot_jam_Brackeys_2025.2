@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://djnmn7lgn6yma"]
+
+[ext_resource type="Texture2D" uid="uid://gmuroxlv2inw" path="res://Assets/icon.svg" id="1_ie34q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ie34q"]
+
+[node name="Card" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.92, 1.44)
+texture = ExtResource("1_ie34q")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(5.8, 8.92)
+shape = SubResource("RectangleShape2D_ie34q")
