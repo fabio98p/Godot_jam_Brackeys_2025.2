@@ -1,10 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://djnmn7lgn6yma"]
+[gd_scene load_steps=6 format=3 uid="uid://djnmn7lgn6yma"]
 
 [ext_resource type="Texture2D" uid="uid://gmuroxlv2inw" path="res://Assets/icon.svg" id="1_ie34q"]
+[ext_resource type="Script" uid="uid://bl8x24ykjqsy5" path="res://Cards/card.gd" id="1_oclfm"]
+[ext_resource type="Script" uid="uid://bu8tp3x63dsa1" path="res://Cards/cardResource.gd" id="2_fynp6"]
+
+[sub_resource type="Resource" id="Resource_wqwah"]
+script = ExtResource("2_fynp6")
+name = ""
+description = ""
+img_size = Vector2(0, 0)
+sanity_cost = 0
+has_attack = false
+damage_value = 0.0
+attack_target_type = 0.0
+has_defense = false
+defense_value = 0.0
+has_heal = false
+heal_value = 0.0
+has_buff = false
+has_damage_buff = false
+damage_buff_value = 0.0
+metadata/_custom_type_script = "uid://bu8tp3x63dsa1"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie34q"]
 
 [node name="Card" type="Node2D"]
+script = ExtResource("1_oclfm")
+cardResource = SubResource("Resource_wqwah")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.92, 1.44)
