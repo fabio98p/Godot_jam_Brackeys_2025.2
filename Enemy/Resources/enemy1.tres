@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=3 format=3 uid="uid://dyrtgw3kaoih3"]
+
+[ext_resource type="Texture2D" uid="uid://gmuroxlv2inw" path="res://Assets/icon.svg" id="1_vda12"]
+[ext_resource type="Script" uid="uid://blb8oufwqiukd" path="res://Enemy/enemyResource.gd" id="2_eufft"]
+
+[resource]
+script = ExtResource("2_eufft")
+enemy_name = ""
+img = ExtResource("1_vda12")
+img_size = Vector2(0, 0)
+max_healt = 20.0
+attack_damage = 10.0
+metadata/_custom_type_script = "uid://blb8oufwqiukd"

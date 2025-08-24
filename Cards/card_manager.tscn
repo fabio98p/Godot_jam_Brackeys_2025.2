@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bubk7tayba5r2" path="res://Cards/card_manager.gd" id="1_cpwxc"]
 [ext_resource type="PackedScene" uid="uid://djnmn7lgn6yma" path="res://Cards/Card.tscn" id="2_fkyc7"]
 [ext_resource type="Resource" uid="uid://bbo0kq26d00d4" path="res://Cards/Resources/attack.tres" id="3_ajkw5"]
-[ext_resource type="Script" path="res://Cards/player_hands.gd" id="3_hdhnw"]
+[ext_resource type="Script" uid="uid://chbloijc35cm1" path="res://Cards/player_hands.gd" id="3_hdhnw"]
 
 [node name="CardManager" type="Node2D"]
 script = ExtResource("1_cpwxc")

@@ -1,9 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlyutofh3wgrc"]
+[gd_scene load_steps=3 format=3 uid="uid://dlyutofh3wgrc"]
 
 [ext_resource type="Texture2D" uid="uid://gmuroxlv2inw" path="res://Assets/icon.svg" id="1_n0qsc"]
+[ext_resource type="PackedScene" uid="uid://cq6edqy2ajdtn" path="res://Enemy/enemy.tscn" id="2_dilhk"]
 
 [node name="Level1" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(506, 291)
 texture = ExtResource("1_n0qsc")
+
+[node name="Enemy" parent="." instance=ExtResource("2_dilhk")]
