@@ -5,6 +5,8 @@
 
 [node name="CardManager" type="Node2D"]
 script = ExtResource("1_cpwxc")
+scaleX = 1.2
+scaleY = 1.2
 
 [node name="Cards" type="Node" parent="."]
 
@@ -12,10 +14,10 @@ script = ExtResource("1_cpwxc")
 position = Vector2(517, 248)
 
 [node name="Card2" parent="Cards" instance=ExtResource("2_fkyc7")]
-position = Vector2(517, 248)
+position = Vector2(379, 248)
 
 [node name="Card3" parent="Cards" instance=ExtResource("2_fkyc7")]
-position = Vector2(517, 248)
+position = Vector2(662, 248)
 
 [node name="Card4" parent="Cards" instance=ExtResource("2_fkyc7")]
-position = Vector2(517, 248)
+position = Vector2(800, 248)

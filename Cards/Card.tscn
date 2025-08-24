@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://djnmn7lgn6yma"]
 
 [ext_resource type="Texture2D" uid="uid://gmuroxlv2inw" path="res://Assets/icon.svg" id="1_ie34q"]
-[ext_resource type="Script" path="res://Cards/card.gd" id="1_oclfm"]
+[ext_resource type="Script" uid="uid://bl8x24ykjqsy5" path="res://Cards/card.gd" id="1_oclfm"]
 [ext_resource type="Script" path="res://Cards/cardResource.gd" id="2_fynp6"]
 
 [sub_resource type="Resource" id="Resource_wqwah"]
@@ -37,3 +37,6 @@ texture = ExtResource("1_ie34q")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(5.8, 8.92)
 shape = SubResource("RectangleShape2D_ie34q")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
