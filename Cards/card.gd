@@ -1,5 +1,6 @@
 extends Node2D
 
+var starting_position
 @export var cardResource: CardResource
 signal hovered
 signal hovered_off

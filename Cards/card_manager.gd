@@ -17,7 +17,8 @@ func _input(event: InputEvent) -> void:
 				#card_being_dragged = card
 				start_drag(card)
 		else:
-			finish_drag()
+			if card_being_dragged: 
+				finish_drag()
 
 
 func connect_card_signals(card):
