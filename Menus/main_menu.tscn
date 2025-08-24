@@ -1,8 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxfe4sa5w5o77"]
+[gd_scene load_steps=3 format=3 uid="uid://bkv8tqjbut3x4"]
 
-[ext_resource type="Script" uid="uid://brpte4ax15v3o" path="res://Menus/main_menu.gd" id="1_jf8mj"]
+[ext_resource type="Script" uid="uid://cjxuhaw0pt4gv" path="res://Menus/main_menu.gd" id="1_jf8mj"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jf8mj"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3jrs"]
 bg_color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="Control"]
@@ -17,38 +17,38 @@ script = ExtResource("1_jf8mj")
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = -16.0
-offset_top = -15.0
-offset_right = 1187.0
-offset_bottom = 670.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_jf8mj")
+offset_top = -14.0
+offset_right = 1175.0
+offset_bottom = 661.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_p3jrs")
 
 [node name="Start" type="Button" parent="."]
 layout_mode = 0
-offset_left = 500.0
-offset_top = 119.0
-offset_right = 583.0
-offset_bottom = 172.0
+offset_left = 579.0
+offset_top = 138.0
+offset_right = 662.0
+offset_bottom = 191.0
 theme_override_font_sizes/font_size = 32
 text = "Start"
 
-[node name="Option" type="Button" parent="."]
+[node name="Credits" type="Button" parent="."]
 layout_mode = 0
-offset_left = 482.0
-offset_top = 193.0
-offset_right = 596.0
-offset_bottom = 246.0
+offset_left = 553.0
+offset_top = 250.0
+offset_right = 671.0
+offset_bottom = 303.0
 theme_override_font_sizes/font_size = 32
-text = "Option"
+text = "Credits"
 
 [node name="Exit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 492.0
-offset_top = 278.0
-offset_right = 575.0
-offset_bottom = 331.0
+offset_left = 579.0
+offset_top = 368.0
+offset_right = 644.0
+offset_bottom = 421.0
 theme_override_font_sizes/font_size = 32
 text = "Exit"
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Option" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

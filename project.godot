@@ -10,15 +10,31 @@ config_version=5
 
 [application]
 
-config/name="Godot_jam_Brackeys_2025.2"
-run/main_scene="uid://bxfe4sa5w5o77"
+config/name="Godot_Template"
+run/main_scene="uid://bkv8tqjbut3x4"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Assets/icon.svg"
+
+[autoload]
+
+GS="*res://GlobalScripts/GS.gd"
+Utils="*res://GlobalScripts/Utils.gd"
 
 [display]
 
 window/size/resizable=false
 window/stretch/mode="viewport"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "yellow",
+"res://Enemy/": "red",
+"res://GlobalScripts/": "pink",
+"res://Levels/": "orange",
+"res://Menus/": "blue",
+"res://Player/": "green"
+}
 
 [rendering]
 
