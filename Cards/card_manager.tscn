@@ -6,14 +6,16 @@
 [node name="CardManager" type="Node2D"]
 script = ExtResource("1_cpwxc")
 
-[node name="Card" parent="." instance=ExtResource("2_fkyc7")]
+[node name="Cards" type="Node" parent="."]
+
+[node name="Card" parent="Cards" instance=ExtResource("2_fkyc7")]
 position = Vector2(517, 248)
 
-[node name="Card2" parent="." instance=ExtResource("2_fkyc7")]
+[node name="Card2" parent="Cards" instance=ExtResource("2_fkyc7")]
 position = Vector2(517, 248)
 
-[node name="Card3" parent="." instance=ExtResource("2_fkyc7")]
+[node name="Card3" parent="Cards" instance=ExtResource("2_fkyc7")]
 position = Vector2(517, 248)
 
-[node name="Card4" parent="." instance=ExtResource("2_fkyc7")]
+[node name="Card4" parent="Cards" instance=ExtResource("2_fkyc7")]
 position = Vector2(517, 248)
