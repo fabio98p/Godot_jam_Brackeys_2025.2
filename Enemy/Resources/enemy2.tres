@@ -27,9 +27,9 @@ metadata/_custom_type_script = "uid://blnkk5r71x700"
 [resource]
 script = ExtResource("3_5xvf8")
 enemy_name = "gino"
+description = ""
 img = ExtResource("2_jl84t")
 img_size = Vector2(0, 0)
 max_healt = 20.0
-attack_damage = 10.0
 attack_list = Array[ExtResource("1_buxya")]([SubResource("Resource_c2n65"), SubResource("Resource_eufft")])
 metadata/_custom_type_script = "uid://blb8oufwqiukd"

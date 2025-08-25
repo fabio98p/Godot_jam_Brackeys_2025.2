@@ -98,9 +98,11 @@ func finish_drag():
 	if drop_zone_found and not drop_zone_found.card_in_drop_zone:
 		player_hand_reference.remove_card_from_hand(card_being_dragged)
 		card_being_dragged.position = drop_zone_found.position
-		print(card_being_dragged.get_node("Area2D/CollisionShape2D"))
+		#print(card_being_dragged.get_node("Area2D/CollisionShape2D"))
+		card_being_dragged.cardDataHandler.playCard("playCard")
 		card_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
 		drop_zone_found.card_in_drop_zone = true
+		card_being_dragged.destroy_card()
 	else:
 		player_hand_reference.add_card_to_hand(card_being_dragged, DEFAULT_CARD_SPEED)
 	card_being_dragged = null

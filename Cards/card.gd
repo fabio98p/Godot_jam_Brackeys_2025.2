@@ -35,3 +35,8 @@ func _on_area_2d_mouse_entered() -> void:
 
 func _on_area_2d_mouse_exited() -> void:
 	emit_signal("hovered_off", self)
+
+func destroy_card():
+	#mettere animazione del crounch
+	await get_tree().create_timer(2).timeout
+	queue_free()
