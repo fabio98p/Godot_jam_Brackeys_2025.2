@@ -1,13 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://dlyutofh3wgrc"]
+[gd_scene load_steps=4 format=3 uid="uid://dlyutofh3wgrc"]
 
-[ext_resource type="Texture2D" uid="uid://gmuroxlv2inw" path="res://Assets/icon.svg" id="1_n0qsc"]
+[ext_resource type="PackedScene" uid="uid://bu424fog720wr" path="res://Cards/card_manager.tscn" id="1_3mhv4"]
+[ext_resource type="PackedScene" uid="uid://b4tcixs27lofb" path="res://Player/player.tscn" id="2_3mhv4"]
 [ext_resource type="PackedScene" uid="uid://cq6edqy2ajdtn" path="res://Enemy/enemy.tscn" id="2_dilhk"]
 
 [node name="Level1" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(506, 291)
-texture = ExtResource("1_n0qsc")
+[node name="CardManager" parent="." instance=ExtResource("1_3mhv4")]
 
 [node name="Enemy" parent="." instance=ExtResource("2_dilhk")]
-position = Vector2(908, 346)
+position = Vector2(1185, 346)
+
+[node name="Player" parent="." instance=ExtResource("2_3mhv4")]
+position = Vector2(104, 355)
+max_health = 1.0
+max_sanity = 1

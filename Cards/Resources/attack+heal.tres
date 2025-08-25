@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3 uid="uid://d2ggajifdbchu"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://d2ggajifdbchu"]
 
+[ext_resource type="Texture2D" uid="uid://gmuroxlv2inw" path="res://Assets/icon.svg" id="1_t8xrw"]
 [ext_resource type="Script" uid="uid://bu8tp3x63dsa1" path="res://Cards/cardResource.gd" id="1_yygi8"]
 
 [resource]
 script = ExtResource("1_yygi8")
-name = ""
-description = ""
+name = "sdfsdf"
+description = "dsfsdfcvx"
+img = ExtResource("1_t8xrw")
 img_size = Vector2(0, 0)
 sanity_cost = 0
 has_attack = true
@@ -18,16 +20,16 @@ has_damage_buff = false
 damage_buff_value = 0.0
 has_defense_buff = false
 defense_buff_value = 0.0
-has_enemy_debuf = false
-has_enemy_damage_debuf = false
-damage_enemy_debuf_value = 0.0
-has_enemy_defense_debuf = false
-enemy_defense_debuf_value = 0.0
+has_enemy_debuff = false
+has_enemy_damage_debuff = false
+damage_enemy_debuff_value = 0.0
+has_enemy_defense_debuff = false
+enemy_defense_debuff_value = 0.0
 has_enemy_damage_poison = false
 enemy_damage_poison_value = 0.0
-has_self_debuf = false
-has_self_damage_debuf = false
-damage_self_debuf_value = 0.0
-has_self_defense_debuf = false
-self_defense_debuf_value = 0.0
+has_self_debuff = false
+has_self_damage_debuff = false
+damage_self_debuff_value = 0.0
+has_self_defense_debuff = false
+self_defense_debuff_value = 0.0
 metadata/_custom_type_script = "uid://bu8tp3x63dsa1"

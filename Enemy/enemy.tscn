@@ -12,6 +12,8 @@ enemyResource = ExtResource("2_px1sc")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_px1sc")

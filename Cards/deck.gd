@@ -27,6 +27,7 @@ func draw_card():
 		rich_text_label.visible = false
 	rich_text_label.text = str(player_deck.size())
 	var card_scene = preload(CARD_SCENE_PATH)
+
 	var new_card = card_scene.instantiate()
 	$"../Cards".add_child(new_card)
 	player_hands.add_card_to_hand(new_card, CARD_DRAW_SPEED)

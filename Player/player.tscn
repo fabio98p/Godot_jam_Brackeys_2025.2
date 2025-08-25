@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://b4tcixs27lofb"]
+[gd_scene load_steps=3 format=3 uid="uid://b4tcixs27lofb"]
 
-[node name="Player" type="CharacterBody2D"]
+[ext_resource type="Script" uid="uid://bmxa872qakfrx" path="res://Player/player.gd" id="1_4ntmi"]
+[ext_resource type="Texture2D" uid="uid://gmuroxlv2inw" path="res://Assets/icon.svg" id="1_l8h54"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_4ntmi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_l8h54")
+
+[node name="health" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="sanity" type="Label" parent="."]
+offset_top = 35.0
+offset_right = 40.0
+offset_bottom = 58.0
