@@ -7,12 +7,12 @@ script = ExtResource("1_yygi8")
 name = "attack=heal"
 description = "comboo"
 img_size = Vector2(0, 0)
-sanity_cost = 0
+sanity_cost = 5
 has_attack = true
-attack_damage_value = 10.0
+attack_damage_value = 2.0
 attack_target_type = 0.0
 has_heal = true
-heal_value = 25.0
+heal_value = 1.0
 has_self_buff = false
 has_damage_buff = false
 damage_buff_value = 0.0
