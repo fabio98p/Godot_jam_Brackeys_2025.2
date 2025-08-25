@@ -5,8 +5,9 @@ extends Node2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var nameEnemy: Label = $Name
 @onready var desc: Label = $Desc
-@onready var healt: Label = $Healt
+@onready var health: Label = $Healt
 @onready var next_attack: Label = $NextAttack
+var current_health: float
 
 var enemyDataHandler: EnemyDataHandler
 func _ready() -> void:
@@ -15,8 +16,14 @@ func _ready() -> void:
 	
 	nameEnemy.text = "name: " + enemyDataHandler.enemy_name
 	desc.text = "desc: " + enemyDataHandler.description
-	healt.text = "max_healt: " + str(enemyDataHandler.max_healt)
+	health.text = "max_healt: " + str(enemyDataHandler.max_healt)
 	next_attack.text = "next_attack: " + str(enemyDataHandler.getNextAttack().attack_damage)
 	
 	sprite_2d.texture = enemyDataHandler.img
 	
+func dmg_taken(value):
+	print("enemy current",enemyDataHandler.current_healt)
+	enemyDataHandler.current_healt = enemyDataHandler.current_healt - value 
+	health.text = "max_healt: " + str(enemyDataHandler.current_healt)
+	if enemyDataHandler.current_healt <= 0:
+		health.text = "max_healt: " +  "dead health"

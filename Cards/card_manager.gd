@@ -102,10 +102,17 @@ func finish_drag():
 		card_being_dragged.cardDataHandler.playCard("playCard")
 		card_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
 		drop_zone_found.card_in_drop_zone = true
-		card_being_dragged.destroy_card()
+		toggle_drop_zone(drop_zone_found, card_being_dragged)
+		#card_being_dragged.destroy_card()
 	else:
 		player_hand_reference.add_card_to_hand(card_being_dragged, DEFAULT_CARD_SPEED)
 	card_being_dragged = null
+
+func toggle_drop_zone(drop_zone_found, card_being_dragged):
+	await get_tree().create_timer(4).timeout
+	drop_zone_found.card_in_drop_zone = false
+	card_being_dragged.destroy_card()
+
 
 func on_left_click_release():
 	if card_being_dragged: 

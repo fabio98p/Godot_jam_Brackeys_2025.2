@@ -14,27 +14,30 @@ func _ready() -> void:
 	current_sanity = max_sanity
 	health.text = "max_healt: " + str(current_health)
 	sanity.text = "max_sanity: " + str(current_sanity)
-	await get_tree().create_timer(2).timeout
-	dmg_taken()
-	sanity_taken()
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-func dmg_taken():
+func dmg_taken(value):
 	print(current_health)
-	current_health -= 1 
+	current_health = current_health - value 
 	health.text = "max_healt: " + str(current_health)
 	if current_health <= 0:
 		health.text = "max_healt: " +  "dead health"
-		
 
-func sanity_taken():
+func heal_self(value):
+	print(current_health)
+	health.text = "max_healt: " + str(current_health)
+	if current_health <= max_health:
+		current_health = current_health + value
+	
+
+func sanity_taken(value):
 	print(current_sanity)
-	current_sanity -= 1 
+	current_sanity = current_sanity - value
 	sanity.text = "max_sanity: " + str(current_sanity)
 	if current_health <= 0:
 		sanity.text = "max_sanity: " + "dead sanity"
-		
