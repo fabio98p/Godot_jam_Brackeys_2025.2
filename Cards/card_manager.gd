@@ -1,23 +1,26 @@
 extends Node2D
 
 const COLLISION_MASK_CARD = 1
-
+const COLLISION_MASK_CARD_DROP_ZONE = 2
+const DEFAULT_CARD_SPEED= 0.1
 var screen_size
 var card
 var card_being_dragged
 var is_hovering_on_card
 @export var scaleX: float
 @export var scaleY: float
+@onready var player_hand_reference: Node2D = $PlayerHands
+@onready var input_manager: Node2D = $InputManager
 
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if event.pressed:
-			card = raycast_check_for_card()
-			if card: 
-				start_drag(card)
-		else:
-			if card_being_dragged: 
-				finish_drag()
+#func _input(event: InputEvent) -> void:
+	#if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		#if event.pressed:
+			#card = raycast_check_for_card()
+			#if card: 
+				#start_drag(card)
+		#else:
+			#if card_being_dragged: 
+				#finish_drag()
 
 
 func connect_card_signals(card):
@@ -60,6 +63,19 @@ func raycast_check_for_card():
 		return get_card_with_highest_z_index(result)
 	return null
 
+func raycast_check_for_card_drop_zone():
+	var space_state = get_world_2d().direct_space_state
+	var parameters = PhysicsPointQueryParameters2D.new()
+	parameters.position = get_global_mouse_position()
+	parameters.collide_with_areas = true
+	parameters.collision_mask = COLLISION_MASK_CARD_DROP_ZONE
+	var result = space_state.intersect_point(parameters)
+	if result.size() > 0:
+		#return result[0].collider.get_parent()
+		return result[0].collider.get_parent()
+	return null
+
+
 func get_card_with_highest_z_index(cards):
 	var highest_z_card = cards[0].collider.get_parent()
 	var highest_z_index = highest_z_card.z_index
@@ -76,12 +92,25 @@ func start_drag(card):
 	card.scale = Vector2(1, 1)
 func finish_drag():
 	card_being_dragged.scale = Vector2(scaleX, scaleY)
+	var drop_zone_found = raycast_check_for_card_drop_zone()
+	if drop_zone_found and not drop_zone_found.card_in_drop_zone:
+		player_hand_reference.remove_card_from_hand(card_being_dragged)
+		card_being_dragged.position = drop_zone_found.position
+		print(card_being_dragged.get_node("Area2D/CollisionShape2D"))
+		card_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
+		drop_zone_found.card_in_drop_zone = true
+	else:
+		player_hand_reference.add_card_to_hand(card_being_dragged, DEFAULT_CARD_SPEED)
 	card_being_dragged = null
+
+func on_left_click_release():
+	if card_being_dragged: 
+		finish_drag()
 
 # Called when the node enters the scene tree for the first time. 
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
-
+	input_manager.connect("left_mouse_button_release", on_left_click_release)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

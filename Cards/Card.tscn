@@ -37,6 +37,7 @@ metadata/_custom_type_script = "uid://bu8tp3x63dsa1"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie34q"]
 
 [node name="Card" type="Node2D"]
+position = Vector2(101, 584)
 script = ExtResource("1_oclfm")
 cardResource = SubResource("Resource_wqwah")
 
