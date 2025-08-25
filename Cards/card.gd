@@ -13,12 +13,11 @@ var cardDataHandler: CardDataHandler
 	
 signal hovered
 signal hovered_off
+signal apply_card_action
 
 func _ready() -> void:
-	get_parent().get_parent().connect_card_signals(self)
 	
-	
-	cardDataHandler = CardDataHandler.new(cardResource)
+	cardDataHandler = CardDataHandler.new(cardResource, self)
 	
 	nameCard.text = "name: " + cardDataHandler.cardName
 	desc.text = "desc: " + cardDataHandler.description
@@ -27,7 +26,7 @@ func _ready() -> void:
 	buff_attack.text = "buffattack: " + str(cardDataHandler.damage_buff_value)
 	buff_defense.text = "buffdefense: " + str(cardDataHandler.defense_buff_value)
 	
-	cardDataHandler.playCard("ciao")
+	#cardDataHandler.playCard("ciao")
 
 func _on_area_2d_mouse_entered() -> void:
 	emit_signal("hovered", self)

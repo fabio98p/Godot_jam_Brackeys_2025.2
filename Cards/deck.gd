@@ -30,5 +30,7 @@ func draw_card():
 
 	var new_card = card_scene.instantiate()
 	new_card.cardResource = card_drawn
+	# connect card action to Level1, Level1 is the grandparent of deck
+	new_card.connect("apply_card_action", Callable(get_parent().get_parent(), "applay_card_effect"))
 	$"../Cards".add_child(new_card)
 	player_hands.add_card_to_hand(new_card, CARD_DRAW_SPEED)

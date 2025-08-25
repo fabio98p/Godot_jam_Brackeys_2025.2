@@ -57,9 +57,12 @@ var damage_self_debuff_value: float
 var has_self_defense_debuff: bool
 var self_defense_debuff_value: float
 
+var actionDictionary: Dictionary[String, float] = {}
 
-
-func _init(cardResource: CardResource) -> void:
+var card_istance
+func _init(cardResource: CardResource, card) -> void:
+	card_istance = card
+	
 	cardName = cardResource.name
 	description = cardResource.description
 	img = cardResource.img
@@ -106,43 +109,53 @@ func _init(cardResource: CardResource) -> void:
 	self_defense_debuff_value = cardResource.self_defense_debuff_value
 			
 func playCard(target:String):
-	print("play")
 	
 	# Attack Part
 	if has_attack:
-		attack_enemy(attack_damage_value, target)
+		#attack_enemy(attack_damage_value, target)
+		actionDictionary["attack_enemy"] = attack_damage_value
 		
 	# Heal Part
 	if has_heal:
-		healSelf(heal_value)
+		#heal_self(heal_value)
+		actionDictionary["heal_self"] = heal_value
 
 	# Self Buff
 	if has_self_buff:
 		if has_damage_buff:
-			apply_self_damage_buff(damage_buff_value)
+			#apply_self_damage_buff(damage_buff_value)
+			actionDictionary["apply_self_damage_buff"] = damage_buff_value
 		if has_defense_buff:
-			apply_self_defense_buff(defense_buff_value)
+			#apply_self_defense_buff(defense_buff_value)
+			actionDictionary["apply_self_defense_buff"] = defense_buff_value
 
 	# Enemy Debuff
 	if has_enemy_debuff:
 		if has_enemy_damage_debuff:
-			apply_enemy_damage_debuff(damage_enemy_debuff_value, target)
+			#apply_enemy_damage_debuff(damage_enemy_debuff_value, target)
+			actionDictionary["apply_enemy_damage_debuff"] = damage_enemy_debuff_value
 		if has_enemy_defense_debuff:
-			apply_enemy_defense_debuff(enemy_defense_debuff_value, target)
+			#apply_enemy_defense_debuff(enemy_defense_debuff_value, target)
+			actionDictionary["apply_enemy_defense_debuff"] = enemy_defense_debuff_value
 		if has_enemy_damage_poison:
-			apply_enemy_poison(enemy_damage_poison_value, target)
+			#apply_enemy_poison(enemy_damage_poison_value, target)
+			actionDictionary["apply_enemy_poison"] = enemy_damage_poison_value
 			
 	# Self Debuf
 	if has_self_debuff:
 		if has_self_damage_debuff:
-			apply_self_damage_debuff(damage_self_debuff_value)
+			#apply_self_damage_debuff(damage_self_debuff_value)
+			actionDictionary["apply_self_damage_debuff"] = damage_self_debuff_value
 		if has_self_defense_debuff:
-			apply_self_defense_debuff(self_defense_debuff_value)
-
+			#apply_self_defense_debuff(self_defense_debuff_value)
+			actionDictionary["apply_self_defense_debuff"] = self_defense_debuff_value
+	
+	card_istance.apply_card_action.emit(actionDictionary)
+	#emette il segnale
 func attack_enemy(damage: float, target: String):
 	print("attack " + target + " enemy with:" + str(damage))
 
-func healSelf(heal: float):
+func heal_self(heal: float):
 	print("heal self of with:" + str(heal))
 
 # Buff
