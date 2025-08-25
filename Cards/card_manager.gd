@@ -7,6 +7,7 @@ var screen_size
 var card
 var card_being_dragged
 var is_hovering_on_card
+var drag_offset = Vector2.ZERO
 @export var scaleX: float
 @export var scaleY: float
 @onready var player_hand_reference: Node2D = $PlayerHands
@@ -90,6 +91,7 @@ func get_card_with_highest_z_index(cards):
 func start_drag(card):
 	card_being_dragged = card
 	card.scale = Vector2(1, 1)
+	drag_offset = card.global_position - get_global_mouse_position()
 func finish_drag():
 	card_being_dragged.scale = Vector2(scaleX, scaleY)
 	var drop_zone_found = raycast_check_for_card_drop_zone()
@@ -116,5 +118,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if card_being_dragged:
 		var mouse_pos = get_global_mouse_position()
-		card_being_dragged.position = Vector2(clamp(mouse_pos.x, 0, screen_size.x), 
-		clamp(mouse_pos.y, 0, screen_size.y))
+		card_being_dragged.global_position = Vector2(
+			clamp(mouse_pos.x + drag_offset.x, 0, screen_size.x),
+			clamp(mouse_pos.y + drag_offset.y, 0, screen_size.y)
+		)

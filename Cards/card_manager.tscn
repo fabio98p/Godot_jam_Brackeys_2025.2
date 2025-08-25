@@ -20,7 +20,8 @@ scaleY = 1.2
 script = ExtResource("3_hdhnw")
 
 [node name="DropZone" parent="." instance=ExtResource("3_ajkw5")]
-position = Vector2(210, 185)
+position = Vector2(646, 185)
+scale = Vector2(9.88, 1.76)
 
 [node name="Deck" type="Node2D" parent="."]
 position = Vector2(107, 583)
