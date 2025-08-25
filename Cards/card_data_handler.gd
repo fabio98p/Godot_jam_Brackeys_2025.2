@@ -68,52 +68,42 @@ func _init(cardResource: CardResource) -> void:
 	
 	#Attack
 	has_attack = cardResource.has_attack
-	if has_attack:
-		attack_damage_value = cardResource.attack_damage_value
-		attack_target_type = cardResource.attack_target_type
+	attack_damage_value = cardResource.attack_damage_value
+	attack_target_type = cardResource.attack_target_type
 
 	#Heal
 	has_heal = cardResource.has_heal
-	if has_heal:
-		heal_value = cardResource.heal_value
+	heal_value = cardResource.heal_value
 
 	#Buff
 	has_self_buff = cardResource.has_self_buff
-	if has_self_buff:
-		has_damage_buff = cardResource.has_damage_buff
-		if has_damage_buff:
-			damage_buff_value = cardResource.damage_buff_value
-			
-		has_defense_buff = cardResource.has_defense_buff
-		if has_defense_buff:
-			defense_buff_value = cardResource.defense_buff_value
-			
+	
+	has_damage_buff = cardResource.has_damage_buff
+	damage_buff_value = cardResource.damage_buff_value
+		
+	has_defense_buff = cardResource.has_defense_buff
+	defense_buff_value = cardResource.defense_buff_value
 			
 	#Enemy Debuff
 	has_enemy_debuff = cardResource.has_enemy_debuff
-	if has_enemy_debuff:
-		has_enemy_damage_debuff = cardResource.has_enemy_damage_debuff
-		if has_enemy_damage_debuff:
-			damage_enemy_debuff_value = cardResource.damage_enemy_debuff_value
-			
-		has_enemy_defense_debuff = cardResource.has_enemy_defense_debuff
-		if has_enemy_defense_debuff:
-			enemy_defense_debuff_value = cardResource.enemy_defense_debuff_value
 
-		has_enemy_damage_poison = cardResource.has_enemy_damage_poison
-		if has_enemy_damage_poison:
-			enemy_damage_poison_value = cardResource.enemy_damage_poison_value
+	has_enemy_damage_debuff = cardResource.has_enemy_damage_debuff
+	damage_enemy_debuff_value = cardResource.damage_enemy_debuff_value
+		
+	has_enemy_defense_debuff = cardResource.has_enemy_defense_debuff
+	enemy_defense_debuff_value = cardResource.enemy_defense_debuff_value
+
+	has_enemy_damage_poison = cardResource.has_enemy_damage_poison
+	enemy_damage_poison_value = cardResource.enemy_damage_poison_value
 
 	#Self Debuff
 	has_self_debuff = cardResource.has_self_debuff
-	if has_self_debuff:
-		has_self_damage_debuff = cardResource.has_self_damage_debuff
-		if has_self_damage_debuff:
-			damage_self_debuff_value = cardResource.damage_self_debuff_value
-			
-		has_self_defense_debuff = cardResource.has_self_defense_debuff
-		if has_self_defense_debuff:
-			self_defense_debuff_value = cardResource.self_defense_debuff_value
+
+	has_self_damage_debuff = cardResource.has_self_damage_debuff
+	damage_self_debuff_value = cardResource.damage_self_debuff_value
+		
+	has_self_defense_debuff = cardResource.has_self_defense_debuff
+	self_defense_debuff_value = cardResource.self_defense_debuff_value
 			
 func playCard(target:String):
 	print("play")

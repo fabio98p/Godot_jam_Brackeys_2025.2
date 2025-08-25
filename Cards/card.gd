@@ -3,6 +3,13 @@ extends Node2D
 var starting_position
 @export var cardResource: CardResource
 var cardDataHandler: CardDataHandler 
+
+@onready var nameCard: Label = $Name
+@onready var desc: Label = $Desc
+@onready var attack: Label = $Attack
+@onready var heal: Label = $Heal
+@onready var buff_attack: Label = $BuffAttack
+@onready var buff_defense: Label = $BuffDefense
 	
 signal hovered
 signal hovered_off
@@ -10,7 +17,16 @@ signal hovered_off
 func _ready() -> void:
 	get_parent().get_parent().connect_card_signals(self)
 	
+	
 	cardDataHandler = CardDataHandler.new(cardResource)
+	
+	nameCard.text = "name: " + cardDataHandler.cardName
+	desc.text = "desc: " + cardDataHandler.description
+	attack.text = "attack: " + str(cardDataHandler.attack_damage_value)
+	heal.text = "heal: " + str(cardDataHandler.heal_value)
+	buff_attack.text = "buffattack: " + str(cardDataHandler.damage_buff_value)
+	buff_defense.text = "buffdefense: " + str(cardDataHandler.defense_buff_value)
+	
 	cardDataHandler.playCard("ciao")
 
 func _on_area_2d_mouse_entered() -> void:
