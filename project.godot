@@ -17,7 +17,7 @@ config/icon="res://Assets/icon.svg"
 
 [autoload]
 
-GS="*res://GlobalScripts/GS.gd"
+GC="*res://GlobalScripts/GC.gd"
 Utils="*res://GlobalScripts/Utils.gd"
 
 [display]

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnemyResource" load_steps=6 format=3 uid="uid://datkxnk7ex56r"]
 
-[ext_resource type="Script" uid="uid://blnkk5r71x700" path="res://Enemy/enemyAttack.gd" id="1_buxya"]
+[ext_resource type="Script" uid="uid://blnkk5r71x700" path="res://Enemy/enemyAttackResource.gd" id="1_buxya"]
 [ext_resource type="Texture2D" uid="uid://gmuroxlv2inw" path="res://Assets/icon.svg" id="2_jl84t"]
 [ext_resource type="Script" uid="uid://blb8oufwqiukd" path="res://Enemy/enemyResource.gd" id="3_5xvf8"]
 

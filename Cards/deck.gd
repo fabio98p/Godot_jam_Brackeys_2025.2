@@ -1,7 +1,7 @@
 extends Node2D
 const CARD_DRAW_SPEED = 0.4
 const CARD_SCENE_PATH = "res://Cards/Card.tscn"
-var player_deck = ["card", "card", "card"]
+var player_deck: Array[CardResource] = GC.runDeck
 @onready var player_hands: Node2D = $"../PlayerHands"
 @onready var area_2d: Area2D = $Area2D
 @onready var collision_shape_2d: CollisionShape2D = $Area2D/CollisionShape2D
@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 
 func draw_card():
 	print("draw card")
-	var card_drawn = player_deck[0]
+	var card_drawn: CardResource = player_deck[0]
 	player_deck.erase(card_drawn)
 	if player_deck.size() == 0:
 		collision_shape_2d.disabled = true
@@ -29,5 +29,6 @@ func draw_card():
 	var card_scene = preload(CARD_SCENE_PATH)
 
 	var new_card = card_scene.instantiate()
+	new_card.cardResource = card_drawn
 	$"../Cards".add_child(new_card)
 	player_hands.add_card_to_hand(new_card, CARD_DRAW_SPEED)

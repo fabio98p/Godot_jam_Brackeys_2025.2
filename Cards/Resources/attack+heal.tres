@@ -5,9 +5,8 @@
 
 [resource]
 script = ExtResource("1_yygi8")
-name = "sdfsdf"
-description = "dsfsdfcvx"
-img = ExtResource("1_t8xrw")
+name = "attack=heal"
+description = "comboo"
 img_size = Vector2(0, 0)
 sanity_cost = 0
 has_attack = true
