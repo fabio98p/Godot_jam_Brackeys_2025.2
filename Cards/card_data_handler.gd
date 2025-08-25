@@ -68,6 +68,7 @@ func _init(cardResource: CardResource, card) -> void:
 	img = cardResource.img
 	img_size = cardResource.img_size
 	sanity_cost = cardResource.sanity_cost
+	actionDictionary["sanity_cost"] = sanity_cost
 	
 	#Attack
 	has_attack = cardResource.has_attack

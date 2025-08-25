@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dlyutofh3wgrc"]
 
 [ext_resource type="PackedScene" uid="uid://bu424fog720wr" path="res://Cards/card_manager.tscn" id="1_3mhv4"]
-[ext_resource type="Script" path="res://Levels/level_1.gd" id="1_rf6l5"]
+[ext_resource type="Script" uid="uid://ccsxyx46s6evw" path="res://Levels/level_1.gd" id="1_rf6l5"]
 [ext_resource type="PackedScene" uid="uid://b4tcixs27lofb" path="res://Player/player.tscn" id="2_3mhv4"]
 [ext_resource type="PackedScene" uid="uid://cq6edqy2ajdtn" path="res://Enemy/enemy.tscn" id="2_dilhk"]
 
