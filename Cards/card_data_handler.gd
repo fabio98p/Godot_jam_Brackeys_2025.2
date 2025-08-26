@@ -39,8 +39,8 @@ var defense_buff_value: float
 # ENEMY DEBUFF ------------------------
 var has_enemy_debuff: bool
 
-var has_enemy_damage_debuff: bool
-var damage_enemy_debuff_value: float
+var has_enemy_attack_debuff: bool
+var enemy_attack_debuff_value: float
 
 var has_enemy_defense_debuff: bool
 var enemy_defense_debuff_value: float
@@ -91,8 +91,8 @@ func _init(cardResource: CardResource, card) -> void:
 	#Enemy Debuff
 	has_enemy_debuff = cardResource.has_enemy_debuff
 
-	has_enemy_damage_debuff = cardResource.has_enemy_damage_debuff
-	damage_enemy_debuff_value = cardResource.damage_enemy_debuff_value
+	has_enemy_attack_debuff = cardResource.has_enemy_attack_debuff
+	enemy_attack_debuff_value = cardResource.enemy_attack_debuff_value
 		
 	has_enemy_defense_debuff = cardResource.has_enemy_defense_debuff
 	enemy_defense_debuff_value = cardResource.enemy_defense_debuff_value
@@ -132,9 +132,9 @@ func playCard(target:String):
 
 	# Enemy Debuff
 	if has_enemy_debuff:
-		if has_enemy_damage_debuff:
+		if has_enemy_attack_debuff:
 			#apply_enemy_damage_debuff(damage_enemy_debuff_value, target)
-			actionDictionary["apply_enemy_damage_debuff"] = damage_enemy_debuff_value
+			actionDictionary["apply_enemy_attack_debuff"] = enemy_attack_debuff_value
 		if has_enemy_defense_debuff:
 			#apply_enemy_defense_debuff(enemy_defense_debuff_value, target)
 			actionDictionary["apply_enemy_defense_debuff"] = enemy_defense_debuff_value
@@ -167,7 +167,7 @@ func apply_self_defense_buff(defense_buff: float):
 	print("self defense buff:" + str(defense_buff))
 	
 # Enemy Debuff
-func apply_enemy_damage_debuff(damage_enemy_debuff: float, target: String):
+func apply_enemy_attack_debuff(damage_enemy_debuff: float, target: String):
 	print("add attack debuff to  " + target + " enemy with:" + str(damage_enemy_debuff))
 
 func apply_enemy_defense_debuff(enemy_defense_debuff: float, target: String):

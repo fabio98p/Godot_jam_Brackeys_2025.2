@@ -7,6 +7,8 @@ extends Node2D
 @onready var desc: Label = $Desc
 @onready var health: Label = $Healt
 @onready var next_attack: Label = $NextAttack
+var attack_multiply: float = 1.0
+var defense_multiply: float = 1.0
 var current_health: float
 
 var enemyDataHandler: EnemyDataHandler

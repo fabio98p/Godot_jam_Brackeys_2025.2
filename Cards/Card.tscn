@@ -21,8 +21,8 @@ damage_buff_value = 0.0
 has_defense_buff = false
 defense_buff_value = 0.0
 has_enemy_debuff = false
-has_enemy_damage_debuff = false
-damage_enemy_debuff_value = 0.0
+has_enemy_attack_debuff = false
+enemy_attack_debuff_value = 0.0
 has_enemy_defense_debuff = false
 enemy_defense_debuff_value = 0.0
 has_enemy_damage_poison = false
@@ -57,6 +57,7 @@ offset_left = -57.0
 offset_top = -88.0
 offset_right = -17.0
 offset_bottom = -65.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "bla"
 
 [node name="Desc" type="Label" parent="."]
@@ -64,6 +65,7 @@ offset_left = -56.0
 offset_top = -66.0
 offset_right = -16.0
 offset_bottom = -43.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "bla"
 
 [node name="Attack" type="Label" parent="."]
@@ -71,6 +73,7 @@ offset_left = -56.0
 offset_top = -16.0
 offset_right = -16.0
 offset_bottom = 7.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "bla"
 
 [node name="Heal" type="Label" parent="."]
@@ -78,6 +81,7 @@ offset_left = -57.0
 offset_top = 4.0
 offset_right = -17.0
 offset_bottom = 27.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "bla"
 
 [node name="BuffAttack" type="Label" parent="."]
@@ -85,6 +89,7 @@ offset_left = -58.0
 offset_top = 23.0
 offset_right = -18.0
 offset_bottom = 46.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "bla"
 
 [node name="BuffDefense" type="Label" parent="."]
@@ -92,6 +97,7 @@ offset_left = -58.0
 offset_top = 41.0
 offset_right = -18.0
 offset_bottom = 64.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "bla"
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

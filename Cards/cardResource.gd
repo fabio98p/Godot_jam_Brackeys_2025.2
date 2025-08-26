@@ -30,7 +30,7 @@ class_name CardResource
 
 # BUFF -------------------------
 @export var has_self_buff: bool
-@export_group("Buff Info")
+@export_group("Self Buff Info")
 
 # DAMAGE BUFF
 @export var has_damage_buff: bool
@@ -50,9 +50,9 @@ class_name CardResource
 @export_group("Enemy Debuff Info")
 
 # ENEMY DAMAGE DEBUFF
-@export var has_enemy_damage_debuff: bool
-@export_subgroup("Damage Debuff Info")
-@export var damage_enemy_debuff_value: float
+@export var has_enemy_attack_debuff: bool
+@export_subgroup("attack Debuff Info")
+@export var enemy_attack_debuff_value: float
 @export_subgroup("")
 
 # ENEMY DEFENSE DEBUFF

@@ -4,6 +4,8 @@ extends Node2D
 @export var max_sanity: int
 var current_health: float
 var current_sanity: int
+var attack_multiply: float = 1.0
+var defense_multiply: float = 1.0
 @onready var health: Label = $health
 @onready var sanity: Label = $sanity
 
@@ -23,7 +25,7 @@ func _process(delta: float) -> void:
 
 func dmg_taken(value):
 	
-	current_health = current_health - value 
+	current_health = current_health - value
 	health.text = "max_healt: " + str(current_health)
 	if current_health <= 0:
 		health.text = "max_healt: " +  "dead health"
