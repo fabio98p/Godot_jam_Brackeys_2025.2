@@ -22,22 +22,22 @@ func _process(delta: float) -> void:
 	pass
 
 func dmg_taken(value):
-	print(current_health)
+	
 	current_health = current_health - value 
 	health.text = "max_healt: " + str(current_health)
 	if current_health <= 0:
 		health.text = "max_healt: " +  "dead health"
 
 func heal_self(value):
-	print(current_health)
-	health.text = "max_healt: " + str(current_health)
+	
 	if current_health <= max_health:
+		health.text = "max_healt: " + str(current_health)
 		current_health = current_health + value
 	
 
 func sanity_taken(value):
-	print(current_sanity)
+	
 	current_sanity = current_sanity - value
 	sanity.text = "max_sanity: " + str(current_sanity)
-	if current_health <= 0:
+	if current_sanity <= 0:
 		sanity.text = "max_sanity: " + "dead sanity"
