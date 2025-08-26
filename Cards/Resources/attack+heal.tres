@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3 uid="uid://d2ggajifdbchu"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://d2ggajifdbchu"]
 
+[ext_resource type="Texture2D" uid="uid://c6n6tllbmb3uo" path="res://Assets/IMG_8215.jpg" id="1_t8xrw"]
 [ext_resource type="Script" uid="uid://bu8tp3x63dsa1" path="res://Cards/cardResource.gd" id="1_yygi8"]
 
 [resource]
 script = ExtResource("1_yygi8")
 name = "attack=heal"
 description = "comboo"
-img_size = Vector2(0, 0)
+img = ExtResource("1_t8xrw")
+img_size = Vector2(0.03, 0.03)
 sanity_cost = 5
 has_attack = true
 attack_damage_value = 2.0

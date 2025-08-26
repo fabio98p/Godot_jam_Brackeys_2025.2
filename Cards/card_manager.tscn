@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bubk7tayba5r2" path="res://Cards/card_manager.gd" id="1_cpwxc"]
 [ext_resource type="PackedScene" uid="uid://b4cl1cqobuohe" path="res://Cards/drop_zone.tscn" id="3_ajkw5"]
 [ext_resource type="Script" uid="uid://chbloijc35cm1" path="res://Cards/player_hands.gd" id="3_hdhnw"]
-[ext_resource type="Texture2D" uid="uid://gmuroxlv2inw" path="res://Assets/icon.svg" id="4_ajkw5"]
 [ext_resource type="Script" uid="uid://ctiqfwqgf5dut" path="res://Cards/deck.gd" id="4_og02b"]
+[ext_resource type="Texture2D" uid="uid://7adf56kwinw7" path="res://Assets/k2hxsfde17r81.jpg" id="5_cnr2g"]
 [ext_resource type="Script" uid="uid://cc5y05uoajwfh" path="res://Cards/input_manager.gd" id="6_cnr2g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hdhnw"]
@@ -28,8 +28,8 @@ position = Vector2(107, 583)
 script = ExtResource("4_og02b")
 
 [node name="Sprite2D" type="Sprite2D" parent="Deck"]
-z_index = -2
-texture = ExtResource("4_ajkw5")
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_cnr2g")
 
 [node name="Area2D" type="Area2D" parent="Deck"]
 collision_layer = 4
@@ -41,7 +41,6 @@ shape = SubResource("RectangleShape2D_hdhnw")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Deck"]
 modulate = Color(0, 0, 0, 1)
-z_index = -2
 offset_left = -10.0
 offset_top = -25.0
 offset_right = 30.0

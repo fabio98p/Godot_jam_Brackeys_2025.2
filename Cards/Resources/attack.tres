@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3 uid="uid://bbo0kq26d00d4"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://bbo0kq26d00d4"]
 
+[ext_resource type="Texture2D" uid="uid://c6n6tllbmb3uo" path="res://Assets/IMG_8215.jpg" id="1_ol8py"]
 [ext_resource type="Script" uid="uid://bu8tp3x63dsa1" path="res://Cards/cardResource.gd" id="1_q361j"]
 
 [resource]
 script = ExtResource("1_q361j")
 name = "attack"
 description = "solo attacco"
-img_size = Vector2(0, 0)
+img = ExtResource("1_ol8py")
+img_size = Vector2(0.03, 0.03)
 sanity_cost = 7
 has_attack = true
 attack_damage_value = 4.0

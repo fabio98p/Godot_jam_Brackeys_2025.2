@@ -1,12 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlyutofh3wgrc"]
+[gd_scene load_steps=10 format=3 uid="uid://dlyutofh3wgrc"]
 
 [ext_resource type="PackedScene" uid="uid://bu424fog720wr" path="res://Cards/card_manager.tscn" id="1_3mhv4"]
 [ext_resource type="Script" uid="uid://ccsxyx46s6evw" path="res://Levels/level_1.gd" id="1_rf6l5"]
+[ext_resource type="Texture2D" uid="uid://cvjfkhp878psc" path="res://Assets/13844017-vecchio-libro-aperto-isolato-su-bianca-sfondo-foto.jpg" id="2_0urlm"]
 [ext_resource type="PackedScene" uid="uid://b4tcixs27lofb" path="res://Player/player.tscn" id="2_3mhv4"]
 [ext_resource type="PackedScene" uid="uid://cq6edqy2ajdtn" path="res://Enemy/enemy.tscn" id="2_dilhk"]
+[ext_resource type="Script" uid="uid://blb8oufwqiukd" path="res://Enemy/enemyResource.gd" id="2_rfktq"]
+[ext_resource type="Script" uid="uid://d2t1l7wqbx5qe" path="res://Levels/levelResource.gd" id="3_0urlm"]
+
+[sub_resource type="Resource" id="Resource_77x7w"]
+script = ExtResource("3_0urlm")
+background = ExtResource("2_0urlm")
+bookmarks = Array[Texture2D]([])
+enemy_list = Array[ExtResource("2_rfktq")]([])
+metadata/_custom_type_script = "uid://d2t1l7wqbx5qe"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0urlm"]
+texture = ExtResource("2_0urlm")
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_rf6l5")
+level_resource = SubResource("Resource_77x7w")
+
+[node name="Backgorund" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(32.04, 17.76)
+theme_override_styles/panel = SubResource("StyleBoxTexture_0urlm")
 
 [node name="CardManager" parent="." instance=ExtResource("1_3mhv4")]
 

@@ -4,7 +4,7 @@ class_name CardResource
 
 @export var name: String
 @export_multiline var description: String
-@export var img: Texture
+@export var img: Texture2D
 @export var img_size: Vector2
 @export var sanity_cost: int
 

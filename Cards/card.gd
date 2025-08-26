@@ -4,13 +4,14 @@ var starting_position
 @export var cardResource: CardResource
 var cardDataHandler: CardDataHandler 
 
+@onready var img: Sprite2D = $Sprite2D
 @onready var nameCard: Label = $Name
 @onready var desc: Label = $Desc
 @onready var attack: Label = $Attack
 @onready var heal: Label = $Heal
 @onready var buff_attack: Label = $BuffAttack
 @onready var buff_defense: Label = $BuffDefense
-	
+
 signal hovered
 signal hovered_off
 signal apply_card_action
@@ -18,7 +19,8 @@ signal apply_card_action
 func _ready() -> void:
 	
 	cardDataHandler = CardDataHandler.new(cardResource, self)
-	
+	img.texture = cardDataHandler.img
+	img.scale = cardDataHandler.img_size
 	nameCard.text = "name: " + cardDataHandler.cardName
 	desc.text = "desc: " + cardDataHandler.description
 	attack.text = "attack: " + str(cardDataHandler.attack_damage_value)
