@@ -25,17 +25,42 @@ func applay_card_effect(cadsEffect):
 			"heal_self":
 				player.heal_self(value)
 			"apply_self_damage_buff":
-				player.attack_multiply = value
+				player.attack_multiply += value
 			"apply_self_defense_buff":
-				player.defense_multiply = value
+				player.defense_multiply += value
 			"apply_enemy_attack_debuff":
-				enemy.defense_multiply = value
+				enemy.defense_multiply -= value
 			"apply_enemy_defense_debuff":
-				enemy.defense_multiply = value
+				enemy.defense_multiply -= value
 			#"apply_enemy_poison":
 				#player.defense_multiply = value
 			"apply_self_damage_debuff":
-				player.attack_multiply = value
+				player.attack_multiply = -value
 			"apply_self_defense_debuff":
-				player.defense_multiply = value
+				player.defense_multiply = -value
 			
+
+
+func _on_skip_round_pressed() -> void:
+	#apply enemy attack
+	var enemyAttack:EnemyAttack = enemy.applay_next_attack()
+	
+	# Attack
+	if enemyAttack.has_attack: 
+		var enemy_attack_damage = enemyAttack.attack_damage * player.attack_multiply
+		enemy_attack_damage = enemy_attack_damage * enemy.defense_multiply
+		player.dmg_taken(enemy_attack_damage)
+	
+	# Self Buff
+	if enemyAttack.has_self_buff:
+		if enemyAttack.has_self_attack_buff:
+			player.attack_multiply += enemyAttack.self_attack_buff 
+		if enemyAttack.has_self_defense_buff:
+			player.defense_multiply += enemyAttack.self_defense_buff 
+	
+	# Player Debuff
+	if enemyAttack.has_player_debuff: 
+		if enemyAttack.has_player_attack_debuff:
+			player.attack_multiply += enemyAttack.player_attack_debuff 
+		if enemyAttack.has_player_defense_debuff:
+			player.defense_multiply += enemyAttack.player_defense_debuff 

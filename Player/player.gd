@@ -24,7 +24,6 @@ func _process(delta: float) -> void:
 	pass
 
 func dmg_taken(value):
-	
 	current_health = current_health - value
 	health.text = "max_healt: " + str(current_health)
 	if current_health <= 0:

@@ -11,6 +11,8 @@ var attack_multiply: float = 1.0
 var defense_multiply: float = 1.0
 var current_health: float
 
+var new_attack: EnemyAttack
+
 var enemyDataHandler: EnemyDataHandler
 func _ready() -> void:
 	var enemy_data: EnemyResource = enemyResource.duplicate()
@@ -19,7 +21,8 @@ func _ready() -> void:
 	nameEnemy.text = "name: " + enemyDataHandler.enemy_name
 	desc.text = "desc: " + enemyDataHandler.description
 	health.text = "max_healt: " + str(enemyDataHandler.max_healt)
-	next_attack.text = "next_attack: " + str(enemyDataHandler.getNextAttack().attack_damage)
+	new_attack = enemyDataHandler.getNextAttack()
+	next_attack.text = "next_attack: " + str(new_attack.attack_damage)
 	
 	sprite_2d.texture = enemyDataHandler.img
 	
@@ -29,3 +32,9 @@ func dmg_taken(value):
 	health.text = "max_healt: " + str(enemyDataHandler.current_healt)
 	if enemyDataHandler.current_healt <= 0:
 		health.text = "max_healt: " +  "dead health"
+
+func applay_next_attack():
+	var old_next_attack : EnemyAttack = new_attack
+	new_attack = enemyDataHandler.getNextAttack()
+	next_attack.text = "next_attack: " + str(new_attack.attack_damage)
+	return old_next_attack

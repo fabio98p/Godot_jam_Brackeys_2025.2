@@ -7,12 +7,18 @@ class_name EnemyAttack
 @export var attack_damage: float
 @export_group("")
 
-@export_group("Buff")
-@export var has_buff: bool
-@export var buff: float
+@export_group("Self Buff")
+@export var has_self_buff: bool
+@export var has_self_attack_buff: bool
+@export var self_attack_buff: float
+@export var has_self_defense_buff: bool
+@export var self_defense_buff: float
 @export_group("")
 
-@export_group("Debuff")
-@export var has_debuff: bool
-@export var debuff: float
+@export_group("Player Debuff")
+@export var has_player_debuff: bool
+@export var has_player_attack_debuff: bool
+@export var player_attack_debuff: float
+@export var has_player_defense_debuff: bool
+@export var player_defense_debuff: float
 @export_group("")

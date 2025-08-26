@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dlyutofh3wgrc"]
+[gd_scene load_steps=11 format=3 uid="uid://dlyutofh3wgrc"]
 
 [ext_resource type="PackedScene" uid="uid://bu424fog720wr" path="res://Cards/card_manager.tscn" id="1_3mhv4"]
 [ext_resource type="Script" uid="uid://ccsxyx46s6evw" path="res://Levels/level_1.gd" id="1_rf6l5"]
@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://b4tcixs27lofb" path="res://Player/player.tscn" id="2_3mhv4"]
 [ext_resource type="PackedScene" uid="uid://cq6edqy2ajdtn" path="res://Enemy/enemy.tscn" id="2_dilhk"]
 [ext_resource type="Script" uid="uid://blb8oufwqiukd" path="res://Enemy/enemyResource.gd" id="2_rfktq"]
-[ext_resource type="Script" uid="uid://d2t1l7wqbx5qe" path="res://Levels/levelResource.gd" id="3_0urlm"]
+[ext_resource type="Script" path="res://Levels/levelResource.gd" id="3_0urlm"]
+[ext_resource type="Texture2D" uid="uid://gmuroxlv2inw" path="res://Assets/icon.svg" id="8_77x7w"]
 
 [sub_resource type="Resource" id="Resource_77x7w"]
 script = ExtResource("3_0urlm")
@@ -37,5 +38,14 @@ position = Vector2(1185, 346)
 position = Vector2(104, 355)
 max_health = 10.0
 max_sanity = 30
+
+[node name="SkipRound" type="Button" parent="."]
+offset_left = 1098.0
+offset_top = 536.0
+offset_right = 1234.0
+offset_bottom = 672.0
+icon = ExtResource("8_77x7w")
+
+[connection signal="pressed" from="SkipRound" to="." method="_on_skip_round_pressed"]
 
 [editable path="CardManager"]
