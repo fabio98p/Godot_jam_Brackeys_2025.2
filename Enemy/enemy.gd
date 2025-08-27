@@ -10,6 +10,7 @@ extends Node2D
 @onready var attack_multi: Label = $AttackMulti
 @onready var defense_multi: Label = $DefenseMulti
 
+var shield: int = 0
 # attack and defense have max of 3 multiply,
 # every multiply is a x0.25 of damage for a max of *1.75 or 
 var attack_multiply: float = 0:
@@ -38,12 +39,33 @@ func _ready() -> void:
 	defense_multi.text = "defense multy: " + str(defense_multiply)
 	sprite_2d.texture = enemyDataHandler.img
 	
-func dmg_taken(value):
-	print("enemy current",enemyDataHandler.current_healt)
-	enemyDataHandler.current_healt = enemyDataHandler.current_healt - value 
-	health.text = "max_healt: " + str(enemyDataHandler.current_healt)
-	if enemyDataHandler.current_healt <= 0:
-		health.text = "max_healt: " +  "dead health"
+#func dmg_taken(value):
+	#print("enemy current",enemyDataHandler.current_healt)
+	#enemyDataHandler.current_healt = enemyDataHandler.current_healt - value 
+	#health.text = "max_healt: " + str(enemyDataHandler.current_healt)
+	#if enemyDataHandler.current_healt <= 0:
+		#health.text = "max_healt: " +  "dead health"
+
+func enemy_dmg_taken(value: int) -> void:
+	print("enemy current", enemyDataHandler.current_healt)
+
+	var damage_after_shield = value
+	
+	if shield >= value:
+		shield -= value
+		damage_after_shield = 0
+	else:
+		damage_after_shield = value - shield
+		shield = 0
+
+	enemyDataHandler.current_healt -= damage_after_shield
+	
+	if enemyDataHandler.current_healt > 0:
+		health.text = "max_healt: " + str(enemyDataHandler.current_healt)
+	else:
+		health.text = "max_healt: dead health"
+
+
 
 func applay_next_attack():
 	var old_next_attack : EnemyAttack = new_attack
