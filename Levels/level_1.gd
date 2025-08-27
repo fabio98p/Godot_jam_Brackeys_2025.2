@@ -22,7 +22,7 @@ func applay_card_effect(cadsEffect):
 			"attack_enemy":
 				var finalMoltiplicator = clamp(1 + (player.attack_multiply*0.25) - (enemy.defense_multiply*0.25),0,3)
 				var final_value= value * finalMoltiplicator
-				enemy.dmg_taken(final_value)
+				enemy.enemy_dmg_taken(final_value)
 			"heal_self":
 				player.heal_self(value)
 			"apply_self_damage_buff":
