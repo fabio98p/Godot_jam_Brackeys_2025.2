@@ -45,8 +45,14 @@ func applay_card_effect(cadsEffect):
 func _on_skip_round_pressed() -> void:
 	#apply enemy attack
 	var enemyAttack:EnemyAttack = enemy.applay_next_attack()
-	
-
+	# Shield
+	if enemyAttack.has_shield: 
+		pass # enemyAttack.shield_value
+		
+	# Heal
+	if enemyAttack.has_heal: 
+		pass # enemyAttack.heal_value
+		
 	# Self Buff
 	if enemyAttack.has_self_buff:
 		if enemyAttack.has_self_attack_buff:

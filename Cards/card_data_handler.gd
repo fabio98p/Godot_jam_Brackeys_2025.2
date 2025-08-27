@@ -23,6 +23,10 @@ var has_attack: bool
 var attack_damage_value: float
 var attack_target_type: float
 
+# SHIELD ----------------
+var has_shield: bool
+var shield_value: int
+
 # HEAL ----------------------
 var has_heal: bool
 var heal_value: float
@@ -75,6 +79,10 @@ func _init(cardResource: CardResource, card) -> void:
 	attack_damage_value = cardResource.attack_damage_value
 	attack_target_type = cardResource.attack_target_type
 
+	#Shield
+	has_shield = cardResource.has_shield
+	shield_value = cardResource.shield_value
+	
 	#Heal
 	has_heal = cardResource.has_heal
 	heal_value = cardResource.heal_value
@@ -110,6 +118,11 @@ func _init(cardResource: CardResource, card) -> void:
 	self_defense_debuff_value = cardResource.self_defense_debuff_value
 
 func playCard(target:String):
+	
+	# Heal Part
+	if has_heal:
+		#heal_self(heal_value)
+		actionDictionary["shield_self"] = shield_value
 		
 	# Heal Part
 	if has_heal:

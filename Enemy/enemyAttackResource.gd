@@ -7,6 +7,16 @@ class_name EnemyAttack
 @export var attack_damage: float
 @export_group("")
 
+@export_group("Shield")
+@export var has_shield: bool
+@export var shield_value: float
+@export_group("")
+
+@export_group("Heal")
+@export var has_heal: bool
+@export var heal_value: float
+@export_group("")
+
 @export_group("Self Buff")
 @export var has_self_buff: bool
 @export var has_self_attack_buff: bool
