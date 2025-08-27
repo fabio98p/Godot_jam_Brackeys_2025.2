@@ -9,6 +9,7 @@ extends Node2D
 @onready var next_attack: Label = $NextAttack
 @onready var attack_multi: Label = $AttackMulti
 @onready var defense_multi: Label = $DefenseMulti
+@onready var shieldLabel: Label = $Shield
 
 var shield: int = 0
 # attack and defense have max of 3 multiply,
@@ -37,6 +38,7 @@ func _ready() -> void:
 	next_attack.text = "next_attack: " + str(new_attack.attack_damage)
 	attack_multi.text =  "attack multy: " + str(attack_multiply)
 	defense_multi.text = "defense multy: " + str(defense_multiply)
+	shieldLabel.text = "Shield: " + str(shield)
 	sprite_2d.texture = enemyDataHandler.img
 	
 #func dmg_taken(value):
@@ -57,7 +59,7 @@ func enemy_dmg_taken(value: int) -> void:
 	else:
 		damage_after_shield = value - shield
 		shield = 0
-
+	shieldLabel.text = "Shield: " + str(shield)
 	enemyDataHandler.current_healt -= damage_after_shield
 	
 	if enemyDataHandler.current_healt > 0:
