@@ -1,5 +1,7 @@
 extends Node2D
 
+signal enemy_dead
+
 @export var enemyResource: EnemyResource
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
@@ -66,6 +68,8 @@ func enemy_dmg_taken(value: int) -> void:
 		health.text = "max_healt: " + str(enemyDataHandler.current_healt)
 	else:
 		health.text = "max_healt: dead health"
+		visible = false
+		enemy_dead.emit()
 
 
 

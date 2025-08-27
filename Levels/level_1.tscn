@@ -5,20 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://cvjfkhp878psc" path="res://Assets/13844017-vecchio-libro-aperto-isolato-su-bianca-sfondo-foto.jpg" id="2_0urlm"]
 [ext_resource type="PackedScene" uid="uid://b4tcixs27lofb" path="res://Player/player.tscn" id="2_3mhv4"]
 [ext_resource type="PackedScene" uid="uid://cq6edqy2ajdtn" path="res://Enemy/enemy.tscn" id="2_dilhk"]
-[ext_resource type="Script" uid="uid://blb8oufwqiukd" path="res://Enemy/enemyResource.gd" id="2_rfktq"]
-[ext_resource type="Script" uid="uid://d2t1l7wqbx5qe" path="res://Levels/levelResource.gd" id="3_0urlm"]
+[ext_resource type="Resource" uid="uid://dnvku0fr2rffq" path="res://Levels/Resources/level_1.tres" id="2_xoyoh"]
 [ext_resource type="Texture2D" uid="uid://gmuroxlv2inw" path="res://Assets/icon.svg" id="8_77x7w"]
-
-[sub_resource type="Resource" id="Resource_77x7w"]
-script = ExtResource("3_0urlm")
-background = ExtResource("2_0urlm")
-bookmarks = Array[Texture2D]([])
-enemy_list = Array[ExtResource("2_rfktq")]([])
-metadata/_custom_type_script = "uid://d2t1l7wqbx5qe"
+[ext_resource type="Texture2D" uid="uid://yr7h47bahev4" path="res://Assets/white.png" id="9_f4pg2"]
+[ext_resource type="Texture2D" uid="uid://c6n6tllbmb3uo" path="res://Assets/IMG_8215.jpg" id="10_62b6n"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_rf6l5")
-level_resource = SubResource("Resource_77x7w")
+level_resource = ExtResource("2_xoyoh")
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(619, 355)
@@ -42,6 +36,64 @@ offset_right = 1234.0
 offset_bottom = 672.0
 icon = ExtResource("8_77x7w")
 
+[node name="ChoseCard" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="ChoseCard"]
+modulate = Color(0, 0, 0, 0.352941)
+position = Vector2(647.5, 368)
+scale = Vector2(41.4688, 24)
+texture = ExtResource("9_f4pg2")
+
+[node name="Reward1" type="Button" parent="ChoseCard"]
+offset_left = 380.0
+offset_top = 224.0
+offset_right = 4108.0
+offset_bottom = 5488.0
+scale = Vector2(0.05, 0.05)
+icon = ExtResource("10_62b6n")
+
+[node name="Reward2" type="Button" parent="ChoseCard"]
+offset_left = 717.0
+offset_top = 222.0
+offset_right = 4445.0
+offset_bottom = 5486.0
+scale = Vector2(0.05, 0.05)
+icon = ExtResource("10_62b6n")
+
+[node name="Bookmarcs" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Bookmarcs"]
+visible = false
+modulate = Color(0, 0, 0, 0.352941)
+position = Vector2(647.5, 368)
+scale = Vector2(41.4688, 24)
+texture = ExtResource("9_f4pg2")
+
+[node name="Bookmark2" type="Button" parent="Bookmarcs"]
+modulate = Color(1, 0, 1, 1)
+offset_left = 1140.0
+offset_top = 184.0
+offset_right = 3648.0
+offset_bottom = 1384.0
+scale = Vector2(0.05, 0.05)
+icon = ExtResource("9_f4pg2")
+
+[node name="Bookmark1" type="Button" parent="Bookmarcs"]
+modulate = Color(1, 1, 0, 1)
+offset_left = 1146.0
+offset_top = 290.0
+offset_right = 3654.0
+offset_bottom = 1490.0
+scale = Vector2(0.05, 0.05)
+icon = ExtResource("9_f4pg2")
+
+[connection signal="enemy_dead" from="Enemy" to="." method="_on_enemy_enemy_dead"]
 [connection signal="pressed" from="SkipRound" to="." method="_on_skip_round_pressed"]
+[connection signal="pressed" from="ChoseCard/Reward1" to="." method="_on_reward_1_pressed"]
+[connection signal="pressed" from="ChoseCard/Reward2" to="." method="_on_reward_2_pressed"]
+[connection signal="pressed" from="Bookmarcs/Bookmark2" to="." method="_on_bookmark_2_pressed"]
+[connection signal="pressed" from="Bookmarcs/Bookmark1" to="." method="_on_bookmark_1_pressed"]
 
 [editable path="CardManager"]

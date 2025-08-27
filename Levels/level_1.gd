@@ -1,16 +1,32 @@
 extends Node2D
 @onready var player: Node2D = $Player
 @onready var enemy: Node2D = $Enemy
-@export var level_resource: LevelResource
 @onready var background: Sprite2D = $background
 
+# Chose Reward
+@onready var chose_card: Node2D = $ChoseCard
+@onready var reward_1: Button = $ChoseCard/Reward1
+@onready var reward_2: Button = $ChoseCard/Reward2
+
+# Bookmarks
+@onready var bookmarcs: Node2D = $Bookmarcs
+@onready var bookmark_1: Button = $Bookmarcs/Bookmark1
+@onready var bookmark_2: Button = $Bookmarcs/Bookmark2
+
+@export var level_resource: LevelResource
 
 func _ready() -> void:
-	#var stileBox: StyleBoxTexture = StyleBoxTexture.new()
-	#stileBox.texture = level_resource.background
 	var decompressedBG= level_resource.background.get_image()
 	background.texture = ImageTexture.create_from_image( decompressedBG) as Texture2D
-
+	
+	# Setup Enemy
+	# TODO: setup enemy from resources??
+	
+	# Setup Rewards
+	chose_card.visible = false
+	reward_1.icon = level_resource.reward1.img
+	reward_2.icon = level_resource.reward2.img
+	
 func applay_card_effect(cadsEffect):
 	print(cadsEffect)
 	for key in cadsEffect.keys():
@@ -73,3 +89,23 @@ func _on_skip_round_pressed() -> void:
 		var enemy_attack_damage = enemyAttack.attack_damage * finalMoltiplicator
 		player.dmg_taken(enemy_attack_damage)
 	
+func _on_enemy_enemy_dead() -> void:
+	chose_card.visible = true
+	
+func _on_reward_1_pressed() -> void:
+	GC.initialDeck.append(reward_1)
+	await get_tree().create_timer(0.5).timeout
+	chose_card.visible = false
+	bookmarcs.visible = true
+
+func _on_reward_2_pressed() -> void:
+	GC.initialDeck.append(reward_2)
+	await get_tree().create_timer(0.5).timeout
+	chose_card.visible = false
+	bookmarcs.visible = true
+
+func _on_bookmark_1_pressed() -> void:
+	print("next level")
+
+func _on_bookmark_2_pressed() -> void:
+	print("next level")
