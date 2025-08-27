@@ -1,14 +1,15 @@
 extends Node2D
 @onready var player: Node2D = $Player
 @onready var enemy: Node2D = $Enemy
-@onready var background: Panel = $Backgorund
 @export var level_resource: LevelResource
+@onready var background: Sprite2D = $background
 
 
 func _ready() -> void:
-	var stileBox: StyleBoxTexture = StyleBoxTexture.new()
-	stileBox.texture = level_resource.background
-	background.add_theme_stylebox_override("panel", stileBox) 
+	#var stileBox: StyleBoxTexture = StyleBoxTexture.new()
+	#stileBox.texture = level_resource.background
+	var decompressedBG= level_resource.background.get_image()
+	background.texture = ImageTexture.create_from_image( decompressedBG) as Texture2D
 
 func applay_card_effect(cadsEffect):
 	print(cadsEffect)
