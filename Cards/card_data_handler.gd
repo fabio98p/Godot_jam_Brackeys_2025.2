@@ -110,11 +110,6 @@ func _init(cardResource: CardResource, card) -> void:
 	self_defense_debuff_value = cardResource.self_defense_debuff_value
 
 func playCard(target:String):
-	
-	# Attack Part
-	if has_attack:
-		#attack_enemy(attack_damage_value, target)
-		actionDictionary["attack_enemy"] = attack_damage_value
 		
 	# Heal Part
 	if has_heal:
@@ -151,6 +146,10 @@ func playCard(target:String):
 			#apply_self_defense_debuff(self_defense_debuff_value)
 			actionDictionary["apply_self_defense_debuff"] = self_defense_debuff_value
 	
+	# Attack Part must be the last
+	if has_attack:
+		#attack_enemy(attack_damage_value, target)
+		actionDictionary["attack_enemy"] = attack_damage_value
 	card_istance.apply_card_action.emit(actionDictionary)
 	#emette il segnale
 func attack_enemy(damage: float, target: String):
