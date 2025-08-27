@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://bo4nqy5opp3ta"]
+
+[ext_resource type="Texture2D" uid="uid://c6n6tllbmb3uo" path="res://Assets/IMG_8215.jpg" id="1_k083p"]
+[ext_resource type="Script" uid="uid://bu8tp3x63dsa1" path="res://Cards/cardResource.gd" id="2_bxkor"]
+
+[resource]
+script = ExtResource("2_bxkor")
+name = "Digestive"
+description = "Biscotto"
+img = ExtResource("1_k083p")
+img_size = Vector2(0.03, 0.03)
+sanity_cost = 3
+has_attack = false
+attack_damage_value = 4.0
+attack_target_type = 0.0
+has_heal = true
+heal_value = 2.0
+has_self_buff = false
+has_damage_buff = false
+damage_buff_value = 0.0
+has_defense_buff = false
+defense_buff_value = 0.0
+has_enemy_debuff = false
+has_enemy_attack_debuff = false
+enemy_attack_debuff_value = 0.0
+has_enemy_defense_debuff = true
+enemy_defense_debuff_value = 2.0
+has_enemy_damage_poison = false
+enemy_damage_poison_value = 0.0
+has_self_debuff = false
+has_self_damage_debuff = false
+damage_self_debuff_value = 0.0
+has_self_defense_debuff = false
+self_defense_debuff_value = 0.0
+metadata/_custom_type_script = "uid://bu8tp3x63dsa1"

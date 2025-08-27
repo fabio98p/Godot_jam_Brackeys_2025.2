@@ -15,12 +15,12 @@ class_name CardResource
 @export var attack_target_type: float
 @export_group("")
 
-## DEFENSE ------------------
-#@export var has_defense: bool
-#@export_group("Defense Info")
-#@export var defense_value: float
-##@export var damage_target: int
-#@export_group("")
+# DEFENSE ------------------
+@export var has_defense: bool
+@export_group("Defense Info")
+@export var defense_value: float
+#@export var damage_target: int
+@export_group("")
 
 # HEAL ----------------------
 @export var has_heal: bool
