@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_x3kj3")
-name = "buff"
+name = "self buff"
 description = "buff"
 img = ExtResource("1_n7641")
 img_size = Vector2(0.03, 0.03)
@@ -13,16 +13,18 @@ sanity_cost = 4
 has_attack = false
 attack_damage_value = 0.0
 attack_target_type = 0.0
+has_defense = false
+defense_value = 0.0
 has_heal = false
 heal_value = 2.0
 has_self_buff = true
 has_damage_buff = true
-damage_buff_value = 2.0
+damage_buff_value = 3.0
 has_defense_buff = true
-defense_buff_value = 2.0
+defense_buff_value = 3.0
 has_enemy_debuff = false
-has_enemy_damage_debuff = false
-damage_enemy_debuff_value = 0.0
+has_enemy_attack_debuff = false
+enemy_attack_debuff_value = 0.0
 has_enemy_defense_debuff = false
 enemy_defense_debuff_value = 0.0
 has_enemy_damage_poison = false

@@ -20,7 +20,8 @@ func applay_card_effect(cadsEffect):
 			"sanity_cost":
 				player.sanity_taken(value)
 			"attack_enemy":
-				var final_value= value * player.attack_multiply
+				var finalMoltiplicator = clamp(1 + (player.attack_multiply*0.25) - (enemy.defense_multiply*0.25),0,3)
+				var final_value= value * finalMoltiplicator
 				final_value = final_value * enemy.defense_multiply
 				enemy.dmg_taken(final_value)
 			"heal_self":
@@ -30,15 +31,15 @@ func applay_card_effect(cadsEffect):
 			"apply_self_defense_buff":
 				player.defense_multiply += value
 			"apply_enemy_attack_debuff":
-				enemy.defense_multiply -= value
+				enemy.attack_multiply += value
 			"apply_enemy_defense_debuff":
-				enemy.defense_multiply -= value
+				enemy.defense_multiply += value
 			#"apply_enemy_poison":
 				#player.defense_multiply = value
 			"apply_self_damage_debuff":
-				player.attack_multiply = -value
+				player.attack_multiply += value
 			"apply_self_defense_debuff":
-				player.defense_multiply = -value
+				player.defense_multiply += value
 			
 
 
@@ -48,8 +49,8 @@ func _on_skip_round_pressed() -> void:
 	
 	# Attack
 	if enemyAttack.has_attack: 
-		var enemy_attack_damage = enemyAttack.attack_damage * player.attack_multiply
-		enemy_attack_damage = enemy_attack_damage * enemy.defense_multiply
+		var finalMoltiplicator = clamp(1 + (enemy.attack_multiply*0.25) - (player.defense_multiply*0.25),0,3)
+		var enemy_attack_damage = enemyAttack.attack_damage * finalMoltiplicator
 		player.dmg_taken(enemy_attack_damage)
 	
 	# Self Buff

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://dv7rdl3awdtmg"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://y3df6cx3cai0"]
 
 [ext_resource type="Texture2D" uid="uid://c6n6tllbmb3uo" path="res://Assets/IMG_8215.jpg" id="1_ks8li"]
 [ext_resource type="Script" uid="uid://bu8tp3x63dsa1" path="res://Cards/cardResource.gd" id="2_q0wyq"]
@@ -24,7 +24,7 @@ has_defense_buff = false
 defense_buff_value = 0.0
 has_enemy_debuff = true
 has_enemy_attack_debuff = true
-enemy_attack_debuff_value = 0.75
+enemy_attack_debuff_value = -1.0
 has_enemy_defense_debuff = false
 enemy_defense_debuff_value = 2.0
 has_enemy_damage_poison = false

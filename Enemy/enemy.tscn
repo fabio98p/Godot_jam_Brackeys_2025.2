@@ -19,33 +19,49 @@ collision_mask = 16
 shape = SubResource("RectangleShape2D_px1sc")
 
 [node name="Name" type="Label" parent="."]
-offset_left = -20.0
-offset_top = -54.0
-offset_right = 20.0
-offset_bottom = -31.0
+offset_left = -79.0
+offset_top = -51.0
+offset_right = -39.0
+offset_bottom = -28.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "bla"
 
 [node name="Desc" type="Label" parent="."]
-offset_left = -19.0
-offset_top = -32.0
-offset_right = 21.0
-offset_bottom = -9.0
+offset_left = -78.0
+offset_top = -29.0
+offset_right = -38.0
+offset_bottom = -6.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "bla"
 
 [node name="Healt" type="Label" parent="."]
-offset_left = -17.0
-offset_top = -7.0
-offset_right = 23.0
-offset_bottom = 16.0
+offset_left = -76.0
+offset_top = -4.0
+offset_right = -36.0
+offset_bottom = 19.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "bla"
 
 [node name="NextAttack" type="Label" parent="."]
-offset_left = -19.0
-offset_top = 18.0
-offset_right = 21.0
-offset_bottom = 41.0
+offset_left = -78.0
+offset_top = 21.0
+offset_right = -38.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "bla"
+
+[node name="AttackMulti" type="Label" parent="."]
+offset_left = -81.0
+offset_top = 46.0
+offset_right = -40.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "bla"
+
+[node name="DefenseMulti" type="Label" parent="."]
+offset_left = -77.0
+offset_top = 71.0
+offset_right = -37.0
+offset_bottom = 94.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "bla"

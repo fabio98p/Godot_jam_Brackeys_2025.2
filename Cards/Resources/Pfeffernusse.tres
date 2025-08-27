@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://xjamjiid0e3q"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://bp7i1vmiovkyd"]
 
 [ext_resource type="Texture2D" uid="uid://c6n6tllbmb3uo" path="res://Assets/IMG_8215.jpg" id="1_vokmm"]
 [ext_resource type="Script" uid="uid://bu8tp3x63dsa1" path="res://Cards/cardResource.gd" id="2_gwt1c"]
@@ -13,6 +13,8 @@ sanity_cost = 3
 has_attack = false
 attack_damage_value = 4.0
 attack_target_type = 0.0
+has_defense = false
+defense_value = 0.0
 has_heal = false
 heal_value = 1.0
 has_self_buff = false
@@ -24,7 +26,7 @@ has_enemy_debuff = true
 has_enemy_attack_debuff = false
 enemy_attack_debuff_value = 0.0
 has_enemy_defense_debuff = true
-enemy_defense_debuff_value = 2.0
+enemy_defense_debuff_value = -1.0
 has_enemy_damage_poison = false
 enemy_damage_poison_value = 0.0
 has_self_debuff = false

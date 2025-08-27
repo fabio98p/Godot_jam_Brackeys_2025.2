@@ -7,8 +7,19 @@ extends Node2D
 @onready var desc: Label = $Desc
 @onready var health: Label = $Healt
 @onready var next_attack: Label = $NextAttack
-var attack_multiply: float = 1.0
-var defense_multiply: float = 1.0
+@onready var attack_multi: Label = $AttackMulti
+@onready var defense_multi: Label = $DefenseMulti
+
+# attack and defense have max of 3 multiply,
+# every multiply is a x0.25 of damage for a max of *1.75 or 
+var attack_multiply: float = 0:
+	set(value):
+		attack_multiply = clamp(attack_multiply + value,-3,3)
+		attack_multi.text =  "attack multy: " + str(attack_multiply)
+var defense_multiply: float = 0:
+	set(value):
+		defense_multiply = clamp(defense_multiply + value,-3,3)
+		defense_multi.text = "defense multy: " + str(defense_multiply)
 var current_health: float
 
 var new_attack: EnemyAttack
@@ -23,7 +34,8 @@ func _ready() -> void:
 	health.text = "max_healt: " + str(enemyDataHandler.max_healt)
 	new_attack = enemyDataHandler.getNextAttack()
 	next_attack.text = "next_attack: " + str(new_attack.attack_damage)
-	
+	attack_multi.text =  "attack multy: " + str(attack_multiply)
+	defense_multi.text = "defense multy: " + str(defense_multiply)
 	sprite_2d.texture = enemyDataHandler.img
 	
 func dmg_taken(value):
