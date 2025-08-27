@@ -40,8 +40,8 @@ func applay_card_effect(cadsEffect):
 				player.attack_multiply += value
 			"apply_self_defense_debuff":
 				player.defense_multiply += value
-			
-
+			"shield_self":
+				player.shield += value
 
 func _on_skip_round_pressed() -> void:
 	#apply enemy attack

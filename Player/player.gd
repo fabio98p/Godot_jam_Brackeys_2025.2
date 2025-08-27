@@ -7,6 +7,7 @@ extends Node2D
 
 var current_health: float
 var current_sanity: int
+var shield: int = 0
 
 # attack and defense have max of 3 multiply,
 # every multiply is a x0.25 of damage for a max of *1.75 or 
@@ -21,6 +22,7 @@ var defense_multiply: float = 0:
 		
 @onready var health: Label = $health
 @onready var sanity: Label = $sanity
+@onready var shieldLabel: Label = $Shield
 
 
 # Called when the node enters the scene tree for the first time.
@@ -31,16 +33,37 @@ func _ready() -> void:
 	sanity.text = "max_sanity: " + str(current_sanity)
 	attack_multi.text =  "attack multy: " + str(attack_multiply)
 	defense_multi.text = "defense multy: " + str(defense_multiply)
+	shieldLabel.text = "shield value: " + str(shield)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-func dmg_taken(value):
-	current_health = current_health - value
-	health.text = "max_healt: " + str(current_health)
-	if current_health <= 0:
-		health.text = "max_healt: " +  "dead health"
+#func dmg_taken(value):
+	#current_health = current_health - (value - shield)
+	#health.text = "max_healt: " + str(current_health)
+	#if current_health <= 0:
+		#health.text = "max_healt: " +  "dead health"
+
+func dmg_taken(value: int) -> void:
+	var damage_after_shield = value
+	
+	if shield > 0:
+		if shield >= value:
+			shield -= value
+			damage_after_shield = 0
+		else:
+			damage_after_shield = value - shield
+			shield = 0
+	current_health -= damage_after_shield
+	shieldLabel.text = "shield value: " + str(shield)
+	if current_health > 0:
+		health.text = "max_health: " + str(current_health)
+	else:
+		health.text = "max_health: dead health"
+
+
+
 
 func heal_self(value):
 	if current_health <= max_health:
