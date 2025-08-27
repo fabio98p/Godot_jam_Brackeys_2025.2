@@ -108,7 +108,7 @@ func _init(cardResource: CardResource, card) -> void:
 		
 	has_self_defense_debuff = cardResource.has_self_defense_debuff
 	self_defense_debuff_value = cardResource.self_defense_debuff_value
-			
+
 func playCard(target:String):
 	
 	# Attack Part

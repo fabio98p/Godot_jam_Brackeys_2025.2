@@ -17,7 +17,7 @@ signal hovered_off
 signal apply_card_action
 
 func _ready() -> void:
-	
+	get_parent().get_parent().connect_card_signals(self)
 	cardDataHandler = CardDataHandler.new(cardResource, self)
 	img.texture = cardDataHandler.img
 	img.scale = cardDataHandler.img_size
@@ -31,6 +31,7 @@ func _ready() -> void:
 	#cardDataHandler.playCard("ciao")
 
 func _on_area_2d_mouse_entered() -> void:
+	print("dsf")
 	emit_signal("hovered", self)
 
 

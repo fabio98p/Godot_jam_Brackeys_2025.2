@@ -31,6 +31,7 @@ func connect_card_signals(card):
 
 
 func on_hovered_over_card(card):
+	print("prova on_hovered_over_card")
 	if !is_hovering_on_card:
 		is_hovering_on_card = true
 		highlight_card(card, true)
