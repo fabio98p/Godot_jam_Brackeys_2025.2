@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_ry76q")
-name = "attack"
+name = "shield"
 description = "solo attacco"
 img = ExtResource("1_fu0g3")
 img_size = Vector2(0.03, 0.03)

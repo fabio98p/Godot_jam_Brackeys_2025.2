@@ -13,12 +13,14 @@ texture = ExtResource("2_4ntmi")
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "fff"
 
 [node name="sanity" type="Label" parent="."]
 offset_top = 35.0
 offset_right = 40.0
 offset_bottom = 58.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "fff"
 
 [node name="AttackMulti" type="Label" parent="."]
 offset_left = -1.0
@@ -37,5 +39,9 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "bla"
 
 [node name="Shield" type="Label" parent="."]
+offset_left = 1.0
+offset_top = -171.0
 offset_right = 40.0
-offset_bottom = 23.0
+offset_bottom = -148.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "ddd"

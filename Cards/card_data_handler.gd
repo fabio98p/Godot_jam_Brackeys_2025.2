@@ -119,9 +119,8 @@ func _init(cardResource: CardResource, card) -> void:
 
 func playCard(target:String):
 	
-	# Heal Part
-	if has_heal:
-		#heal_self(heal_value)
+	# Shield Part
+	if has_shield:
 		actionDictionary["shield_self"] = shield_value
 		
 	# Heal Part

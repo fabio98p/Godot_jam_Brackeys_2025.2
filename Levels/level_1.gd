@@ -47,11 +47,11 @@ func _on_skip_round_pressed() -> void:
 	var enemyAttack:EnemyAttack = enemy.applay_next_attack()
 	# Shield
 	if enemyAttack.has_shield: 
-		pass # enemyAttack.shield_value
+		enemy.shield += enemyAttack.shield_value
 		
 	# Heal
 	if enemyAttack.has_heal: 
-		pass # enemyAttack.heal_value
+		enemy.heal += enemyAttack.heal_value
 		
 	# Self Buff
 	if enemyAttack.has_self_buff:
