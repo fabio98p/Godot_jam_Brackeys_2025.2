@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="EnemyResource" load_steps=7 format=3 uid="uid://drtfi6b3df1hp"]
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=7 format=3 uid="uid://cn7xw8r25d5d6"]
 
 [ext_resource type="Script" uid="uid://blnkk5r71x700" path="res://Enemy/enemyAttackResource.gd" id="1_4qpu5"]
-[ext_resource type="Texture2D" uid="uid://c0mmwn0hoylw0" path="res://Assets/349444ab11082a39e9d47461e9ead24c.jpg" id="2_4qpu5"]
+[ext_resource type="Texture2D" uid="uid://cnegoanrarci0" path="res://Assets/51KDacDWNKL._SL500_._SS510_.jpg" id="2_4qpu5"]
 [ext_resource type="Script" uid="uid://blb8oufwqiukd" path="res://Enemy/enemyResource.gd" id="3_kf404"]
 
 [sub_resource type="Resource" id="Resource_jl84t"]

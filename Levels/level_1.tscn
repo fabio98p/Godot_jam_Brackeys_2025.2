@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dlyutofh3wgrc"]
+[gd_scene load_steps=9 format=3 uid="uid://dlyutofh3wgrc"]
 
 [ext_resource type="PackedScene" uid="uid://bu424fog720wr" path="res://Cards/card_manager.tscn" id="1_3mhv4"]
 [ext_resource type="Script" uid="uid://ccsxyx46s6evw" path="res://Levels/level_1.gd" id="1_rf6l5"]
 [ext_resource type="Texture2D" uid="uid://cvjfkhp878psc" path="res://Assets/13844017-vecchio-libro-aperto-isolato-su-bianca-sfondo-foto.jpg" id="2_0urlm"]
 [ext_resource type="PackedScene" uid="uid://b4tcixs27lofb" path="res://Player/player.tscn" id="2_3mhv4"]
-[ext_resource type="PackedScene" uid="uid://cq6edqy2ajdtn" path="res://Enemy/enemy.tscn" id="2_dilhk"]
 [ext_resource type="Resource" uid="uid://dnvku0fr2rffq" path="res://Levels/Resources/level_1.tres" id="2_xoyoh"]
 [ext_resource type="Texture2D" uid="uid://gmuroxlv2inw" path="res://Assets/icon.svg" id="8_77x7w"]
 [ext_resource type="Texture2D" uid="uid://yr7h47bahev4" path="res://Assets/white.png" id="9_f4pg2"]
@@ -21,14 +20,10 @@ texture = ExtResource("2_0urlm")
 
 [node name="CardManager" parent="." instance=ExtResource("1_3mhv4")]
 
-[node name="Enemy" parent="." instance=ExtResource("2_dilhk")]
-visible = false
-position = Vector2(1185, 346)
-
 [node name="Player" parent="." instance=ExtResource("2_3mhv4")]
 position = Vector2(104, 355)
 max_health = 10.0
-max_sanity = 30
+max_sanity = 100
 
 [node name="SkipRound" type="Button" parent="."]
 offset_left = 1098.0
@@ -90,7 +85,6 @@ offset_bottom = 1490.0
 scale = Vector2(0.05, 0.05)
 icon = ExtResource("9_f4pg2")
 
-[connection signal="enemy_dead" from="Enemy" to="." method="_on_enemy_enemy_dead"]
 [connection signal="pressed" from="SkipRound" to="." method="_on_skip_round_pressed"]
 [connection signal="pressed" from="ChoseCard/Reward1" to="." method="_on_reward_1_pressed"]
 [connection signal="pressed" from="ChoseCard/Reward2" to="." method="_on_reward_2_pressed"]

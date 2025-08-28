@@ -61,6 +61,8 @@ func dmg_taken(value: int) -> void:
 		health.text = "max_health: " + str(current_health)
 	else:
 		health.text = "max_health: dead health"
+		await get_tree().create_timer(2).timeout
+		get_tree().change_scene_to_file("res://Levels/Ending/Dead.tscn")
 
 
 
@@ -75,3 +77,5 @@ func sanity_taken(value):
 	sanity.text = "max_sanity: " + str(current_sanity)
 	if current_sanity <= 0:
 		sanity.text = "max_sanity: " + "dead sanity"
+		await get_tree().create_timer(2).timeout
+		get_tree().change_scene_to_file("res://Levels/Ending/Sanity.tscn")

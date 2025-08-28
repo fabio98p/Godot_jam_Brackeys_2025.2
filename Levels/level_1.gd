@@ -1,6 +1,6 @@
 extends Node2D
 @onready var player: Node2D = $Player
-@onready var enemy: Node2D = $Enemy
+var enemy: Node2D
 @onready var background: Sprite2D = $background
 
 # Chose Reward
@@ -24,7 +24,10 @@ func _ready() -> void:
 	# Setup Enemy
 	var enemyResource: EnemyResource = GC.pickenemy()
 	var enemyInstance = preload("res://Enemy/enemy.tscn").instantiate()
+	enemyInstance.position = Vector2(1100.0,300.0)
+	enemyInstance.connect("enemy_dead", Callable(self, "_on_enemy_enemy_dead"))
 	enemyInstance.enemyResource = enemyResource
+	enemy = enemyInstance
 	add_child(enemyInstance)
 	# Setup Rewards
 	chose_card.visible = false
@@ -94,6 +97,13 @@ func _on_skip_round_pressed() -> void:
 		player.dmg_taken(enemy_attack_damage)
 	
 func _on_enemy_enemy_dead() -> void:
+	#print(GC.numberOfFight) #todo, capire perche non funziona
+	#if GC.numberOfFight == 10:
+		#if player.current_sanity == 1:
+			#get_tree().change_scene_to_file("res://Levels/Ending/Parents.tscn")
+		#if player.current_sanity > 1:
+			#get_tree().change_scene_to_file("res://Levels/Ending/Good.tscn")
+	#else:
 	chose_card.visible = true
 	
 func _on_reward_1_pressed() -> void:

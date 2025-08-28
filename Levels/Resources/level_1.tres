@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://cvjfkhp878psc" path="res://Assets/13844017-vecchio-libro-aperto-isolato-su-bianca-sfondo-foto.jpg" id="1_h0abp"]
 [ext_resource type="Script" uid="uid://blb8oufwqiukd" path="res://Enemy/enemyResource.gd" id="2_5tqm4"]
 [ext_resource type="Resource" uid="uid://datkxnk7ex56r" path="res://Enemy/Resources/enemy2.tres" id="3_ph58v"]
-[ext_resource type="Resource" path="res://Cards/Resources/Alfajor.tres" id="4_qbs5p"]
-[ext_resource type="Resource" path="res://Cards/Resources/Amaretti.tres" id="5_yno2g"]
+[ext_resource type="Resource" uid="uid://cg03jg13dle5l" path="res://Cards/Resources/Alfajor.tres" id="4_qbs5p"]
+[ext_resource type="Resource" uid="uid://bn85c601t5dyv" path="res://Cards/Resources/Amaretti.tres" id="5_yno2g"]
 [ext_resource type="Script" uid="uid://d2t1l7wqbx5qe" path="res://Levels/levelResource.gd" id="6_e31pc"]
 
 [resource]
