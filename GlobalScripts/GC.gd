@@ -23,7 +23,8 @@ func resetDeck():
 
 
 func pickenemy():
-	numberOfFight +1
+	numberOfFight += 1
+	print(numberOfFight)
 	if numberOfFight <= 3:
 		return Pools.BaseEnemyPool[randi_range(0, Pools.BaseEnemyPool.size()-1)]
 	if numberOfFight == 4:
@@ -37,5 +38,5 @@ func pickenemy():
 		print("resitng 9")
 		return
 	if numberOfFight == 10:
-		return Pools.BossEnemyPool[randi_range(0, Pools.BossEnemyPool.size()-1)]
 		numberOfFight = 0
+		return Pools.BossEnemyPool[randi_range(0, Pools.BossEnemyPool.size()-1)]

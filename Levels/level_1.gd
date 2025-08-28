@@ -109,7 +109,13 @@ func _on_reward_2_pressed() -> void:
 	bookmarcs.visible = true
 
 func _on_bookmark_1_pressed() -> void:
-	get_tree().change_scene_to_file("res://Levels/level_1.tscn")
+	if GC.numberOfFight == 3 or GC.numberOfFight == 8:
+		get_tree().change_scene_to_file("res://Levels/Falo.tscn")
+	else:
+		get_tree().change_scene_to_file("res://Levels/level_1.tscn")
 
 func _on_bookmark_2_pressed() -> void:
-	get_tree().change_scene_to_file("res://Levels/level_1.tscn")
+	if GC.numberOfFight == 3 or GC.numberOfFight == 8:
+		get_tree().change_scene_to_file("res://Levels/Falo.tscn")
+	else:
+		get_tree().change_scene_to_file("res://Levels/level_1.tscn")
