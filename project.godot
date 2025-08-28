@@ -19,6 +19,7 @@ config/icon="res://Assets/icon.svg"
 
 GC="*res://GlobalScripts/GC.gd"
 Utils="*res://GlobalScripts/Utils.gd"
+Pools="*res://GlobalScripts/Pools.gd"
 
 [display]
 

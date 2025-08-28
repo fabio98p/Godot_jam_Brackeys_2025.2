@@ -1,7 +1,7 @@
 extends Node2D
 const CARD_DRAW_SPEED = 0.4
 const CARD_SCENE_PATH = "res://Cards/Card.tscn"
-var player_deck: Array[CardResource] = GC.runDeck
+var player_deck: Array[CardResource]
 @onready var player_hands: Node2D = $"../PlayerHands"
 @onready var area_2d: Area2D = $Area2D
 @onready var collision_shape_2d: CollisionShape2D = $Area2D/CollisionShape2D
@@ -10,6 +10,7 @@ var player_deck: Array[CardResource] = GC.runDeck
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	player_deck = GC.runDeck.duplicate()
 	rich_text_label.text = str(player_deck.size())
 
 

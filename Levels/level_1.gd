@@ -16,12 +16,16 @@ extends Node2D
 @export var level_resource: LevelResource
 
 func _ready() -> void:
+#	resetta il deck quando si inizia un nuovo livello
+	#GC.resetDeck()
+#	gestione dello sfondo skjdbgviksdbvskjdbgviksdbvskjdbgviksdbv
 	var decompressedBG= level_resource.background.get_image()
 	background.texture = ImageTexture.create_from_image( decompressedBG) as Texture2D
-	
 	# Setup Enemy
-	# TODO: setup enemy from resources??
-	
+	var enemyResource: EnemyResource = GC.pickenemy()
+	var enemyInstance = preload("res://Enemy/enemy.tscn").instantiate()
+	enemyInstance.enemyResource = enemyResource
+	add_child(enemyInstance)
 	# Setup Rewards
 	chose_card.visible = false
 	reward_1.icon = level_resource.reward1.img
@@ -93,19 +97,19 @@ func _on_enemy_enemy_dead() -> void:
 	chose_card.visible = true
 	
 func _on_reward_1_pressed() -> void:
-	GC.initialDeck.append(reward_1)
+	GC.runDeck.append(level_resource.reward1)
 	await get_tree().create_timer(0.5).timeout
 	chose_card.visible = false
 	bookmarcs.visible = true
 
 func _on_reward_2_pressed() -> void:
-	GC.initialDeck.append(reward_2)
+	GC.runDeck.append(level_resource.reward2)
 	await get_tree().create_timer(0.5).timeout
 	chose_card.visible = false
 	bookmarcs.visible = true
 
 func _on_bookmark_1_pressed() -> void:
-	print("next level")
+	get_tree().change_scene_to_file("res://Levels/level_1.tscn")
 
 func _on_bookmark_2_pressed() -> void:
-	print("next level")
+	get_tree().change_scene_to_file("res://Levels/level_1.tscn")

@@ -22,6 +22,7 @@ texture = ExtResource("2_0urlm")
 [node name="CardManager" parent="." instance=ExtResource("1_3mhv4")]
 
 [node name="Enemy" parent="." instance=ExtResource("2_dilhk")]
+visible = false
 position = Vector2(1185, 346)
 
 [node name="Player" parent="." instance=ExtResource("2_3mhv4")]

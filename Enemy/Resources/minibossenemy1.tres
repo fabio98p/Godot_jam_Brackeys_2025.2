@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="EnemyResource" load_steps=7 format=3 uid="uid://datkxnk7ex56r"]
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=7 format=3 uid="uid://dlnnaibls17ky"]
 
-[ext_resource type="Script" uid="uid://blnkk5r71x700" path="res://Enemy/enemyAttackResource.gd" id="1_buxya"]
-[ext_resource type="Texture2D" uid="uid://lw16pyucsae0" path="res://Assets/2c6d773f20f8a2752001d64452a2420d.jpg" id="2_buxya"]
-[ext_resource type="Script" uid="uid://blb8oufwqiukd" path="res://Enemy/enemyResource.gd" id="3_5xvf8"]
+[ext_resource type="Script" uid="uid://blnkk5r71x700" path="res://Enemy/enemyAttackResource.gd" id="1_ulavc"]
+[ext_resource type="Texture2D" uid="uid://cgufv4ltkgwji" path="res://Assets/jabberwocky-illustration-by-john-tenniel-681x1024.jpg" id="2_ulavc"]
+[ext_resource type="Script" uid="uid://blb8oufwqiukd" path="res://Enemy/enemyResource.gd" id="3_gq44y"]
 
 [sub_resource type="Resource" id="Resource_jl84t"]
-script = ExtResource("1_buxya")
+script = ExtResource("1_ulavc")
 has_attack = true
 attack_damage = 4.0
 has_shield = false
@@ -25,7 +25,7 @@ player_defense_debuff = 0.0
 metadata/_custom_type_script = "uid://blnkk5r71x700"
 
 [sub_resource type="Resource" id="Resource_buxya"]
-script = ExtResource("1_buxya")
+script = ExtResource("1_ulavc")
 has_attack = true
 attack_damage = 10.0
 has_shield = false
@@ -45,7 +45,7 @@ player_defense_debuff = 0.0
 metadata/_custom_type_script = "uid://blnkk5r71x700"
 
 [sub_resource type="Resource" id="Resource_5xvf8"]
-script = ExtResource("1_buxya")
+script = ExtResource("1_ulavc")
 has_attack = false
 attack_damage = 0.0
 has_shield = true
@@ -65,11 +65,11 @@ player_defense_debuff = 0.0
 metadata/_custom_type_script = "uid://blnkk5r71x700"
 
 [resource]
-script = ExtResource("3_5xvf8")
+script = ExtResource("3_gq44y")
 enemy_name = "gino"
 description = ""
-img = ExtResource("2_buxya")
+img = ExtResource("2_ulavc")
 img_size = Vector2(0, 0)
 max_healt = 20.0
-attack_list = Array[ExtResource("1_buxya")]([SubResource("Resource_jl84t"), SubResource("Resource_buxya"), SubResource("Resource_5xvf8")])
+attack_list = Array[ExtResource("1_ulavc")]([SubResource("Resource_jl84t"), SubResource("Resource_buxya"), SubResource("Resource_5xvf8")])
 metadata/_custom_type_script = "uid://blb8oufwqiukd"

@@ -2,7 +2,7 @@ extends Node2D
 
 var starting_position
 @export var cardResource: CardResource
-var cardDataHandler: CardDataHandler 
+var cardDataHandler: CardDataHandler
 
 @onready var img: Sprite2D = $Sprite2D
 @onready var nameCard: Label = $Name
@@ -31,7 +31,6 @@ func _ready() -> void:
 	#cardDataHandler.playCard("ciao")
 
 func _on_area_2d_mouse_entered() -> void:
-	print("dsf")
 	emit_signal("hovered", self)
 
 
