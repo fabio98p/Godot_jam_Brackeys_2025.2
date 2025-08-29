@@ -21,21 +21,34 @@ func resetDeck():
 	runDeck = initialDeck.duplicate()
 
 
-func audioLoad(audio: AudioStreamMP3):
-	AudioEnding.stream = audio
-	AudioEnding.play()
+#func audioLoad(audio: AudioStreamMP3):
+	#AudioEnding.stream = audio
+	#AudioEnding.play()
 
 func audioStop():
 	AudioEnding.stop()
 	AudioInit.stop()
-	
 
-func willingAudio(initAudio, endingAudio):
+func willingAudio(audio: AudioStreamMP3, durationWilling: float = 5.0):
 	var tween = get_tree().create_tween()
-	initAudio.volume_db = 0.0
-	endingAudio.volume_db = -40.0
-	tween.tween_property(initAudio, "volume_db", -40.0, 5.0)
-	tween.parallel().tween_property(endingAudio, "volume_db", 0.0, 5.0)
+	
+	if AudioInit.playing == false:
+		AudioInit.stream = audio
+		AudioInit.play()
+		AudioInit.volume_db = -40.0
+		tween.tween_property(AudioInit, "volume_db", 0, durationWilling)
+		tween.parallel().tween_property(AudioEnding, "volume_db", -40.0, durationWilling)
+		await get_tree().create_timer(durationWilling).timeout
+		AudioEnding.stop()
+	else:
+		AudioEnding.stream = audio
+		AudioEnding.play()
+		AudioEnding.volume_db = -40.0
+		tween.tween_property(AudioEnding, "volume_db", 0, durationWilling)
+		tween.parallel().tween_property(AudioInit, "volume_db", -40.0, durationWilling)
+		await get_tree().create_timer(durationWilling).timeout
+		AudioInit.stop()
+		
 
 func pickenemy():
 	numberOfFight += 1

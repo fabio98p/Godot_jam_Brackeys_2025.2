@@ -14,11 +14,6 @@ var enemy: Node2D
 @onready var bookmark_2: Button = $Bookmarcs/Bookmark2
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-#Audio globali livello
-var Sanity_audio_ending: AudioStreamMP3 = load("res://Assets/Music/Music/InsanityGameOver.mp3")
-var Dead_audio_ending: AudioStreamMP3 = load("res://Assets/Music/Music/1SanityPointEnding.mp3")
-
-
 @export var level_resource: LevelResource
 
 func _ready() -> void:
@@ -145,8 +140,7 @@ func transition_dead(reason) -> void:
 	var audioLoaded: AudioStreamMP3 = load(reason.audio)
 #	effetto sinusoide
 #	funzione ricorsiva andiamo a whillare audio in negativo del audiolevel
-	GC.willingAudio(audio_level, GlobalAudio)
-	GC.audioLoad(audioLoaded)
+	GC.willingAudio(audioLoaded, 3)
 	await get_tree().create_timer(7).timeout
 	get_tree().change_scene_to_file(reason.scene)
 
