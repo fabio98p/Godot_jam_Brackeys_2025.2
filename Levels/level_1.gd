@@ -12,10 +12,12 @@ var enemy: Node2D
 @onready var bookmarcs: Node2D = $Bookmarcs
 @onready var bookmark_1: Button = $Bookmarcs/Bookmark1
 @onready var bookmark_2: Button = $Bookmarcs/Bookmark2
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @export var level_resource: LevelResource
 
 func _ready() -> void:
+	player.dead.connect(transition_dead)
 #	resetta il deck quando si inizia un nuovo livello
 	#GC.resetDeck()
 #	gestione dello sfondo skjdbgviksdbvskjdbgviksdbvskjdbgviksdbv
@@ -129,3 +131,11 @@ func _on_bookmark_2_pressed() -> void:
 		get_tree().change_scene_to_file("res://Levels/Falo.tscn")
 	else:
 		get_tree().change_scene_to_file("res://Levels/level_1.tscn")
+
+
+
+func transition_dead(reason: String) -> void:
+	print("Transizione verso scena Dead...")
+	animation_player.play("Sanity_dead")
+	await get_tree().create_timer(7).timeout
+	get_tree().change_scene_to_file(reason)
