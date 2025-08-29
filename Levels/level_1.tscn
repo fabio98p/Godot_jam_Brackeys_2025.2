@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dlyutofh3wgrc"]
+[gd_scene load_steps=13 format=3 uid="uid://dlyutofh3wgrc"]
 
 [ext_resource type="PackedScene" uid="uid://bu424fog720wr" path="res://Cards/card_manager.tscn" id="1_3mhv4"]
 [ext_resource type="Script" uid="uid://ccsxyx46s6evw" path="res://Levels/level_1.gd" id="1_rf6l5"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ljnqon2uev35" path="res://Assets/BG Colorato.jpg" id="3_77x7w"]
 [ext_resource type="Texture2D" uid="uid://gmuroxlv2inw" path="res://Assets/icon.svg" id="8_77x7w"]
 [ext_resource type="Texture2D" uid="uid://yr7h47bahev4" path="res://Assets/white.png" id="9_f4pg2"]
+[ext_resource type="AudioStream" uid="uid://c3k1ue8nqhiqm" path="res://Assets/Music/Music/GamePlayBGMLoop.mp3" id="9_xoyoh"]
 [ext_resource type="Texture2D" uid="uid://c6n6tllbmb3uo" path="res://Assets/IMG_8215.jpg" id="10_62b6n"]
 
 [sub_resource type="Animation" id="Animation_xoyoh"]
@@ -132,7 +133,7 @@ texture = ExtResource("3_77x7w")
 [node name="Player" parent="." instance=ExtResource("2_3mhv4")]
 position = Vector2(222, 355)
 max_health = 10.0
-max_sanity = 3
+max_sanity = 300
 
 [node name="SkipRound" type="Button" parent="."]
 offset_left = 1098.0
@@ -201,6 +202,10 @@ offset = Vector2(640, 360)
 libraries = {
 &"": SubResource("AnimationLibrary_xoyoh")
 }
+
+[node name="AudioLevel" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_xoyoh")
+autoplay = true
 
 [connection signal="pressed" from="SkipRound" to="." method="_on_skip_round_pressed"]
 [connection signal="pressed" from="ChoseCard/Reward1" to="." method="_on_reward_1_pressed"]
