@@ -105,14 +105,15 @@ func _on_skip_round_pressed() -> void:
 		player.dmg_taken(enemy_attack_damage)
 	
 func _on_enemy_enemy_dead() -> void:
-	#print(GC.numberOfFight) #todo, capire perche non funziona
-	#if GC.numberOfFight == 10:
-		#if player.current_sanity == 1:
-			#get_tree().change_scene_to_file("res://Levels/Ending/Parents.tscn")
-		#if player.current_sanity > 1:
-			#get_tree().change_scene_to_file("res://Levels/Ending/Good.tscn")
-	#else:
-	chose_card.visible = true
+	if GC.numberOfFight == 10:
+		await get_tree().create_timer(1).timeout
+#		TODO mettere animazioni zoom
+		if player.current_sanity == 1:
+			get_tree().change_scene_to_file("res://Levels/Ending/Parents.tscn")
+		if player.current_sanity > 1:
+			get_tree().change_scene_to_file("res://Levels/Ending/Good.tscn")
+	else:
+		chose_card.visible = true
 	
 func _on_reward_1_pressed() -> void:
 	GC.runDeck.append(level_resource.reward1)

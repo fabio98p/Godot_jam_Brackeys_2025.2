@@ -18,7 +18,7 @@ func _init() -> void:
 	resetDeck()
 
 func resetDeck():
-	runDeck = initialDeck
+	runDeck = initialDeck.duplicate()
 
 
 func audioLoad(audio: AudioStreamMP3):
@@ -45,5 +45,5 @@ func pickenemy():
 		print("resitng 9")
 		return
 	if numberOfFight == 10:
-		numberOfFight = 0
+		#numberOfFight = 0
 		return Pools.BossEnemyPool[randi_range(0, Pools.BossEnemyPool.size()-1)]
