@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ccsxyx46s6evw" path="res://Levels/level_1.gd" id="1_rf6l5"]
 [ext_resource type="PackedScene" uid="uid://b4tcixs27lofb" path="res://Player/player.tscn" id="2_3mhv4"]
 [ext_resource type="Resource" uid="uid://dnvku0fr2rffq" path="res://Levels/Resources/level_1.tres" id="2_xoyoh"]
-[ext_resource type="Texture2D" uid="uid://bq58k5u7hln0p" path="res://Assets/BG PROVA.jpg" id="3_77x7w"]
+[ext_resource type="Texture2D" uid="uid://ljnqon2uev35" path="res://Assets/BG Colorato.jpg" id="3_77x7w"]
 [ext_resource type="Texture2D" uid="uid://gmuroxlv2inw" path="res://Assets/icon.svg" id="8_77x7w"]
 [ext_resource type="Texture2D" uid="uid://yr7h47bahev4" path="res://Assets/white.png" id="9_f4pg2"]
 [ext_resource type="Texture2D" uid="uid://c6n6tllbmb3uo" path="res://Assets/IMG_8215.jpg" id="10_62b6n"]
@@ -123,7 +123,7 @@ script = ExtResource("1_rf6l5")
 level_resource = ExtResource("2_xoyoh")
 
 [node name="background" type="Sprite2D" parent="."]
-position = Vector2(619, 355)
+position = Vector2(636, 377)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_77x7w")
 
@@ -132,7 +132,7 @@ texture = ExtResource("3_77x7w")
 [node name="Player" parent="." instance=ExtResource("2_3mhv4")]
 position = Vector2(222, 355)
 max_health = 10.0
-max_sanity = 2
+max_sanity = 15
 
 [node name="SkipRound" type="Button" parent="."]
 offset_left = 1098.0

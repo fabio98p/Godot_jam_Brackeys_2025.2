@@ -15,6 +15,7 @@ signal dead
 var current_health: float
 var current_sanity: int
 var shield: int = 0
+var original_position: Vector2
 
 # moltiplicatori di attacco/difesa
 var attack_multiply: float = 0:
@@ -41,6 +42,57 @@ func _ready() -> void:
 	defense_multi.text = "defense multy: " + str(defense_multiply)
 	shieldLabel.text = "shield value: " + str(shield)
 	sprite_2d.texture = NORMAL_TEXTURE
+	original_position = sprite_2d.position
+
+
+func shake_sprite(intensity: float = 2.0, duration: float = 0.2, bounce: float = 3.0) -> void:
+	var elapsed = 0.0
+	while elapsed < duration:
+		# tremolio orizzontale e verticale
+		var offset = Vector2(randf_range(-intensity, intensity), randf_range(-intensity, intensity))
+		offset.y -= sin(elapsed / duration * PI) * bounce
+		sprite_2d.position = original_position + offset
+		await get_tree().process_frame
+		elapsed += get_process_delta_time()
+	
+	# torna alla posizione originale
+	sprite_2d.position = original_position
+
+func insane_shake(intensity: float = 4.0, duration: float = 0.5, rotation_intensity: float = 5.0) -> void:
+	var elapsed = 0.0
+	while elapsed < duration:
+		# Posizione casuale folle
+		var offset = Vector2(randf_range(-intensity, intensity), randf_range(-intensity, intensity))
+		sprite_2d.position = original_position + offset
+		
+		# Piccola rotazione casuale
+		sprite_2d.rotation_degrees = randf_range(-rotation_intensity, rotation_intensity)
+		
+		await get_tree().process_frame
+		elapsed += get_process_delta_time()
+	
+	# Torna normale
+	sprite_2d.position = original_position
+	sprite_2d.rotation_degrees = 0
+
+func insane_shake_exponential(duration: float = 6.4, max_intensity: float = 4.0, max_rotation: float = 5.0) -> void:
+	var elapsed = 0.0
+	while elapsed < duration:
+		var t = elapsed / duration  # normalizzato 0..1
+		# esponenziale: parte basso e cresce verso max
+		var intensity = lerp(0.5, max_intensity, t * t)  # t^2 per esponenziale
+		var rotation_intensity = lerp(0.5, max_rotation, t * t)
+		
+		var offset = Vector2(randf_range(-intensity, intensity), randf_range(-intensity, intensity))
+		sprite_2d.position = original_position + offset
+		sprite_2d.rotation_degrees = randf_range(-rotation_intensity, rotation_intensity)
+		
+		await get_tree().process_frame
+		elapsed += get_process_delta_time()
+	
+	sprite_2d.position = original_position
+	sprite_2d.rotation_degrees = 0
+
 
 func dmg_taken(value: int) -> void:
 	var damage_after_shield = value
@@ -52,11 +104,14 @@ func dmg_taken(value: int) -> void:
 		else:
 			damage_after_shield = value - shield
 			shield = 0
+
 	# Applico danno
 	current_health -= damage_after_shield
 	shieldLabel.text = "shield value: " + str(shield)
-	# Cambio skin a "hurt" e reset dopo poco
+
+	# Cambio skin a "hurt" e tremolio
 	sprite_2d.texture = HURT_TEXTURE
+	shake_sprite(2.0, 0.2)
 	reset_skin_later()
 
 	# Aggiorno testo vita
@@ -66,27 +121,31 @@ func dmg_taken(value: int) -> void:
 		health.text = "max_health: dead health"
 		emit_signal("dead", "res://Levels/Ending/Dead.tscn")
 
-# torna a normale dopo un breve delay
-func reset_skin_later() -> void:
-	await get_tree().create_timer(0.5).timeout
-	# Se Alice non è morta e non ha sanity a 0, torna normale
-	if current_health > 0 and current_sanity > 0:
-		sprite_2d.texture = NORMAL_TEXTURE
-
-func heal_self(value: int) -> void:
-	if current_health < max_health:
-		current_health = min(current_health + value, max_health)
-		health.text = "max_health: " + str(current_health)
 
 
 func sanity_taken(value: int) -> void:
 	current_sanity -= value
 	sanity.text = "max_sanity: " + str(current_sanity)
-	# Cambio skin a "sanityhurt" e reset dopo poco
+
+	# Cambio skin a "sanity hurt" e tremolio
 	sprite_2d.texture = SANITY_HURT_TEXTURE
+	insane_shake(0.5, 0.4, 0.5)  # tremolio pazzoide
 	reset_skin_later()
+
 	if current_sanity <= 0:
 		sanity.text = "max_sanity: dead sanity"
 		emit_signal("dead", "res://Levels/Ending/Sanity.tscn")
-		#await get_tree().create_timer(7).timeout
-		#get_tree().change_scene_to_file("res://Levels/Ending/Sanity.tscn")
+
+
+func reset_skin_later() -> void:
+	await get_tree().create_timer(0.5).timeout
+	if current_health > 0 and current_sanity > 0:
+		sprite_2d.texture = NORMAL_TEXTURE
+	if current_sanity <= 0:
+		insane_shake_exponential(6.4, 4.0, 5.0) 
+
+
+func heal_self(value: int) -> void:
+	if current_health < max_health:
+		current_health = min(current_health + value, max_health)
+		health.text = "max_health: " + str(current_health)

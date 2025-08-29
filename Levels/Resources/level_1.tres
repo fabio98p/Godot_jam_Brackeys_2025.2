@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="LevelResource" load_steps=7 format=3 uid="uid://dnvku0fr2rffq"]
 
-[ext_resource type="Texture2D" uid="uid://cvjfkhp878psc" path="res://Assets/13844017-vecchio-libro-aperto-isolato-su-bianca-sfondo-foto.jpg" id="1_h0abp"]
+[ext_resource type="Texture2D" uid="uid://ljnqon2uev35" path="res://Assets/BG Colorato.jpg" id="1_h0abp"]
 [ext_resource type="Script" uid="uid://blb8oufwqiukd" path="res://Enemy/enemyResource.gd" id="2_5tqm4"]
 [ext_resource type="Resource" uid="uid://datkxnk7ex56r" path="res://Enemy/Resources/enemy2.tres" id="3_ph58v"]
 [ext_resource type="Resource" uid="uid://cg03jg13dle5l" path="res://Cards/Resources/Alfajor.tres" id="4_qbs5p"]
