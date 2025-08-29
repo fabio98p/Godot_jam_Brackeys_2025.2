@@ -21,3 +21,29 @@ var RewardPool: Array[CardResource] = [
 	load("res://Cards/Resources/heal.tres") as CardResource,
 	load("res://Cards/Resources/attack.tres") as CardResource,
 ]
+
+
+var ClickDragCoocky: Array[String] = [
+	"res://Assets/SFX/SFX/ClickDragCokie1Final.mp3",
+	"res://Assets/SFX/SFX/ClickDragCokie2Final.mp3",
+	"res://Assets/SFX/SFX/ClickDragCokie3Final.mp3",
+	"res://Assets/SFX/SFX/ClickDragCokie4Final.mp3",
+	"res://Assets/SFX/SFX/ClickDragCokie5Final.mp3",
+]
+
+var PutCoocky: Array[String] = [
+	"res://Assets/SFX/SFX/PutDownCookie1Final.mp3",
+	"res://Assets/SFX/SFX/PutDownCookie2Final.mp3",
+	"res://Assets/SFX/SFX/PutDownCookie3Final.mp3",
+	"res://Assets/SFX/SFX/PutDownCookie4Final.mp3",
+]
+
+var BookmarksPageFlip: Array[String] = [
+	"res://Assets/SFX/SFX/Page1Final.mp3",
+	"res://Assets/SFX/SFX/Page2Final.mp3",
+]
+
+var GetCocky: Array[String] = [
+	"res://Assets/SFX/SFX/GetCookie1Final.mp3",
+	"res://Assets/SFX/SFX/GetCookie2Final.mp3",
+]

@@ -64,6 +64,7 @@ func get_card_with_highest_z_index(cards):
 func start_drag(card):
 	card_being_dragged = card
 	card.scale = Vector2(1, 1)
+	Utils.play_sfx(Pools.ClickDragCoocky[randi_range(0,Pools.ClickDragCoocky.size()-1)], "SFX")
 
 func finish_drag():
 	card_being_dragged.scale = Vector2(1.05, 1.05)
@@ -72,13 +73,16 @@ func finish_drag():
 		card_being_dragged.position = card_slot_found.position
 		card_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
 		drop_zone.card_in_drop_zone = true
+		Utils.play_sfx("res://Assets/SFX/SFX/BitesFinal.mp3", "SFX")
 		if card_scenes.has(card_being_dragged.name):
 			GC.willingAudio(preload("res://Assets/Music/Music/GamePlayBGMLoop.mp3"))
 			await_change_scene(card_being_dragged.name)
+	else:
+		Utils.play_sfx(Pools.PutCoocky[randi_range(0,Pools.PutCoocky.size()-1)], "SFX")
 	card_being_dragged = null
 
 func await_change_scene(card_name: String) -> void:
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(1).timeout
 	if card_scenes.has(card_name):
 		get_tree().change_scene_to_file(card_scenes[card_name])
 

@@ -16,8 +16,10 @@ func _process(delta: float) -> void:
 
 
 func _on_button_1_pressed() -> void:
+	Utils.play_sfx(Pools.BookmarksPageFlip[randi_range(0,Pools.BookmarksPageFlip.size()-1)], "SFX")
 	get_tree().change_scene_to_file("res://Levels/level_1.tscn")
 
 
 func _on_button_2_pressed() -> void:
+	Utils.play_sfx(Pools.BookmarksPageFlip[randi_range(0,Pools.BookmarksPageFlip.size()-1)], "SFX")
 	get_tree().change_scene_to_file("res://Levels/level_1.tscn")

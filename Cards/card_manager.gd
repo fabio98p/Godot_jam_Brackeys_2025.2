@@ -92,6 +92,7 @@ func start_drag(card):
 	card_being_dragged = card
 	card.scale = Vector2(1, 1)
 	drag_offset = card.global_position - get_global_mouse_position()
+	Utils.play_sfx(Pools.ClickDragCoocky[randi_range(0,Pools.ClickDragCoocky.size()-1)], "SFX")
 func finish_drag():
 	card_being_dragged.scale = Vector2(scaleX, scaleY)
 	var drop_zone_found = raycast_check_for_card_drop_zone()
@@ -103,13 +104,15 @@ func finish_drag():
 		card_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
 		drop_zone_found.card_in_drop_zone = true
 		toggle_drop_zone(drop_zone_found, card_being_dragged)
+		Utils.play_sfx("res://Assets/SFX/SFX/BitesFinal.mp3", "SFX")
 		#card_being_dragged.destroy_card()
 	else:
 		player_hand_reference.add_card_to_hand(card_being_dragged, DEFAULT_CARD_SPEED)
+		Utils.play_sfx(Pools.PutCoocky[randi_range(0,Pools.PutCoocky.size()-1)], "SFX")
 	card_being_dragged = null
 
 func toggle_drop_zone(drop_zone_found, card_being_dragged):
-	await get_tree().create_timer(4).timeout
+	await get_tree().create_timer(1).timeout
 	drop_zone_found.card_in_drop_zone = false
 	card_being_dragged.destroy_card()
 

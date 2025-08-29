@@ -111,23 +111,27 @@ func _on_enemy_enemy_dead() -> void:
 	
 func _on_reward_1_pressed() -> void:
 	GC.runDeck.append(level_resource.reward1)
+	Utils.play_sfx(Pools.GetCocky[randi_range(0,Pools.GetCocky.size()-1)], "SFX")
 	await get_tree().create_timer(0.5).timeout
 	chose_card.visible = false
 	bookmarcs.visible = true
 
 func _on_reward_2_pressed() -> void:
 	GC.runDeck.append(level_resource.reward2)
+	Utils.play_sfx(Pools.GetCocky[randi_range(0,Pools.GetCocky.size()-1)], "SFX")
 	await get_tree().create_timer(0.5).timeout
 	chose_card.visible = false
 	bookmarcs.visible = true
 
 func _on_bookmark_1_pressed() -> void:
+	Utils.play_sfx(Pools.BookmarksPageFlip[randi_range(0,Pools.BookmarksPageFlip.size()-1)], "SFX")
 	if GC.numberOfFight == 3 or GC.numberOfFight == 8:
 		get_tree().change_scene_to_file("res://Levels/Falo.tscn")
 	else:
 		get_tree().change_scene_to_file("res://Levels/level_1.tscn")
 
 func _on_bookmark_2_pressed() -> void:
+	Utils.play_sfx(Pools.BookmarksPageFlip[randi_range(0,Pools.BookmarksPageFlip.size()-1)], "SFX")
 	if GC.numberOfFight == 3 or GC.numberOfFight == 8:
 		get_tree().change_scene_to_file("res://Levels/Falo.tscn")
 	else:
@@ -140,9 +144,6 @@ func transition_dead(reason) -> void:
 	var audioLoaded: AudioStreamMP3 = load(reason.audio)
 #	effetto sinusoide
 #	funzione ricorsiva andiamo a whillare audio in negativo del audiolevel
-	GC.willingAudio(audioLoaded, 3)
+	GC.willingAudio(audioLoaded, 1)
 	await get_tree().create_timer(7).timeout
 	get_tree().change_scene_to_file(reason.scene)
-
-
-	

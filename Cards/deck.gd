@@ -34,3 +34,4 @@ func draw_card():
 	new_card.connect("apply_card_action", Callable(get_parent().get_parent(), "applay_card_effect"))
 	$"../Cards".add_child(new_card)
 	player_hands.add_card_to_hand(new_card, CARD_DRAW_SPEED)
+	Utils.play_sfx(Pools.GetCocky[randi_range(0,Pools.GetCocky.size()-1)], "SFX")

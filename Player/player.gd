@@ -104,9 +104,11 @@ func dmg_taken(value: int) -> void:
 		else:
 			damage_after_shield = value - shield
 			shield = 0
+		Utils.play_sfx("res://Assets/SFX/SFX/ShieldFinal.mp3", "SFX")
 
 	# Applico danno
 	current_health -= damage_after_shield
+	Utils.play_sfx("res://Assets/SFX/SFX/AttackFinal.mp3", "SFX")
 	shieldLabel.text = "shield value: " + str(shield)
 
 	# Cambio skin a "hurt" e tremolio
