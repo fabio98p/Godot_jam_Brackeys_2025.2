@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcxyiqm70k4bg"]
+
+[ext_resource type="AudioStream" uid="uid://c3k1ue8nqhiqm" path="res://Assets/Music/Music/GamePlayBGMLoop.mp3" id="1_k0816"]
+
+[node name="AudioLevel" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_k0816")

@@ -22,12 +22,20 @@ func resetDeck():
 
 
 func audioLoad(audio: AudioStreamMP3):
-	GlobalAudio.stream = audio
-	GlobalAudio.play()
+	AudioEnding.stream = audio
+	AudioEnding.play()
 
 func audioStop():
-	GlobalAudio.stop()
+	AudioEnding.stop()
+	AudioInit.stop()
+	
 
+func willingAudio(initAudio, endingAudio):
+	var tween = get_tree().create_tween()
+	initAudio.volume_db = 0.0
+	endingAudio.volume_db = -40.0
+	tween.tween_property(initAudio, "volume_db", -40.0, 5.0)
+	tween.parallel().tween_property(endingAudio, "volume_db", 0.0, 5.0)
 
 func pickenemy():
 	numberOfFight += 1

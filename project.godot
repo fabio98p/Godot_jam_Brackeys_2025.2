@@ -20,7 +20,8 @@ config/icon="res://Assets/icon.svg"
 GC="*res://GlobalScripts/GC.gd"
 Utils="*res://GlobalScripts/Utils.gd"
 Pools="*res://GlobalScripts/Pools.gd"
-GlobalAudio="*res://GlobalScripts/scene globali audio/audio_stream_player_2d.tscn"
+AudioEnding="*res://GlobalScripts/scene globali audio/audio_ending.tscn"
+AudioInit="*res://GlobalScripts/scene globali audio/audio_init.tscn"
 
 [display]
 

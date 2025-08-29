@@ -73,6 +73,7 @@ func finish_drag():
 		card_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
 		drop_zone.card_in_drop_zone = true
 		if card_scenes.has(card_being_dragged.name):
+			GC.willingAudio(AudioInit, AudioEnding)
 			await_change_scene(card_being_dragged.name)
 	card_being_dragged = null
 
