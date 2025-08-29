@@ -19,7 +19,6 @@ func _process(delta: float) -> void:
 	pass
 
 func draw_card():
-	print("draw card")
 	var card_drawn: CardResource = player_deck[0]
 	player_deck.erase(card_drawn)
 	if player_deck.size() == 0:

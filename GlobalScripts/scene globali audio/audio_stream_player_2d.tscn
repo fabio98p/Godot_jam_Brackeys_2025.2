@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmfqutvdp4s8e"]
+
+[ext_resource type="AudioStream" uid="uid://coceqbx3qics2" path="res://Assets/Music/Music/InsanityGameOver.mp3" id="1_nye3v"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_nye3v")

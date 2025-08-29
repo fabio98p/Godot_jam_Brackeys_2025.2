@@ -21,6 +21,13 @@ func resetDeck():
 	runDeck = initialDeck
 
 
+func audioLoad(audio: AudioStreamMP3):
+	GlobalAudio.stream = audio
+	GlobalAudio.play()
+
+func audioStop():
+	GlobalAudio.stop()
+
 
 func pickenemy():
 	numberOfFight += 1

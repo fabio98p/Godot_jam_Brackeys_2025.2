@@ -119,7 +119,7 @@ func dmg_taken(value: int) -> void:
 		health.text = "max_health: " + str(current_health)
 	else:
 		health.text = "max_health: dead health"
-		emit_signal("dead", "res://Levels/Ending/Dead.tscn")
+		emit_signal("dead", {"scene":"res://Levels/Ending/Dead.tscn", "audio":"res://Assets/Music/Music/1SanityPointEnding.mp3"})
 
 
 
@@ -134,7 +134,7 @@ func sanity_taken(value: int) -> void:
 
 	if current_sanity <= 0:
 		sanity.text = "max_sanity: dead sanity"
-		emit_signal("dead", "res://Levels/Ending/Sanity.tscn")
+		emit_signal("dead",  {"scene": "res://Levels/Ending/Sanity.tscn", "audio": "res://Assets/Music/Music/InsanityGameOver.mp3"})
 
 
 func reset_skin_later() -> void:
