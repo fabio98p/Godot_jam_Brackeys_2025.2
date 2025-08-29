@@ -1,12 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4tcixs27lofb"]
 
 [ext_resource type="Script" uid="uid://bmxa872qakfrx" path="res://Player/player.gd" id="1_4ntmi"]
-[ext_resource type="Texture2D" uid="uid://dfj48irv8teua" path="res://Assets/image.png" id="2_4ntmi"]
+[ext_resource type="Texture2D" uid="uid://hha4bthtxuc7" path="res://Assets/Alice_Normal.png" id="2_4ntmi"]
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_4ntmi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_4ntmi")
 
 [node name="health" type="Label" parent="."]

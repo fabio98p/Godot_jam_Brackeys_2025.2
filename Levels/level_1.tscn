@@ -21,7 +21,7 @@ texture = ExtResource("2_0urlm")
 [node name="CardManager" parent="." instance=ExtResource("1_3mhv4")]
 
 [node name="Player" parent="." instance=ExtResource("2_3mhv4")]
-position = Vector2(104, 355)
+position = Vector2(222, 355)
 max_health = 10.0
 max_sanity = 100
 

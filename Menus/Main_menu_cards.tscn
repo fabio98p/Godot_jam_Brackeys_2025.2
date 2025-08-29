@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhmlq48643nrv"]
+
+[ext_resource type="Texture2D" uid="uid://cvjfkhp878psc" path="res://Assets/13844017-vecchio-libro-aperto-isolato-su-bianca-sfondo-foto.jpg" id="1_g17bn"]
+[ext_resource type="PackedScene" uid="uid://dm2rmqggvb0dl" path="res://Cards/CardMenu.tscn" id="1_iqxob"]
+[ext_resource type="Script" uid="uid://cwogr7p3uyewg" path="res://Menus/card_manager_menu.gd" id="2_iqxob"]
+[ext_resource type="Texture2D" uid="uid://bd7j6coidrc5e" path="res://Assets/IMG_82sdfsf08.jpg" id="2_r3pw0"]
+[ext_resource type="PackedScene" uid="uid://b4cl1cqobuohe" path="res://Cards/drop_zone.tscn" id="5_k616j"]
+
+[node name="MainMenuCards" type="Node2D"]
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(622, 321)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_g17bn")
+
+[node name="Alice" type="Sprite2D" parent="."]
+position = Vector2(924, 321)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_r3pw0")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 111.0
+offset_top = 120.0
+offset_right = 644.0
+offset_bottom = 208.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "Cardinal Sani Tea"
+
+[node name="info" type="Label" parent="."]
+offset_left = 215.0
+offset_top = 366.0
+offset_right = 748.0
+offset_bottom = 454.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Give Alice the biscuit "
+
+[node name="CardManagerMenu" type="Node2D" parent="."]
+script = ExtResource("2_iqxob")
+
+[node name="Story" parent="CardManagerMenu" instance=ExtResource("1_iqxob")]
+z_index = 0
+position = Vector2(171, 584)
+
+[node name="Start" parent="CardManagerMenu" instance=ExtResource("1_iqxob")]
+z_index = 0
+position = Vector2(296, 584)
+
+[node name="Option" parent="CardManagerMenu" instance=ExtResource("1_iqxob")]
+z_index = 0
+position = Vector2(421, 584)
+
+[node name="Exit" parent="CardManagerMenu" instance=ExtResource("1_iqxob")]
+z_index = 0
+position = Vector2(549, 584)
+
+[node name="DropZone" parent="." instance=ExtResource("5_k616j")]
+position = Vector2(949, 238)
+scale = Vector2(2.16, 1.8)
