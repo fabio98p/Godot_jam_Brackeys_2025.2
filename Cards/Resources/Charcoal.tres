@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://bbqkud58f7ywu"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://vmre2di6gh3g"]
 
-[ext_resource type="Texture2D" uid="uid://c6n6tllbmb3uo" path="res://Assets/IMG_8215.jpg" id="1_f832w"]
+[ext_resource type="Texture2D" uid="uid://7nc07hbq5l42" path="res://Assets/CardsImg/IMG_8220.png" id="1_f832w"]
 [ext_resource type="Script" uid="uid://bu8tp3x63dsa1" path="res://Cards/cardResource.gd" id="2_lcpvu"]
 
 [resource]
@@ -13,8 +13,8 @@ sanity_cost = 7
 has_attack = false
 attack_damage_value = 2.0
 attack_target_type = 0.0
-has_defense = true
-defense_value = 6.0
+has_shield = false
+shield_value = 0
 has_heal = false
 heal_value = 4.0
 has_self_buff = false

@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://cax06kmbiljud"]
+
+[ext_resource type="Texture2D" uid="uid://bqncmyem6b104" path="res://Assets/CardsImg/IMG_8221.png" id="1_6oeqa"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2109.0
+offset_top = -319.0
+offset_right = -1.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_6oeqa")
+stretch_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="GridContainer"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_6oeqa")
+
+[node name="Sprite2D2" type="Sprite2D" parent="GridContainer"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_6oeqa")
+
+[node name="Sprite2D3" type="Sprite2D" parent="GridContainer"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_6oeqa")
