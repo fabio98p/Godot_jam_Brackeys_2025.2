@@ -3,6 +3,7 @@ extends Node2D
 signal enemy_dead
 
 @export var enemyResource: EnemyResource
+@onready var bars: Control = $Bars
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var nameEnemy: Label = $Name
@@ -30,6 +31,7 @@ var new_attack: EnemyAttack
 
 var enemyDataHandler: EnemyDataHandler
 func _ready() -> void:
+	bars.max_health = enemyResource.max_healt
 	var enemy_data: EnemyResource = enemyResource.duplicate()
 	enemyDataHandler = EnemyDataHandler.new(enemy_data)
 	
@@ -63,6 +65,7 @@ func enemy_dmg_taken(value: int) -> void:
 		shield = 0
 	shieldLabel.text = "Shield: " + str(shield)
 	enemyDataHandler.current_healt -= damage_after_shield
+	bars.minus_progress_bars(enemyDataHandler.current_healt)
 	
 	if enemyDataHandler.current_healt > 0:
 		health.text = "max_healt: " + str(enemyDataHandler.current_healt)
