@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnemyResource" load_steps=9 format=3 uid="uid://bjw112vhemw4b"]
 
-[ext_resource type="Script" path="res://Enemy/enemyAnimationResource.gd" id="1_c2n65"]
+[ext_resource type="Script" uid="uid://dvrp4fo5kk2hp" path="res://Enemy/enemyAnimationResource.gd" id="1_c2n65"]
 [ext_resource type="Script" uid="uid://blnkk5r71x700" path="res://Enemy/enemyAttackResource.gd" id="1_eufft"]
 [ext_resource type="Texture2D" uid="uid://cqqf6kn5atvor" path="res://Assets/Image/Enemy/IMG_8267-ezgif.com-gif-to-sprite-converter.png" id="2_eufft"]
 [ext_resource type="Script" uid="uid://blb8oufwqiukd" path="res://Enemy/enemyResource.gd" id="3_wuuqv"]

@@ -36,6 +36,7 @@ func _ready() -> void:
 	bars.init_stats(player.current_health, 10, enemy.enemyDataHandler.max_healt, 10)
 	bars.set_player_health(player.current_health)
 	bars.set_enemy_health(enemy.enemyDataHandler.max_healt)
+	bars.set_player_sanity(player.current_sanity)
 	player.dead.connect(transition_dead)
 	
 	
@@ -52,6 +53,7 @@ func applay_card_effect(cadsEffect):
 		match key:
 			"sanity_cost":
 				player.sanity_taken(value)
+				bars.set_player_sanity(player.current_sanity)
 			"attack_enemy":
 				var finalMoltiplicator = clamp(1 + (player.attack_multiply*0.25) - (enemy.defense_multiply*0.25),0,3)
 				var final_value= value * finalMoltiplicator
@@ -109,6 +111,7 @@ func _on_skip_round_pressed() -> void:
 		var finalMoltiplicator = clamp(1 + (enemy.attack_multiply*0.25) - (player.defense_multiply*0.25),0,3)
 		var enemy_attack_damage = enemyAttack.attack_damage * finalMoltiplicator
 		player.dmg_taken(enemy_attack_damage)
+		print("shiels",player.shield)
 		bars.set_player_health(player.current_health)
 		bars.set_player_shield(player.shield, "danno")
 func _on_enemy_enemy_dead() -> void:

@@ -16,7 +16,9 @@ signal dead
 
 var current_health: float
 var current_sanity: int
-var shield: int = 0
+var shield: int = 0:
+	set(value):
+		shield = clamp(value, 0, 10)
 var original_position: Vector2
 
 # moltiplicatori di attacco/difesa
@@ -120,7 +122,7 @@ func dmg_taken(value: int) -> void:
 			damage_after_shield = value - shield
 			shield = 0
 		Utils.play_sfx("res://Assets/SFX/SFX/ShieldFinal.mp3", "SFX")
-
+	print("shiels",shield)
 	# Applico danno
 	current_health -= damage_after_shield
 	Utils.play_sfx("res://Assets/SFX/SFX/AttackFinal.mp3", "SFX")

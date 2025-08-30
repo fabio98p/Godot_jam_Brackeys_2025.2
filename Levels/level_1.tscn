@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ljnqon2uev35" path="res://Assets/BG Colorato.jpg" id="3_77x7w"]
 [ext_resource type="Texture2D" uid="uid://gmuroxlv2inw" path="res://Assets/icon.svg" id="8_77x7w"]
 [ext_resource type="Texture2D" uid="uid://yr7h47bahev4" path="res://Assets/white.png" id="9_f4pg2"]
-[ext_resource type="PackedScene" uid="uid://b4peykb6dte6l" path="res://HUD/barsHUD.tscn" id="9_xoyoh"]
+[ext_resource type="PackedScene" uid="uid://30bkaphh1yvg" path="res://HUD/barsHUD.tscn" id="9_xoyoh"]
 [ext_resource type="Texture2D" uid="uid://c6n6tllbmb3uo" path="res://Assets/IMG_8215.jpg" id="10_62b6n"]
 
 [sub_resource type="Animation" id="Animation_xoyoh"]

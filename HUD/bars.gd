@@ -5,6 +5,12 @@ extends Node2D
 @onready var enemy_health: TextureProgressBar = $Bars/EnemyHealth
 @onready var enemy_shield: TextureProgressBar = $Bars/EnemyShield
 
+@onready var player_health_value: Label = $Labels/PlayerHealthValue
+@onready var player_shield_value: Label = $Labels/PlayerShieldValue
+@onready var enemy_health_value: Label = $Labels/EnemyHealthValue
+@onready var enemy_shield_value: Label = $Labels/EnemyShieldValue
+@onready var sanity_value: Label = $Labels/SanityValue
+
 # Variabili interne
 var _player_max_health: float
 var _player_current_health: float
@@ -34,25 +40,29 @@ func init_stats(player_max_h: float, player_max_s: float, enemy_max_h: float, en
 	_player_current_health = player_max_h
 	player_health.max_value = _player_max_health
 	player_health.value = _player_current_health
+	player_health_value.text = str(_player_current_health)
 
 	_player_max_shield = player_max_s
 	_player_current_shield = 0 # parte vuoto
 	player_shield.max_value = _player_max_shield
 	player_shield.value = _player_current_shield
-	player_shield.visible = false
-
+	player_shield.visible = true
+	player_shield_value.text = str(_player_current_shield)
+	
 	# --- Enemy ---
 	_enemy_max_health = enemy_max_h
 	_enemy_current_health = enemy_max_h
 	enemy_health.max_value = _enemy_max_health
 	enemy_health.value = _enemy_current_health
+	enemy_health_value.text = str(_enemy_current_health)
 
 	_enemy_max_shield = enemy_max_s
 	_enemy_current_shield = 0 # parte vuoto
 	enemy_shield.max_value = _enemy_max_shield
 	enemy_shield.value = _enemy_current_shield
-	enemy_shield.visible = false
-
+	enemy_shield.visible = true
+	enemy_shield_value.text = str(_enemy_current_shield)
+	
 # --- Funzione generica per animare una barra ---
 func animate_bar_by_name(name: String, target_value: float, duration: float = 0.5) -> void:
 	if not bar_map.has(name):
@@ -71,28 +81,26 @@ func animate_bar_by_name(name: String, target_value: float, duration: float = 0.
 
 # --- Aggiorna vita ---
 func set_player_health(value: float) -> void:
+	print("healt player")
 	_player_current_health = clamp(value, 0, _player_max_health)
 	animate_bar_by_name("player_health", _player_current_health)
+	player_health_value.text = str(_player_current_health)
 
 func set_enemy_health(value: float) -> void:
+	print("healtenemy")
 	_enemy_current_health = clamp(value, 0, _enemy_max_health)
 	animate_bar_by_name("enemy_health", _enemy_current_health)
+	enemy_health_value.text = str(_enemy_current_health)
 
 # --- Aggiorna scudo (aggiunta o danno) ---
 func set_player_shield(value: float, mode: String = "aggiunta") -> void:
-	if mode == "danno":
-		_player_current_shield = clamp(_player_current_shield - value, 0, _player_max_shield)
-	else:
-		_player_current_shield = clamp(_player_current_shield + value, 0, _player_max_shield)
-
-	player_shield.visible = _player_current_shield > 0
-	animate_bar_by_name("player_shield", _player_current_shield)
+	animate_bar_by_name("player_shield", value)
+	player_shield_value.text = str(value)
 
 func set_enemy_shield(value: float, mode: String = "aggiunta") -> void:
-	if mode == "danno":
-		_enemy_current_shield = clamp(_enemy_current_shield - value, 0, _enemy_max_shield)
-	else:
-		_enemy_current_shield = clamp(_enemy_current_shield + value, 0, _enemy_max_shield)
+	print("shild enemy")
+	animate_bar_by_name("enemy_shield", value)
+	enemy_shield_value.text = str(value)
 
-	enemy_shield.visible = _enemy_current_shield > 0
-	animate_bar_by_name("enemy_shield", _enemy_current_shield)
+func set_player_sanity(value:int):
+	sanity_value.text = str(value)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4peykb6dte6l"]
+[gd_scene load_steps=9 format=3 uid="uid://30bkaphh1yvg"]
 
 [ext_resource type="Script" uid="uid://1vkl465ttyxo" path="res://HUD/bars.gd" id="1_yiwb4"]
 [ext_resource type="Texture2D" uid="uid://dn3jee7bp7t40" path="res://Assets/Image/HUD FINAL.png" id="2_yiwb4"]
@@ -24,7 +24,7 @@ fill_to = Vector2(0.0145631, 0)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_5inxx"]
 gradient = SubResource("Gradient_8iwd0")
 width = 245
-height = 24
+height = 31
 fill_to = Vector2(0.0145631, 0)
 
 [node name="Bars" type="Node2D"]
@@ -42,20 +42,20 @@ value = 100.0
 fill_mode = 1
 texture_under = SubResource("GradientTexture2D_mlmcx")
 texture_progress = SubResource("GradientTexture2D_nyamc")
-tint_under = Color(0.164706, 1, 1, 1)
-tint_progress = Color(1, 0.231373, 1, 1)
+tint_under = Color(0.411765, 0.309804, 0.219608, 1)
+tint_progress = Color(0.333333, 0.592157, 0.929412, 1)
 
 [node name="PlayerShield" type="TextureProgressBar" parent="Bars"]
-offset_left = 209.0
-offset_top = 57.0
-offset_right = 454.0
-offset_bottom = 121.0
+offset_left = 210.0
+offset_top = 51.0
+offset_right = 455.0
+offset_bottom = 115.0
 value = 100.0
 fill_mode = 1
 texture_under = SubResource("GradientTexture2D_5inxx")
 texture_progress = SubResource("GradientTexture2D_5inxx")
-tint_under = Color(0.164706, 1, 1, 1)
-tint_progress = Color(1, 0.231373, 1, 1)
+tint_under = Color(0.411765, 0.309804, 0.219608, 1)
+tint_progress = Color(0.333333, 0.592157, 0.929412, 1)
 
 [node name="EnemyHealth" type="TextureProgressBar" parent="Bars"]
 offset_left = 790.0
@@ -65,19 +65,19 @@ offset_bottom = 65.0
 value = 100.0
 texture_under = SubResource("GradientTexture2D_mlmcx")
 texture_progress = SubResource("GradientTexture2D_nyamc")
-tint_under = Color(0.164706, 1, 1, 1)
-tint_progress = Color(1, 0.231373, 1, 1)
+tint_under = Color(0.411765, 0.309804, 0.219608, 1)
+tint_progress = Color(0.843137, 0.235294, 0.262745, 1)
 
 [node name="EnemyShield" type="TextureProgressBar" parent="Bars"]
-offset_left = 783.0
-offset_top = 57.0
-offset_right = 1028.0
-offset_bottom = 121.0
+offset_left = 784.0
+offset_top = 51.0
+offset_right = 1029.0
+offset_bottom = 115.0
 value = 100.0
 texture_under = SubResource("GradientTexture2D_5inxx")
 texture_progress = SubResource("GradientTexture2D_5inxx")
-tint_under = Color(0.164706, 1, 1, 1)
-tint_progress = Color(1, 0.231373, 1, 1)
+tint_under = Color(0.411765, 0.309804, 0.219608, 1)
+tint_progress = Color(0.843137, 0.235294, 0.262745, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Bars"]
 position = Vector2(620, 52)
