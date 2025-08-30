@@ -43,7 +43,16 @@ func _ready() -> void:
 	attack_multi.text =  "attack multy: " + str(attack_multiply)
 	defense_multi.text = "defense multy: " + str(defense_multiply)
 	shieldLabel.text = "Shield: " + str(shield)
-	sprite_2d.texture = enemyDataHandler.img
+	
+	#handle animation
+	var anim := create_idle_anim(enemyDataHandler.animation)
+	anim.scale = enemyDataHandler.animation.scale
+	if enemyDataHandler.animation.position:
+		anim.position = enemyDataHandler.animation.position
+	else: 
+		anim.position = Vector2(1000.0,400.0)
+	add_child(anim)
+	#sprite_2d.texture = enemyDataHandler.img
 	
 #func dmg_taken(value):
 	#print("enemy current",enemyDataHandler.current_healt)
@@ -78,8 +87,28 @@ func enemy_dmg_taken(value: int) -> void:
 
 
 
-func applay_next_attack():
-	var old_next_attack : EnemyAttack = new_attack
-	new_attack = enemyDataHandler.getNextAttack()
-	next_attack.text = "next_attack: " + str(new_attack.attack_damage)
-	return old_next_attack
+func create_idle_anim(res: EnemyAnimationResource) -> AnimatedSprite2D:
+	var sprite := AnimatedSprite2D.new()
+	var frames := SpriteFrames.new()
+
+	frames.add_animation("idle")
+	frames.set_animation_speed("idle", res.fps)
+	frames.set_animation_loop("idle", true)
+
+	# Calcolo numero di frame nella sprite sheet
+	var cols := res.sprite_sheet.get_width() / res.frame_size.x
+	var rows := res.sprite_sheet.get_height() / res.frame_size.y
+
+	var base_img: Image = res.sprite_sheet.get_image()
+	for y in rows:
+		for x in cols:
+			var rect := Rect2(Vector2i(x, y) * res.frame_size, res.frame_size)
+			var img: Image = base_img.get_region(rect)
+			var frame_tex: ImageTexture = ImageTexture.create_from_image(img)
+			frames.add_frame("idle", frame_tex)
+
+	sprite.frames = frames
+	sprite.animation = "idle"
+	sprite.play("idle")
+
+	return sprite

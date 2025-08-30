@@ -1,8 +1,17 @@
-[gd_resource type="Resource" script_class="EnemyResource" load_steps=7 format=3 uid="uid://bjw112vhemw4b"]
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=9 format=3 uid="uid://b1gf6cv1et3cv"]
 
+[ext_resource type="Script" uid="uid://dvrp4fo5kk2hp" path="res://Enemy/enemyAnimationResource.gd" id="1_c2n65"]
 [ext_resource type="Script" uid="uid://blnkk5r71x700" path="res://Enemy/enemyAttackResource.gd" id="1_eufft"]
-[ext_resource type="Texture2D" uid="uid://bv8075q5qlve8" path="res://Assets/dfgdfgdfgdfgdg.png" id="2_c2n65"]
+[ext_resource type="Texture2D" uid="uid://cqqf6kn5atvor" path="res://Assets/Image/Enemy/IMG_8267-ezgif.com-gif-to-sprite-converter.png" id="2_eufft"]
 [ext_resource type="Script" uid="uid://blb8oufwqiukd" path="res://Enemy/enemyResource.gd" id="3_wuuqv"]
+
+[sub_resource type="Resource" id="Resource_wuuqv"]
+script = ExtResource("1_c2n65")
+sprite_sheet = ExtResource("2_eufft")
+frame_size = Vector2i(567, 869)
+fps = 3
+scale = Vector2(0.5, 0.5)
+metadata/_custom_type_script = "uid://dvrp4fo5kk2hp"
 
 [sub_resource type="Resource" id="Resource_jl84t"]
 script = ExtResource("1_eufft")
@@ -68,8 +77,7 @@ metadata/_custom_type_script = "uid://blnkk5r71x700"
 script = ExtResource("3_wuuqv")
 enemy_name = "gino"
 description = ""
-img = ExtResource("2_c2n65")
-img_size = Vector2(0, 0)
+animation = SubResource("Resource_wuuqv")
 max_healt = 20.0
 attack_list = Array[ExtResource("1_eufft")]([SubResource("Resource_jl84t"), SubResource("Resource_buxya"), SubResource("Resource_5xvf8")])
 metadata/_custom_type_script = "uid://blb8oufwqiukd"

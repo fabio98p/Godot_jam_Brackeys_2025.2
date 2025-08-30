@@ -1,8 +1,18 @@
-[gd_resource type="Resource" script_class="EnemyResource" load_steps=7 format=3 uid="uid://dlnnaibls17ky"]
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=9 format=3 uid="uid://coyj6rscam2v2"]
 
+[ext_resource type="Script" uid="uid://dvrp4fo5kk2hp" path="res://Enemy/enemyAnimationResource.gd" id="1_fqkdp"]
 [ext_resource type="Script" uid="uid://blnkk5r71x700" path="res://Enemy/enemyAttackResource.gd" id="1_ulavc"]
-[ext_resource type="Texture2D" uid="uid://cgufv4ltkgwji" path="res://Assets/jabberwocky-illustration-by-john-tenniel-681x1024.jpg" id="2_ulavc"]
+[ext_resource type="Texture2D" uid="uid://doups3ewdi6cc" path="res://Assets/Image/Enemy/IMG_8304-ezgif.com-gif-to-sprite-converter.png" id="2_gq44y"]
 [ext_resource type="Script" uid="uid://blb8oufwqiukd" path="res://Enemy/enemyResource.gd" id="3_gq44y"]
+
+[sub_resource type="Resource" id="Resource_cm02a"]
+script = ExtResource("1_fqkdp")
+sprite_sheet = ExtResource("2_gq44y")
+frame_size = Vector2i(745, 668)
+fps = 3
+scale = Vector2(0.7, 0.7)
+position = Vector2(1030, 300)
+metadata/_custom_type_script = "uid://dvrp4fo5kk2hp"
 
 [sub_resource type="Resource" id="Resource_jl84t"]
 script = ExtResource("1_ulavc")
@@ -68,8 +78,7 @@ metadata/_custom_type_script = "uid://blnkk5r71x700"
 script = ExtResource("3_gq44y")
 enemy_name = "gino"
 description = ""
-img = ExtResource("2_ulavc")
-img_size = Vector2(0, 0)
+animation = SubResource("Resource_cm02a")
 max_healt = 20.0
 attack_list = Array[ExtResource("1_ulavc")]([SubResource("Resource_jl84t"), SubResource("Resource_buxya"), SubResource("Resource_5xvf8")])
 metadata/_custom_type_script = "uid://blb8oufwqiukd"

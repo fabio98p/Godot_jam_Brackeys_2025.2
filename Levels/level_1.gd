@@ -26,7 +26,6 @@ func _ready() -> void:
 	# Setup Enemy
 	var enemyResource: EnemyResource = GC.pickenemy()
 	var enemyInstance = preload("res://Enemy/enemy.tscn").instantiate()
-	enemyInstance.position = Vector2(1100.0,300.0)
 	enemyInstance.connect("enemy_dead", Callable(self, "_on_enemy_enemy_dead"))
 	enemyInstance.enemyResource = enemyResource
 	enemy = enemyInstance

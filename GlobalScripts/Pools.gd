@@ -4,10 +4,14 @@ var BaseEnemyPool: Array[EnemyResource] = [
 	load("res://Enemy/Resources/enemy1.tres") as EnemyResource,
 	load("res://Enemy/Resources/enemy2.tres") as EnemyResource,
 	load("res://Enemy/Resources/enemy3.tres") as EnemyResource,
+	load("res://Enemy/Resources/enemy4.tres") as EnemyResource,
+	load("res://Enemy/Resources/enemy5.tres") as EnemyResource,
+	load("res://Enemy/Resources/enemy6.tres") as EnemyResource,
+	load("res://Enemy/Resources/enemy7.tres") as EnemyResource,
+	load("res://Enemy/Resources/enemy8.tres") as EnemyResource,
 ]
 var MiniBossEnemyPool: Array[EnemyResource] = [
 	load("res://Enemy/Resources/minibossenemy1.tres") as EnemyResource,
-	load("res://Enemy/Resources/minibossenemy2.tres") as EnemyResource,
 ]
 var BossEnemyPool: Array[EnemyResource] = [
 	load("res://Enemy/Resources/bossenemy1.tres") as EnemyResource,

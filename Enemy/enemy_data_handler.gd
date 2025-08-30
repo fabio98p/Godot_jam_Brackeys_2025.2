@@ -7,12 +7,9 @@ var enemy_name: String:
 var description: String:
 	get:
 		return description
-var img: Texture:
+var animation: EnemyAnimationResource:
 	get:
-		return img
-var img_size: Vector2:
-	get:
-		return img_size
+		return animation
 var max_healt: int:
 	get:
 		return max_healt
@@ -24,8 +21,7 @@ var attackList: Array[EnemyAttack]
 func _init(enemyResource: EnemyResource) -> void:
 	enemy_name = enemyResource.enemy_name
 	description = enemyResource.description
-	img = enemyResource.img
-	img_size = enemyResource.img_size
+	animation = enemyResource.animation
 	max_healt = enemyResource.max_healt
 	current_healt = max_healt
 	attackList = enemyResource.attack_list
