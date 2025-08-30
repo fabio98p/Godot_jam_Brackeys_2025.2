@@ -83,6 +83,11 @@ func enemy_dmg_taken(value: int) -> void:
 		visible = false
 		enemy_dead.emit()
 
+func applay_next_attack():
+	var old_next_attack : EnemyAttack = new_attack
+	new_attack = enemyDataHandler.getNextAttack()
+	next_attack.text = "next_attack: " + str(new_attack.attack_damage)
+	return old_next_attack
 
 
 func create_idle_anim(res: EnemyAnimationResource) -> AnimatedSprite2D:
