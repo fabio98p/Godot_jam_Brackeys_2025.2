@@ -8,7 +8,6 @@ var max_health: float:
 
 var set_Shield_Value: float:
 	set(value):
-		print(value)
 		if value <= 0:
 			icon_shield.visible = false
 		else:	
