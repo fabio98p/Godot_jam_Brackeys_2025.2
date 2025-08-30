@@ -1,7 +1,6 @@
-[gd_resource type="Resource" script_class="EnemyResource" load_steps=7 format=3 uid="uid://8lttja1gtjjp"]
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=6 format=3 uid="uid://5nac43urnit4"]
 
 [ext_resource type="Script" uid="uid://blnkk5r71x700" path="res://Enemy/enemyAttackResource.gd" id="1_6n452"]
-[ext_resource type="Texture2D" uid="uid://bpyndofk00s2h" path="res://Assets/s-l1200.jpg" id="2_6n452"]
 [ext_resource type="Script" uid="uid://blb8oufwqiukd" path="res://Enemy/enemyResource.gd" id="3_w2qr3"]
 
 [sub_resource type="Resource" id="Resource_jl84t"]
@@ -68,8 +67,6 @@ metadata/_custom_type_script = "uid://blnkk5r71x700"
 script = ExtResource("3_w2qr3")
 enemy_name = "gino"
 description = ""
-img = ExtResource("2_6n452")
-img_size = Vector2(0, 0)
 max_healt = 20.0
 attack_list = Array[ExtResource("1_6n452")]([SubResource("Resource_jl84t"), SubResource("Resource_buxya"), SubResource("Resource_5xvf8")])
 metadata/_custom_type_script = "uid://blb8oufwqiukd"

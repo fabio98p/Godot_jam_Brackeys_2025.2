@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="EnemyResource" load_steps=9 format=3 uid="uid://b717rt7o87krf"]
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=10 format=3 uid="uid://b717rt7o87krf"]
 
-[ext_resource type="Script" uid="uid://dvrp4fo5kk2hp" path="res://Enemy/enemyAnimationResource.gd" id="1_dbb1o"]
+[ext_resource type="Script" path="res://Enemy/enemyAnimationResource.gd" id="1_dbb1o"]
 [ext_resource type="Texture2D" uid="uid://dtr6cpmmmrduj" path="res://Assets/Image/Enemy/IMG_8270-ezgif.com-gif-to-sprite-converter.png" id="2_dbb1o"]
 [ext_resource type="Script" uid="uid://blnkk5r71x700" path="res://Enemy/enemyAttackResource.gd" id="3_kvv5a"]
 [ext_resource type="Script" uid="uid://blb8oufwqiukd" path="res://Enemy/enemyResource.gd" id="4_4lxnh"]
@@ -11,14 +11,15 @@ sprite_sheet = ExtResource("2_dbb1o")
 frame_size = Vector2i(567, 869)
 fps = 3
 scale = Vector2(0.5, 0.5)
+position = Vector2(0, 0)
 metadata/_custom_type_script = "uid://dvrp4fo5kk2hp"
 
 [sub_resource type="Resource" id="Resource_jl84t"]
 script = ExtResource("3_kvv5a")
 has_attack = true
-attack_damage = 4.0
-has_shield = false
-shield_value = 0.0
+attack_damage = 2.0
+has_shield = true
+shield_value = 2.0
 has_heal = false
 heal_value = 0.0
 has_self_buff = false
@@ -36,7 +37,7 @@ metadata/_custom_type_script = "uid://blnkk5r71x700"
 [sub_resource type="Resource" id="Resource_buxya"]
 script = ExtResource("3_kvv5a")
 has_attack = true
-attack_damage = 10.0
+attack_damage = 3.0
 has_shield = false
 shield_value = 0.0
 has_heal = false
@@ -58,7 +59,27 @@ script = ExtResource("3_kvv5a")
 has_attack = false
 attack_damage = 0.0
 has_shield = true
-shield_value = 5.0
+shield_value = 2.0
+has_heal = false
+heal_value = 0.0
+has_self_buff = false
+has_self_attack_buff = false
+self_attack_buff = 0.0
+has_self_defense_buff = false
+self_defense_buff = 0.0
+has_player_debuff = true
+has_player_attack_debuff = true
+player_attack_debuff = -1.0
+has_player_defense_debuff = false
+player_defense_debuff = 0.0
+metadata/_custom_type_script = "uid://blnkk5r71x700"
+
+[sub_resource type="Resource" id="Resource_dbb1o"]
+script = ExtResource("3_kvv5a")
+has_attack = true
+attack_damage = 2.0
+has_shield = true
+shield_value = 2.0
 has_heal = false
 heal_value = 0.0
 has_self_buff = false
@@ -78,6 +99,6 @@ script = ExtResource("4_4lxnh")
 enemy_name = "gino"
 description = ""
 animation = SubResource("Resource_kf404")
-max_healt = 20.0
-attack_list = Array[ExtResource("3_kvv5a")]([SubResource("Resource_jl84t"), SubResource("Resource_buxya"), SubResource("Resource_5xvf8")])
+max_healt = 9.0
+attack_list = Array[ExtResource("3_kvv5a")]([SubResource("Resource_jl84t"), SubResource("Resource_buxya"), SubResource("Resource_5xvf8"), SubResource("Resource_dbb1o")])
 metadata/_custom_type_script = "uid://blb8oufwqiukd"

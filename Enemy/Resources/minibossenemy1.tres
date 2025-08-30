@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="EnemyResource" load_steps=9 format=3 uid="uid://coyj6rscam2v2"]
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=9 format=3 uid="uid://dlnnaibls17ky"]
 
-[ext_resource type="Script" uid="uid://dvrp4fo5kk2hp" path="res://Enemy/enemyAnimationResource.gd" id="1_fqkdp"]
+[ext_resource type="Script" path="res://Enemy/enemyAnimationResource.gd" id="1_fqkdp"]
 [ext_resource type="Script" uid="uid://blnkk5r71x700" path="res://Enemy/enemyAttackResource.gd" id="1_ulavc"]
 [ext_resource type="Texture2D" uid="uid://doups3ewdi6cc" path="res://Assets/Image/Enemy/IMG_8304-ezgif.com-gif-to-sprite-converter.png" id="2_gq44y"]
 [ext_resource type="Script" uid="uid://blb8oufwqiukd" path="res://Enemy/enemyResource.gd" id="3_gq44y"]
@@ -17,7 +17,7 @@ metadata/_custom_type_script = "uid://dvrp4fo5kk2hp"
 [sub_resource type="Resource" id="Resource_jl84t"]
 script = ExtResource("1_ulavc")
 has_attack = true
-attack_damage = 4.0
+attack_damage = 7.0
 has_shield = false
 shield_value = 0.0
 has_heal = false
@@ -37,9 +37,9 @@ metadata/_custom_type_script = "uid://blnkk5r71x700"
 [sub_resource type="Resource" id="Resource_buxya"]
 script = ExtResource("1_ulavc")
 has_attack = true
-attack_damage = 10.0
-has_shield = false
-shield_value = 0.0
+attack_damage = 8.0
+has_shield = true
+shield_value = 3.0
 has_heal = false
 heal_value = 0.0
 has_self_buff = false
@@ -59,9 +59,9 @@ script = ExtResource("1_ulavc")
 has_attack = false
 attack_damage = 0.0
 has_shield = true
-shield_value = 5.0
-has_heal = false
-heal_value = 0.0
+shield_value = 3.0
+has_heal = true
+heal_value = 1.0
 has_self_buff = false
 has_self_attack_buff = false
 self_attack_buff = 0.0
@@ -79,6 +79,6 @@ script = ExtResource("3_gq44y")
 enemy_name = "gino"
 description = ""
 animation = SubResource("Resource_cm02a")
-max_healt = 20.0
+max_healt = 50.0
 attack_list = Array[ExtResource("1_ulavc")]([SubResource("Resource_jl84t"), SubResource("Resource_buxya"), SubResource("Resource_5xvf8")])
 metadata/_custom_type_script = "uid://blb8oufwqiukd"
