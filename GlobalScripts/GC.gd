@@ -54,14 +54,24 @@ func pickenemy():
 	numberOfFight += 1
 	print(numberOfFight)
 	if numberOfFight <= 3:
-		return Pools.BaseEnemyPool[randi_range(0, Pools.BaseEnemyPool.size()-1)]
+		if Pools.poolBaseEnemy.size() > 0:
+			var index = randi_range(0, Pools.poolBaseEnemy.size() - 1)
+			var enemy = Pools.poolBaseEnemy[index]
+			Pools.poolBaseEnemy.remove_at(index)
+			
+			return enemy
 	if numberOfFight == 4:
 		print("resitng 4")
 		return
 	if numberOfFight == 5:
 		return Pools.MiniBossEnemyPool[randi_range(0, Pools.MiniBossEnemyPool.size()-1)]
 	if numberOfFight > 5 and numberOfFight <= 8:
-		return Pools.BaseEnemyPool[randi_range(0, Pools.BaseEnemyPool.size()-1)]
+		if Pools.poolChessEnemy.size() > 0:
+			var index = randi_range(0, Pools.poolChessEnemy.size() - 1)
+			var enemy = Pools.poolChessEnemy[index]
+			Pools.poolChessEnemy.remove_at(index)
+			
+			return enemy
 	if numberOfFight == 9:
 		print("resitng 9")
 		return

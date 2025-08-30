@@ -1,14 +1,24 @@
 extends Node
+var poolBaseEnemy: Array[EnemyResource]
+var poolChessEnemy: Array[EnemyResource]
 
-var BaseEnemyPool: Array[EnemyResource] = [
+func _ready() -> void:
+	poolBaseEnemy = BaseCardEnemyPool.duplicate()
+	poolChessEnemy = BaseChessEnemyPool.duplicate()
+
+var BaseCardEnemyPool: Array[EnemyResource] = [
 	load("res://Enemy/Resources/enemy1.tres") as EnemyResource,
-	#load("res://Enemy/Resources/enemy2.tres") as EnemyResource,
-	#load("res://Enemy/Resources/enemy3.tres") as EnemyResource,
-	#load("res://Enemy/Resources/enemy4.tres") as EnemyResource,
-	#load("res://Enemy/Resources/enemy5.tres") as EnemyResource,
-	#load("res://Enemy/Resources/enemy6.tres") as EnemyResource,
-	#load("res://Enemy/Resources/enemy7.tres") as EnemyResource,
-	#load("res://Enemy/Resources/enemy8.tres") as EnemyResource,
+	load("res://Enemy/Resources/enemy2.tres") as EnemyResource,
+	load("res://Enemy/Resources/enemy3.tres") as EnemyResource,
+	load("res://Enemy/Resources/enemy4.tres") as EnemyResource,
+	]
+
+
+var BaseChessEnemyPool: Array[EnemyResource] = [
+	load("res://Enemy/Resources/enemy5.tres") as EnemyResource,
+	load("res://Enemy/Resources/enemy6.tres") as EnemyResource,
+	load("res://Enemy/Resources/enemy7.tres") as EnemyResource,
+	load("res://Enemy/Resources/enemy8.tres") as EnemyResource,
 ]
 var MiniBossEnemyPool: Array[EnemyResource] = [
 	load("res://Enemy/Resources/minibossenemy1.tres") as EnemyResource,
