@@ -84,7 +84,7 @@ func insane_shake_exponential(duration: float = 6.4, max_intensity: float = 4.0,
 	animated_sprite_2d.play("insane")
 	animated_sprite_2d.speed_scale = 1.0
 	var durations = 5.0  
-	var target_speed = 3.0 
+	var target_speed = 6.0 
 	var elapseds = 0.0
 	while elapseds < duration:
 		var t = elapseds / durations

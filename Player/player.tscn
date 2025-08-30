@@ -77,7 +77,7 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_vtle1")
 animation = &"insane"
 autoplay = "default"
-frame_progress = 0.264252
+frame_progress = 0.29879
 
 [node name="health" type="Label" parent="."]
 offset_right = 40.0
