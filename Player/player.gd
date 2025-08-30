@@ -107,7 +107,7 @@ func dmg_taken(value: int) -> void:
 		else:
 			damage_after_shield = value - shield
 			shield = 0
-			health_bars.set_Shield_Value = 0
+			health_bars.set_Shield_Value = shield
 		Utils.play_sfx("res://Assets/SFX/SFX/ShieldFinal.mp3", "SFX")
 
 	# Applico danno

@@ -74,6 +74,7 @@ func _on_skip_round_pressed() -> void:
 	# Shield
 	if enemyAttack.has_shield: 
 		enemy.shield += enemyAttack.shield_value
+		enemy.health_bars.set_Shield_Value = enemy.shield
 		
 	# Heal
 	if enemyAttack.has_heal: 

@@ -77,6 +77,6 @@ text = "bla"
 
 [node name="Bars" parent="." instance=ExtResource("3_am0pq")]
 offset_left = -101.0
-offset_top = -322.0
+offset_top = -259.0
 offset_right = -101.0
-offset_bottom = -322.0
+offset_bottom = -259.0
