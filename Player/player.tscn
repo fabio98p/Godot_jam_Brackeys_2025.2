@@ -1,10 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4tcixs27lofb"]
+[gd_scene load_steps=4 format=3 uid="uid://b4tcixs27lofb"]
 
 [ext_resource type="Script" uid="uid://bmxa872qakfrx" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://hha4bthtxuc7" path="res://Assets/Alice_Normal.png" id="2_4ntmi"]
+[ext_resource type="PackedScene" uid="uid://sdbmp6ijqpfo" path="res://HUD/bars.tscn" id="2_btcbx"]
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_4ntmi")
+
+[node name="Bars" parent="." instance=ExtResource("2_btcbx")]
+offset_left = -103.0
+offset_top = -292.0
+offset_right = -103.0
+offset_bottom = -292.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)

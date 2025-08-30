@@ -4,6 +4,7 @@ extends Node2D
 @export var max_sanity: int = 100
 
 signal dead
+@onready var bars: Control = $Bars
 
 @onready var attack_multi: Label = $AttackMulti
 @onready var defense_multi: Label = $DefenseMulti
@@ -34,6 +35,7 @@ const SANITY_HURT_TEXTURE: Texture2D = preload("res://Assets/Alice_Sanity_Hurt.p
 const NORMAL_TEXTURE: Texture2D = preload("res://Assets/Alice_Normal.png")
 
 func _ready() -> void:
+	bars.max_health = max_health
 	current_health = max_health
 	current_sanity = max_sanity
 	health.text = "max_health: " + str(current_health)
@@ -108,6 +110,7 @@ func dmg_taken(value: int) -> void:
 
 	# Applico danno
 	current_health -= damage_after_shield
+	bars.minus_progress_bars(current_health)
 	Utils.play_sfx("res://Assets/SFX/SFX/AttackFinal.mp3", "SFX")
 	shieldLabel.text = "shield value: " + str(shield)
 
@@ -150,4 +153,5 @@ func reset_skin_later() -> void:
 func heal_self(value: int) -> void:
 	if current_health < max_health:
 		current_health = min(current_health + value, max_health)
+		bars.minus_progress_bars(current_health)
 		health.text = "max_health: " + str(current_health)
