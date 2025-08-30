@@ -14,7 +14,9 @@ signal enemy_dead
 @onready var defense_multi: Label = $DefenseMulti
 @onready var shieldLabel: Label = $Shield
 
-var shield: int = 0
+var shield: int = 0:
+	set(value):
+		shield = clamp(value, 0, 10)
 # attack and defense have max of 3 multiply,
 # every multiply is a x0.25 of damage for a max of *1.75 or 
 var attack_multiply: float = 0:
@@ -65,14 +67,16 @@ func enemy_dmg_taken(value: int) -> void:
 
 	var damage_after_shield = value
 	
-	if shield >= value:
-		shield -= value
-		damage_after_shield = 0
-		
+	if shield > 0:
+		if shield >= value:
+			shield -= value
+			damage_after_shield = 0
+		else:
+			damage_after_shield = value - shield
+			shield = 0
+		Utils.play_sfx("res://Assets/SFX/SFX/ShieldFinal.mp3", "SFX")
 	else:
-		damage_after_shield = value - shield
-		shield = 0
-		
+		Utils.play_sfx("res://Assets/SFX/SFX/AttackFinal.mp3", "SFX")
 	shieldLabel.text = "Shield: " + str(shield)
 	enemyDataHandler.current_healt -= damage_after_shield
 	current_health = enemyDataHandler.current_healt

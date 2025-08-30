@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyResource" load_steps=9 format=3 uid="uid://bjw112vhemw4b"]
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=7 format=3 uid="uid://bjw112vhemw4b"]
 
 [ext_resource type="Script" uid="uid://dvrp4fo5kk2hp" path="res://Enemy/enemyAnimationResource.gd" id="1_c2n65"]
 [ext_resource type="Script" uid="uid://blnkk5r71x700" path="res://Enemy/enemyAttackResource.gd" id="1_eufft"]
@@ -13,46 +13,6 @@ fps = 3
 scale = Vector2(0.5, 0.5)
 position = Vector2(0, 0)
 metadata/_custom_type_script = "uid://dvrp4fo5kk2hp"
-
-[sub_resource type="Resource" id="Resource_jl84t"]
-script = ExtResource("1_eufft")
-has_attack = true
-attack_damage = 4.0
-has_shield = false
-shield_value = 0.0
-has_heal = false
-heal_value = 0.0
-has_self_buff = false
-has_self_attack_buff = false
-self_attack_buff = 0.0
-has_self_defense_buff = false
-self_defense_buff = 0.0
-has_player_debuff = false
-has_player_attack_debuff = false
-player_attack_debuff = 0.0
-has_player_defense_debuff = false
-player_defense_debuff = 0.0
-metadata/_custom_type_script = "uid://blnkk5r71x700"
-
-[sub_resource type="Resource" id="Resource_buxya"]
-script = ExtResource("1_eufft")
-has_attack = true
-attack_damage = 10.0
-has_shield = false
-shield_value = 0.0
-has_heal = false
-heal_value = 0.0
-has_self_buff = false
-has_self_attack_buff = false
-self_attack_buff = 0.0
-has_self_defense_buff = false
-self_defense_buff = 0.0
-has_player_debuff = false
-has_player_attack_debuff = false
-player_attack_debuff = 0.0
-has_player_defense_debuff = false
-player_defense_debuff = 0.0
-metadata/_custom_type_script = "uid://blnkk5r71x700"
 
 [sub_resource type="Resource" id="Resource_5xvf8"]
 script = ExtResource("1_eufft")
@@ -80,5 +40,5 @@ enemy_name = "gino"
 description = ""
 animation = SubResource("Resource_wuuqv")
 max_healt = 20.0
-attack_list = Array[ExtResource("1_eufft")]([SubResource("Resource_jl84t"), SubResource("Resource_buxya"), SubResource("Resource_5xvf8")])
+attack_list = Array[ExtResource("1_eufft")]([SubResource("Resource_5xvf8")])
 metadata/_custom_type_script = "uid://blb8oufwqiukd"

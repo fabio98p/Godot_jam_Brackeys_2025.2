@@ -59,6 +59,7 @@ func applay_card_effect(cadsEffect):
 				var final_value= value * finalMoltiplicator
 				enemy.enemy_dmg_taken(final_value)
 				bars.set_enemy_health(enemy.current_health)
+				bars.set_enemy_shield(enemy.shield)
 			"heal_self":
 				player.heal_self(value)
 				bars.set_player_health(player.current_health)
@@ -78,7 +79,7 @@ func applay_card_effect(cadsEffect):
 				player.defense_multiply += value
 			"shield_self":
 				player.shield += value
-				bars.set_player_shield(player.shield, "aggiunta")
+				bars.set_player_shield(player.shield)
 
 func _on_skip_round_pressed() -> void:
 	#apply enemy attack
@@ -86,7 +87,7 @@ func _on_skip_round_pressed() -> void:
 	# Shield
 	if enemyAttack.has_shield: 
 		enemy.shield += enemyAttack.shield_value
-		
+		bars.set_enemy_shield(enemy.shield)
 		
 	# Heal
 	if enemyAttack.has_heal: 
@@ -113,7 +114,7 @@ func _on_skip_round_pressed() -> void:
 		player.dmg_taken(enemy_attack_damage)
 		print("shiels",player.shield)
 		bars.set_player_health(player.current_health)
-		bars.set_player_shield(player.shield, "danno")
+		bars.set_player_shield(player.shiel)
 func _on_enemy_enemy_dead() -> void:
 	if GC.numberOfFight == 10:
 		await get_tree().create_timer(1).timeout
