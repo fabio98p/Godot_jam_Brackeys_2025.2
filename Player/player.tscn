@@ -1,14 +1,83 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4tcixs27lofb"]
+[gd_scene load_steps=12 format=3 uid="uid://b4tcixs27lofb"]
 
 [ext_resource type="Script" uid="uid://bmxa872qakfrx" path="res://Player/player.gd" id="1_4ntmi"]
-[ext_resource type="Texture2D" uid="uid://hha4bthtxuc7" path="res://Assets/Alice_Normal.png" id="2_4ntmi"]
+[ext_resource type="Texture2D" uid="uid://dmeghawqy0736" path="res://Assets/Image/Player/IMG_8263-ezgif.com-gif-to-sprite-converter.png" id="3_btcbx"]
+[ext_resource type="Texture2D" uid="uid://do7td882pjssv" path="res://Assets/Image/Player/IMG_8277-ezgif.com-gif-to-sprite-converter.png" id="3_gwnis"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwnis"]
+atlas = ExtResource("3_btcbx")
+region = Rect2(0, 0, 512, 797)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k53q1"]
+atlas = ExtResource("3_btcbx")
+region = Rect2(512, 0, 512, 797)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhl08"]
+atlas = ExtResource("3_btcbx")
+region = Rect2(1024, 0, 512, 797)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtle1"]
+atlas = ExtResource("3_gwnis")
+region = Rect2(0, 0, 512, 797)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_od3ui"]
+atlas = ExtResource("3_gwnis")
+region = Rect2(512, 0, 512, 797)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00tjw"]
+atlas = ExtResource("3_gwnis")
+region = Rect2(1024, 0, 512, 797)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3vf3"]
+atlas = ExtResource("3_gwnis")
+region = Rect2(1536, 0, 512, 797)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vtle1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwnis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k53q1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhl08")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtle1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_od3ui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00tjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3vf3")
+}],
+"loop": true,
+"name": &"insane",
+"speed": 7.0
+}]
 
 [node name="Player" type="Node2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_4ntmi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_4ntmi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vtle1")
+animation = &"insane"
+autoplay = "default"
+frame_progress = 0.264252
 
 [node name="health" type="Label" parent="."]
 offset_right = 40.0

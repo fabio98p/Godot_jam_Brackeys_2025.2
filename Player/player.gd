@@ -2,6 +2,7 @@ extends Node2D
 
 @export var max_health: float = 100.0
 @export var max_sanity: int = 100
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 signal dead
 @onready var health_bars: Control = $Bars
@@ -30,7 +31,7 @@ var defense_multiply: float = 0:
 		defense_multi.text = "defense multy: " + str(defense_multiply)
 
 # texture
-const HURT_TEXTURE: Texture2D = preload("res://Assets/Alice_Hurt.png")
+const HURT_TEXTURE: Texture2D = preload("res://Assets/Image/Alice_Hurt_Final.png")
 const SANITY_HURT_TEXTURE: Texture2D = preload("res://Assets/Alice_Sanity_Hurt.png")
 const NORMAL_TEXTURE: Texture2D = preload("res://Assets/Alice_Normal.png")
 
@@ -78,22 +79,34 @@ func insane_shake(intensity: float = 4.0, duration: float = 0.5, rotation_intens
 	sprite_2d.rotation_degrees = 0
 
 func insane_shake_exponential(duration: float = 6.4, max_intensity: float = 4.0, max_rotation: float = 5.0) -> void:
-	var elapsed = 0.0
-	while elapsed < duration:
-		var t = elapsed / duration  # normalizzato 0..1
-		# esponenziale: parte basso e cresce verso max
-		var intensity = lerp(0.5, max_intensity, t * t)  # t^2 per esponenziale
-		var rotation_intensity = lerp(0.5, max_rotation, t * t)
-		
-		var offset = Vector2(randf_range(-intensity, intensity), randf_range(-intensity, intensity))
-		sprite_2d.position = original_position + offset
-		sprite_2d.rotation_degrees = randf_range(-rotation_intensity, rotation_intensity)
-		
+	sprite_2d.visible = false
+	animated_sprite_2d.stop()
+	animated_sprite_2d.play("insane")
+	animated_sprite_2d.speed_scale = 1.0
+	var durations = 5.0  
+	var target_speed = 3.0 
+	var elapseds = 0.0
+	while elapseds < duration:
+		var t = elapseds / durations
+		animated_sprite_2d.speed_scale = lerp(1.0, target_speed, t)  # aumenta gradualmente
 		await get_tree().process_frame
-		elapsed += get_process_delta_time()
-	
-	sprite_2d.position = original_position
-	sprite_2d.rotation_degrees = 0
+		elapseds += get_process_delta_time()
+		#var elapsed = 0.0
+		#while elapsed < duration:
+			#var t = elapsed / duration  # normalizzato 0..1
+			## esponenziale: parte basso e cresce verso max
+			#var intensity = lerp(0.5, max_intensity, t * t)  # t^2 per esponenziale
+			#var rotation_intensity = lerp(0.5, max_rotation, t * t)
+			#
+			#var offset = Vector2(randf_range(-intensity, intensity), randf_range(-intensity, intensity))
+			#sprite_2d.position = original_position + offset
+			#sprite_2d.rotation_degrees = randf_range(-rotation_intensity, rotation_intensity)
+			#
+			#await get_tree().process_frame
+			#elapsed += get_process_delta_time()
+		#
+		#sprite_2d.position = original_position
+		#sprite_2d.rotation_degrees = 0
 
 
 func dmg_taken(value: int) -> void:
@@ -122,6 +135,8 @@ func dmg_taken(value: int) -> void:
 	if current_health > 0:
 		health.text = "max_health: " + str(current_health)
 	else:
+		animated_sprite_2d.stop()
+		
 		health.text = "max_health: dead health"
 		emit_signal("dead", {"scene":"res://Levels/Ending/Dead.tscn", "audio":"res://Assets/Music/Music/1SanityPointEnding.mp3"})
 
@@ -142,11 +157,21 @@ func sanity_taken(value: int) -> void:
 
 
 func reset_skin_later() -> void:
+	scale = Vector2(1.0, 1.0)
+	animated_sprite_2d.visible = false
 	await get_tree().create_timer(0.5).timeout
+	scale = Vector2(0.5, 0.5)
+	animated_sprite_2d.visible = true
 	if current_health > 0 and current_sanity > 0:
-		sprite_2d.texture = NORMAL_TEXTURE
+		#sprite_2d.texture = NORMAL_TEXTURE
+		pass
 	if current_sanity <= 0:
 		insane_shake_exponential(6.4, 4.0, 5.0) 
+	if current_health <=0:
+		animated_sprite_2d.stop()
+		animated_sprite_2d.visible = false
+		scale = Vector2(1.0, 1.0)
+		sprite_2d.texture = HURT_TEXTURE
 
 
 func heal_self(value: int) -> void:
