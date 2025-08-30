@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b4tcixs27lofb" path="res://Player/player.tscn" id="2_3mhv4"]
 [ext_resource type="Resource" uid="uid://dnvku0fr2rffq" path="res://Levels/Resources/level_1.tres" id="2_xoyoh"]
 [ext_resource type="Texture2D" uid="uid://ljnqon2uev35" path="res://Assets/BG Colorato.jpg" id="3_77x7w"]
-[ext_resource type="Texture2D" uid="uid://gmuroxlv2inw" path="res://Assets/icon.svg" id="8_77x7w"]
+[ext_resource type="Texture2D" uid="uid://fe07nl7i763x" path="res://Assets/Image/NEXT.png" id="6_xoyoh"]
 [ext_resource type="Texture2D" uid="uid://yr7h47bahev4" path="res://Assets/white.png" id="9_f4pg2"]
 [ext_resource type="PackedScene" uid="uid://30bkaphh1yvg" path="res://HUD/barsHUD.tscn" id="9_xoyoh"]
 [ext_resource type="Texture2D" uid="uid://c6n6tllbmb3uo" path="res://Assets/IMG_8215.jpg" id="10_62b6n"]
@@ -136,11 +136,12 @@ max_health = 110.0
 max_sanity = 300
 
 [node name="SkipRound" type="Button" parent="."]
-offset_left = 1098.0
-offset_top = 536.0
-offset_right = 1234.0
-offset_bottom = 672.0
-icon = ExtResource("8_77x7w")
+offset_left = 1179.0
+offset_top = 639.0
+offset_right = 1389.0
+offset_bottom = 847.0
+scale = Vector2(0.319998, 0.319998)
+icon = ExtResource("6_xoyoh")
 
 [node name="ChoseCard" type="Node2D" parent="."]
 visible = false
