@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://blt1iy4s22cuy"]
+[gd_scene load_steps=6 format=3 uid="uid://blt1iy4s22cuy"]
 
 [ext_resource type="Texture2D" uid="uid://cvjfkhp878psc" path="res://Assets/13844017-vecchio-libro-aperto-isolato-su-bianca-sfondo-foto.jpg" id="1_nvp2m"]
 [ext_resource type="Script" uid="uid://baccahtoae2ch" path="res://Levels/Ending/parents.gd" id="1_yhdmd"]
 [ext_resource type="Texture2D" uid="uid://bq5lhd801dxs1" path="res://Assets/46f825710e6a6121cadf1a0187d142a1.jpg" id="2_nvp2m"]
+[ext_resource type="AudioStream" uid="uid://bnof5gv30r1yt" path="res://Assets/Narration/Narration1SanityPoint.mp3" id="4_rwh8t"]
+[ext_resource type="Texture2D" uid="uid://gmuroxlv2inw" path="res://Assets/icon.svg" id="5_qs38o"]
 
 [node name="Parents" type="Node2D"]
 script = ExtResource("1_yhdmd")
@@ -17,35 +19,29 @@ position = Vector2(880, 325)
 texture = ExtResource("2_nvp2m")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 133.0
-offset_top = 7.0
-offset_right = 620.0
-offset_bottom = 706.0
+offset_left = 137.0
+offset_top = 27.0
+offset_right = 594.0
+offset_bottom = 726.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM "
+text = "At last, after so much peril and sorrow, Alice stumbled upon a looking-glass shining faintly between two twisted oaks. Her heart leapt—home! She pressed her palms to the glass, and it yielded, rippling like water, until she tumbled through and landed once more in her familiar room.
+But the world felt different now. The ticking clock struck too loudly. The shadows leaned too long across the floor. Wonderland’s cracks and horrors clung to her mind like cobwebs that would not shake free.
+Still trembling, Alice hurried downstairs in search of comfort. “Mother? Father?” she called. And there, waiting in the parlor, sat her parents… smiling gently at her with sugared lips and eyes like candied currants. Their arms, their faces, their very skin were baked to a golden crust. They were gingerbread.
+Alice’s breath came sharp and shallow. The sweetness in the air was dizzying, unbearable. Her hands shook, her teeth ached, her eyes gleamed with hunger and terror all at once.
+And as her smile twisted into a frantic grin, she understood the truth: to stay in this world, she must devour it.
+"
+autowrap_mode = 3
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_rwh8t")
+autoplay = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1022.0
+offset_top = 562.0
+offset_right = 1158.0
+offset_bottom = 698.0
+icon = ExtResource("5_qs38o")
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

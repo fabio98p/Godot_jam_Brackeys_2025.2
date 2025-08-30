@@ -19,13 +19,14 @@ func _on_next_page_pressed() -> void:
 		get_tree().change_scene_to_file("res://Levels/level_1.tscn")
 	loadNewPage()
 	previus_page_button.visible = true
+	Utils.play_sfx(Pools.BookmarksPageFlip[randi_range(0,Pools.BookmarksPageFlip.size()-1)], "SFX")
 
 func _on_previus_page_pressed() -> void:
 	currentPage -= 1
 	loadNewPage()
 	if currentPage == 1:
 		previus_page_button.visible = false
-
+	Utils.play_sfx(Pools.BookmarksPageFlip[randi_range(0,Pools.BookmarksPageFlip.size()-1)], "SFX")
 
 func getFileThing(path: String):
 	var file = FileAccess.open(path, FileAccess.READ)
