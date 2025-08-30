@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://dhmlq48643nrv"]
 
 [ext_resource type="Script" uid="uid://4gxl80juhov" path="res://Menus/main_menu_cards.gd" id="1_fnipk"]
-[ext_resource type="Texture2D" uid="uid://cvjfkhp878psc" path="res://Assets/13844017-vecchio-libro-aperto-isolato-su-bianca-sfondo-foto.jpg" id="1_g17bn"]
 [ext_resource type="PackedScene" uid="uid://dm2rmqggvb0dl" path="res://Cards/CardMenu.tscn" id="1_iqxob"]
+[ext_resource type="Texture2D" uid="uid://bftu7ihywk67q" path="res://Assets/Image/sfondo.png" id="2_fnipk"]
 [ext_resource type="Script" uid="uid://cwogr7p3uyewg" path="res://Menus/card_manager_menu.gd" id="2_iqxob"]
-[ext_resource type="Texture2D" uid="uid://bd7j6coidrc5e" path="res://Assets/IMG_82sdfsf08.jpg" id="2_r3pw0"]
+[ext_resource type="Texture2D" uid="uid://dxqvceiw4bkey" path="res://Assets/Image/MENU ALICE.png" id="3_fnipk"]
 [ext_resource type="PackedScene" uid="uid://b4cl1cqobuohe" path="res://Cards/drop_zone.tscn" id="5_k616j"]
 
 [node name="MainMenuCards" type="Node2D"]
@@ -12,13 +12,13 @@ script = ExtResource("1_fnipk")
 
 [node name="BG" type="Sprite2D" parent="."]
 position = Vector2(622, 321)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_g17bn")
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("2_fnipk")
 
 [node name="Alice" type="Sprite2D" parent="."]
 position = Vector2(924, 321)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_r3pw0")
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_fnipk")
 
 [node name="Title" type="Label" parent="."]
 offset_left = 111.0

@@ -1,18 +1,18 @@
 [gd_scene load_steps=6 format=3 uid="uid://blt1iy4s22cuy"]
 
-[ext_resource type="Texture2D" uid="uid://cvjfkhp878psc" path="res://Assets/13844017-vecchio-libro-aperto-isolato-su-bianca-sfondo-foto.jpg" id="1_nvp2m"]
 [ext_resource type="Script" uid="uid://baccahtoae2ch" path="res://Levels/Ending/parents.gd" id="1_yhdmd"]
 [ext_resource type="Texture2D" uid="uid://bq5lhd801dxs1" path="res://Assets/46f825710e6a6121cadf1a0187d142a1.jpg" id="2_nvp2m"]
+[ext_resource type="Texture2D" uid="uid://bftu7ihywk67q" path="res://Assets/Image/sfondo.png" id="2_qs38o"]
 [ext_resource type="AudioStream" uid="uid://bnof5gv30r1yt" path="res://Assets/Narration/Narration1SanityPoint.mp3" id="4_rwh8t"]
-[ext_resource type="Texture2D" uid="uid://gmuroxlv2inw" path="res://Assets/icon.svg" id="5_qs38o"]
+[ext_resource type="Texture2D" uid="uid://fe07nl7i763x" path="res://Assets/Image/NEXT.png" id="5_qs38o"]
 
 [node name="Parents" type="Node2D"]
 script = ExtResource("1_yhdmd")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(600, 356)
-scale = Vector2(0.474745, 0.474745)
-texture = ExtResource("1_nvp2m")
+scale = Vector2(1.32478, 1.32478)
+texture = ExtResource("2_qs38o")
 
 [node name="Image" type="Sprite2D" parent="."]
 position = Vector2(880, 325)
@@ -38,9 +38,10 @@ autoplay = true
 
 [node name="Button" type="Button" parent="."]
 offset_left = 1022.0
-offset_top = 562.0
-offset_right = 1158.0
-offset_bottom = 698.0
+offset_top = 575.0
+offset_right = 1232.0
+offset_bottom = 783.0
+scale = Vector2(0.6, 0.6)
 icon = ExtResource("5_qs38o")
 
 [connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

@@ -1,21 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://sxjl1trhv6ss"]
+[gd_scene load_steps=6 format=3 uid="uid://sxjl1trhv6ss"]
 
-[ext_resource type="Texture2D" uid="uid://cvjfkhp878psc" path="res://Assets/13844017-vecchio-libro-aperto-isolato-su-bianca-sfondo-foto.jpg" id="1_mic4u"]
 [ext_resource type="Script" uid="uid://qu3bqe2t0wuv" path="res://Levels/Ending/dead.gd" id="1_vks13"]
-[ext_resource type="Texture2D" uid="uid://ctcuui0077leb" path="res://Assets/captain-curly-mouthwashing.png" id="2_mic4u"]
-[ext_resource type="Texture2D" uid="uid://gmuroxlv2inw" path="res://Assets/icon.svg" id="4_v8g8f"]
+[ext_resource type="Texture2D" uid="uid://bftu7ihywk67q" path="res://Assets/Image/sfondo.png" id="2_020v1"]
+[ext_resource type="Texture2D" uid="uid://dclgnbbiq40xq" path="res://Assets/Image/0 HP LEFT.png" id="3_v8g8f"]
+[ext_resource type="AudioStream" uid="uid://b3j15kfcpvbxx" path="res://Assets/Narration/NarrationNoHp.mp3" id="4_020v1"]
+[ext_resource type="Texture2D" uid="uid://fe07nl7i763x" path="res://Assets/Image/NEXT.png" id="5_020v1"]
 
 [node name="Dead" type="Node2D"]
 script = ExtResource("1_vks13")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(600, 356)
-scale = Vector2(0.474745, 0.474745)
-texture = ExtResource("1_mic4u")
+scale = Vector2(1.23474, 1.23474)
+texture = ExtResource("2_020v1")
 
 [node name="Image" type="Sprite2D" parent="."]
 position = Vector2(894, 336)
-texture = ExtResource("2_mic4u")
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("3_v8g8f")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 133.0
@@ -23,17 +25,25 @@ offset_top = 7.0
 offset_right = 620.0
 offset_bottom = 706.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "YOU DEAD ahahaha lol noob"
+text = "Alice’s steps grew heavy, her breath ragged. The trees seemed to lean closer, whispering in voices she could no longer understand. Her vision swam, colors blurring together in a dizzy whirl of red and black.
+At last, she sank to her knees, the world spinning around her. The ground felt soft, almost like velvet, and she let her eyes close, too tired to fight, too tired to flee.
+Darkness wrapped around her gently, like a curtain falling at the end of a play.
+But this cannot be the end. Not yet. Somewhere, the looking-glass still waits, gleaming in the distance. Somewhere, the path home lies hidden.
+You must rise again. You must make it out of Wonderland.
+"
+autowrap_mode = 3
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_020v1")
 autoplay = true
 
 [node name="Button" type="Button" parent="."]
-offset_left = 1063.0
-offset_top = 568.0
-offset_right = 1199.0
-offset_bottom = 704.0
-icon = ExtResource("4_v8g8f")
+offset_left = 997.0
+offset_top = 553.0
+offset_right = 1207.0
+offset_bottom = 761.0
+scale = Vector2(0.719998, 0.719998)
+icon = ExtResource("5_020v1")
 
 [connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
