@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://cc7jt84xtj6r3"]
 
-[ext_resource type="Texture2D" uid="uid://7nc07hbq5l42" path="res://Assets/CardsImg/IMG_8220.png" id="1_0lnh7"]
+[ext_resource type="Texture2D" uid="uid://nmvg8fm5na7t" path="res://Assets/CardsImg/macaroon.png" id="1_0lnh7"]
 [ext_resource type="Script" uid="uid://bu8tp3x63dsa1" path="res://Cards/cardResource.gd" id="2_rs1w1"]
 
 [resource]
@@ -8,27 +8,27 @@ script = ExtResource("2_rs1w1")
 name = "Macaroon"
 description = "Biscotto DA FINIRE"
 img = ExtResource("1_0lnh7")
-img_size = Vector2(0.03, 0.03)
-sanity_cost = 9
-has_attack = true
+img_size = Vector2(0.26, 0.26)
+sanity_cost = 4
+has_attack = false
 attack_damage_value = 0.0
 attack_target_type = 0.0
-has_shield = false
-shield_value = 0
+has_shield = true
+shield_value = 10
 has_heal = false
-heal_value = 4.0
+heal_value = 0.0
 has_self_buff = false
 has_damage_buff = false
 damage_buff_value = 0.0
 has_defense_buff = false
 defense_buff_value = 0.0
 has_enemy_debuff = false
-has_enemy_attack_debuff = true
-enemy_attack_debuff_value = 0.75
+has_enemy_attack_debuff = false
+enemy_attack_debuff_value = 0.0
 has_enemy_defense_debuff = false
-enemy_defense_debuff_value = 2.0
+enemy_defense_debuff_value = 0.0
 has_enemy_damage_poison = false
-enemy_damage_poison_value = 2.0
+enemy_damage_poison_value = 0.0
 has_self_debuff = false
 has_self_damage_debuff = false
 damage_self_debuff_value = 0.0

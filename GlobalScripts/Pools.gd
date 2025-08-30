@@ -29,11 +29,12 @@ var BossEnemyPool: Array[EnemyResource] = [
 
 
 var RewardPool: Array[CardResource] = [
-	load("res://Cards/Resources/buff3.tres") as CardResource,
-	load("res://Cards/Resources/shield.tres") as CardResource,
-	load("res://Cards/Resources/attack+heal.tres") as CardResource,
-	load("res://Cards/Resources/heal.tres") as CardResource,
-	load("res://Cards/Resources/attack.tres") as CardResource,
+	load("res://Cards/Resources/Alfajor.tres") as CardResource,
+	load("res://Cards/Resources/Bourbon.tres") as CardResource,
+	load("res://Cards/Resources/ButterCoockie.tres") as CardResource,
+	load("res://Cards/Resources/Shortbread.tres") as CardResource,
+	load("res://Cards/Resources/Crinkie.tres") as CardResource,
+	load("res://Cards/Resources/Pizelle.tres") as CardResource,
 ]
 
 

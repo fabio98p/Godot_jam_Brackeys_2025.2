@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://drsry7c8tte8y"]
 
-[ext_resource type="Texture2D" uid="uid://7nc07hbq5l42" path="res://Assets/CardsImg/IMG_8220.png" id="1_gei0d"]
+[ext_resource type="Texture2D" uid="uid://ce2qg2skt76sp" path="res://Assets/CardsImg/gignerbread.png" id="1_gei0d"]
 [ext_resource type="Script" uid="uid://bu8tp3x63dsa1" path="res://Cards/cardResource.gd" id="2_gpsdq"]
 
 [resource]
@@ -8,7 +8,7 @@ script = ExtResource("2_gpsdq")
 name = "Gingerbread"
 description = "Biscotto DA FINIRE"
 img = ExtResource("1_gei0d")
-img_size = Vector2(0.03, 0.03)
+img_size = Vector2(0.26, 0.26)
 sanity_cost = 4
 has_attack = true
 attack_damage_value = 0.0

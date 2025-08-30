@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://bn85c601t5dyv"]
 
-[ext_resource type="Texture2D" uid="uid://7nc07hbq5l42" path="res://Assets/CardsImg/IMG_8220.png" id="1_i4b37"]
+[ext_resource type="Texture2D" uid="uid://b1l5g7obp28lw" path="res://Assets/CardsImg/amaretti.png" id="1_i4b37"]
 [ext_resource type="Script" uid="uid://bu8tp3x63dsa1" path="res://Cards/cardResource.gd" id="2_rapia"]
 
 [resource]
@@ -8,7 +8,7 @@ script = ExtResource("2_rapia")
 name = "Amaretti"
 description = "Biscotto"
 img = ExtResource("1_i4b37")
-img_size = Vector2(0.03, 0.03)
+img_size = Vector2(0.26, 0.26)
 sanity_cost = 6
 has_attack = true
 attack_damage_value = 5.0

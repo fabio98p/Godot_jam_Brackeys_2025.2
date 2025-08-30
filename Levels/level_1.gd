@@ -43,7 +43,9 @@ func _ready() -> void:
 	# Setup Rewards
 	chose_card.visible = false
 	reward_1.icon = level_resource.reward1.img
+	#reward_1.scale = level_resource.reward1.img_size
 	reward_2.icon = level_resource.reward2.img
+	#reward_1.scale = level_resource.reward1.img_size
 	
 func applay_card_effect(cadsEffect):
 	print(cadsEffect)

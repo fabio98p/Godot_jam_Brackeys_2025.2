@@ -29,24 +29,23 @@ func _ready() -> void:
 	buff_attack.text = "buffattack: " + str(cardDataHandler.damage_buff_value)
 	buff_defense.text = "buffdefense: " + str(cardDataHandler.defense_buff_value)
 	
-	# Card Type
-	print("sososoosos")
-	if cardDataHandler.has_attack:
-		var textureReactIstance: TextureRect = TextureRect.new()
-		textureReactIstance.texture = preload("res://Assets/CardsImg/IMG_8221.png")
-		card_type.add_child(textureReactIstance)
-	if cardDataHandler.has_shield:
-		var textureReactIstance: TextureRect = TextureRect.new()
-		textureReactIstance.texture = preload("res://Assets/CardsImg/IMG_8222.png")
-		card_type.add_child(textureReactIstance)
-	if cardDataHandler.has_self_buff:
-		var textureReactIstance: TextureRect = TextureRect.new()
-		textureReactIstance.texture = preload("res://Assets/CardsImg/IMG_8222.png")
-		card_type.add_child(textureReactIstance)
-	if cardDataHandler.has_enemy_debuff:
-		var textureReactIstance: TextureRect = TextureRect.new()
-		textureReactIstance.texture = preload("res://Assets/CardsImg/IMG_8224.png")
-		card_type.add_child(textureReactIstance)
+	## Card Type
+	#if cardDataHandler.has_attack:
+		#var textureReactIstance: TextureRect = TextureRect.new()
+		#textureReactIstance.texture = preload("res://Assets/CardsImg/IMG_8221.png")
+		#card_type.add_child(textureReactIstance)
+	#if cardDataHandler.has_shield:
+		#var textureReactIstance: TextureRect = TextureRect.new()
+		#textureReactIstance.texture = preload("res://Assets/CardsImg/IMG_8222.png")
+		#card_type.add_child(textureReactIstance)
+	#if cardDataHandler.has_self_buff:
+		#var textureReactIstance: TextureRect = TextureRect.new()
+		#textureReactIstance.texture = preload("res://Assets/CardsImg/IMG_8222.png")
+		#card_type.add_child(textureReactIstance)
+	#if cardDataHandler.has_enemy_debuff:
+		#var textureReactIstance: TextureRect = TextureRect.new()
+		#textureReactIstance.texture = preload("res://Assets/CardsImg/IMG_8224.png")
+		#card_type.add_child(textureReactIstance)
 
 func _on_area_2d_mouse_entered() -> void:
 	emit_signal("hovered", self)

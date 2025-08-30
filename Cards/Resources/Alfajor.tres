@@ -1,20 +1,21 @@
 [gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://cg03jg13dle5l"]
 
-[ext_resource type="Texture2D" uid="uid://7nc07hbq5l42" path="res://Assets/CardsImg/IMG_8220.png" id="1_s72vu"]
+[ext_resource type="Texture2D" uid="uid://do0iy20jwghcs" path="res://Assets/CardsImg/alfajor.png" id="1_s72vu"]
 [ext_resource type="Script" uid="uid://bu8tp3x63dsa1" path="res://Cards/cardResource.gd" id="2_b7wlr"]
 
 [resource]
 script = ExtResource("2_b7wlr")
 name = "Alfajor"
-description = "Biscotto"
+description = "Alfajior
+"
 img = ExtResource("1_s72vu")
-img_size = Vector2(0.03, 0.03)
+img_size = Vector2(0.26, 0.26)
 sanity_cost = 7
 has_attack = false
 attack_damage_value = 4.0
 attack_target_type = 0.0
-has_shield = false
-shield_value = 0
+has_shield = true
+shield_value = 7
 has_heal = true
 heal_value = 1.0
 has_self_buff = false
@@ -25,8 +26,8 @@ defense_buff_value = 0.0
 has_enemy_debuff = false
 has_enemy_attack_debuff = false
 enemy_attack_debuff_value = 0.0
-has_enemy_defense_debuff = true
-enemy_defense_debuff_value = 2.0
+has_enemy_defense_debuff = false
+enemy_defense_debuff_value = 0.0
 has_enemy_damage_poison = false
 enemy_damage_poison_value = 0.0
 has_self_debuff = false

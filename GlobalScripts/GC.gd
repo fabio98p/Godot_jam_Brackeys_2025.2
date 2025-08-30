@@ -4,13 +4,16 @@ var runDeck: Array[CardResource]
 var numberOfFight = 0
 
 var initialDeck: Array[CardResource] = [
-load("res://Cards/Resources/attack.tres") as CardResource,
-load("res://Cards/Resources/shield.tres") as CardResource,
-load("res://Cards/Resources/shield.tres") as CardResource,
-load("res://Cards/Resources/attack+heal.tres") as CardResource,
-load("res://Cards/Resources/heal.tres") as CardResource,
-load("res://Cards/Resources/attack2.tres") as CardResource,
-load("res://Cards/Resources/attack2.tres") as CardResource,
+#load("res://Cards/Resources/attack.tres") as CardResource,
+load("res://Cards/Resources/Hardtack.tres") as CardResource,
+load("res://Cards/Resources/Hardtack.tres") as CardResource,
+load("res://Cards/Resources/Hardtack.tres") as CardResource,
+load("res://Cards/Resources/Hardtack.tres") as CardResource,
+load("res://Cards/Resources/Hardtack.tres") as CardResource,
+load("res://Cards/Resources/JammyDodger.tres") as CardResource,
+load("res://Cards/Resources/JammyDodger.tres") as CardResource,
+load("res://Cards/Resources/Pfeffernusse.tres") as CardResource,
+load("res://Cards/Resources/Digestive.tres") as CardResource,
 ]
 
 func _init() -> void:

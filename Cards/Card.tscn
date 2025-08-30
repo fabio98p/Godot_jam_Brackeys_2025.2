@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://djnmn7lgn6yma"]
+[gd_scene load_steps=6 format=3 uid="uid://djnmn7lgn6yma"]
 
 [ext_resource type="Script" uid="uid://bl8x24ykjqsy5" path="res://Cards/card.gd" id="1_oclfm"]
 [ext_resource type="Script" uid="uid://bu8tp3x63dsa1" path="res://Cards/cardResource.gd" id="2_fynp6"]
 [ext_resource type="Texture2D" uid="uid://7nc07hbq5l42" path="res://Assets/CardsImg/IMG_8220.png" id="2_wqwah"]
-[ext_resource type="Texture2D" uid="uid://bqncmyem6b104" path="res://Assets/CardsImg/IMG_8221.png" id="4_wqwah"]
 
 [sub_resource type="Resource" id="Resource_wqwah"]
 script = ExtResource("2_fynp6")
@@ -46,7 +45,7 @@ script = ExtResource("1_oclfm")
 cardResource = SubResource("Resource_wqwah")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.92, 1.44)
+scale = Vector2(0.03, 0.03)
 texture = ExtResource("2_wqwah")
 
 [node name="CardType" type="HBoxContainer" parent="."]
@@ -57,10 +56,6 @@ offset_bottom = 967.0
 scale = Vector2(0.03, 0.03)
 alignment = 2
 
-[node name="TextureRect" type="TextureRect" parent="CardType"]
-layout_mode = 2
-texture = ExtResource("4_wqwah")
-
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -68,6 +63,7 @@ scale = Vector2(5.8, 8.92)
 shape = SubResource("RectangleShape2D_ie34q")
 
 [node name="Name" type="Label" parent="."]
+visible = false
 offset_left = -57.0
 offset_top = -88.0
 offset_right = -17.0
@@ -76,6 +72,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "bla"
 
 [node name="Desc" type="Label" parent="."]
+visible = false
 offset_left = -56.0
 offset_top = -66.0
 offset_right = -16.0
@@ -84,6 +81,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "bla"
 
 [node name="Attack" type="Label" parent="."]
+visible = false
 offset_left = -56.0
 offset_top = -16.0
 offset_right = -16.0
@@ -92,6 +90,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "bla"
 
 [node name="Heal" type="Label" parent="."]
+visible = false
 offset_left = -57.0
 offset_top = 4.0
 offset_right = -17.0
@@ -100,6 +99,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "bla"
 
 [node name="BuffAttack" type="Label" parent="."]
+visible = false
 offset_left = -58.0
 offset_top = 23.0
 offset_right = -18.0
@@ -108,6 +108,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "bla"
 
 [node name="BuffDefense" type="Label" parent="."]
+visible = false
 offset_left = -58.0
 offset_top = 41.0
 offset_right = -18.0

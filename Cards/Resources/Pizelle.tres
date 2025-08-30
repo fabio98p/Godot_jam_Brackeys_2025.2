@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://ctmox8tj8em8i"]
 
-[ext_resource type="Texture2D" uid="uid://7nc07hbq5l42" path="res://Assets/CardsImg/IMG_8220.png" id="1_nu42c"]
+[ext_resource type="Texture2D" uid="uid://h3tgjhv0fv4k" path="res://Assets/CardsImg/pizzelle.png" id="1_nu42c"]
 [ext_resource type="Script" uid="uid://bu8tp3x63dsa1" path="res://Cards/cardResource.gd" id="2_6wr58"]
 
 [resource]
@@ -8,7 +8,7 @@ script = ExtResource("2_6wr58")
 name = "Pizelle"
 description = "Biscotto "
 img = ExtResource("1_nu42c")
-img_size = Vector2(0.03, 0.03)
+img_size = Vector2(0.26, 0.26)
 sanity_cost = 12
 has_attack = false
 attack_damage_value = 0.0

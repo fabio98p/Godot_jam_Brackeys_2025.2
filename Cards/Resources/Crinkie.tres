@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://ftaheov8wqv1"]
 
-[ext_resource type="Texture2D" uid="uid://7nc07hbq5l42" path="res://Assets/CardsImg/IMG_8220.png" id="1_21g8j"]
+[ext_resource type="Texture2D" uid="uid://bcsh317e0iouv" path="res://Assets/CardsImg/crinkle.png" id="1_21g8j"]
 [ext_resource type="Script" uid="uid://bu8tp3x63dsa1" path="res://Cards/cardResource.gd" id="2_bdfmc"]
 
 [resource]
@@ -8,27 +8,27 @@ script = ExtResource("2_bdfmc")
 name = "Crinkie"
 description = "Biscotto "
 img = ExtResource("1_21g8j")
-img_size = Vector2(0.03, 0.03)
+img_size = Vector2(0.26, 0.26)
 sanity_cost = 2
 has_attack = true
 attack_damage_value = 2.0
 attack_target_type = 0.0
-has_shield = false
-shield_value = 0
+has_shield = true
+shield_value = 2
 has_heal = false
-heal_value = 4.0
+heal_value = 0.0
 has_self_buff = false
 has_damage_buff = false
 damage_buff_value = 0.0
 has_defense_buff = false
 defense_buff_value = 0.0
 has_enemy_debuff = false
-has_enemy_attack_debuff = true
-enemy_attack_debuff_value = 0.75
+has_enemy_attack_debuff = false
+enemy_attack_debuff_value = 0.0
 has_enemy_defense_debuff = false
-enemy_defense_debuff_value = 2.0
+enemy_defense_debuff_value = 0.0
 has_enemy_damage_poison = false
-enemy_damage_poison_value = 2.0
+enemy_damage_poison_value = 0.0
 has_self_debuff = false
 has_self_damage_debuff = false
 damage_self_debuff_value = 0.0

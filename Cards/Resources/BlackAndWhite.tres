@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://dedrf5oxxr3u8"]
 
-[ext_resource type="Texture2D" uid="uid://7nc07hbq5l42" path="res://Assets/CardsImg/IMG_8220.png" id="1_5qqsc"]
+[ext_resource type="Texture2D" uid="uid://ck47e4kbembd7" path="res://Assets/CardsImg/black and white.png" id="1_5qqsc"]
 [ext_resource type="Script" uid="uid://bu8tp3x63dsa1" path="res://Cards/cardResource.gd" id="2_c4jp7"]
 
 [resource]
@@ -8,7 +8,7 @@ script = ExtResource("2_c4jp7")
 name = "BlackAndWhite"
 description = "Biscotto "
 img = ExtResource("1_5qqsc")
-img_size = Vector2(0.03, 0.03)
+img_size = Vector2(0.26, 0.26)
 sanity_cost = 5
 has_attack = true
 attack_damage_value = 5.0
