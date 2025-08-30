@@ -31,7 +31,7 @@ var new_attack: EnemyAttack
 
 var enemyDataHandler: EnemyDataHandler
 func _ready() -> void:
-	health_bars.max_health = enemyResource.max_healt
+	#health_bars.max_health = enemyResource.max_healt
 	var enemy_data: EnemyResource = enemyResource.duplicate()
 	enemyDataHandler = EnemyDataHandler.new(enemy_data)
 	
@@ -62,22 +62,20 @@ func _ready() -> void:
 		#health.text = "max_healt: " +  "dead health"
 
 func enemy_dmg_taken(value: int) -> void:
-	print("enemy current", enemyDataHandler.current_healt)
 
 	var damage_after_shield = value
 	
 	if shield >= value:
 		shield -= value
 		damage_after_shield = 0
-		health_bars.set_Shield_Value = shield
+		
 	else:
 		damage_after_shield = value - shield
 		shield = 0
-		health_bars.set_Shield_Value = shield
+		
 	shieldLabel.text = "Shield: " + str(shield)
 	enemyDataHandler.current_healt -= damage_after_shield
-	health_bars.minus_progress_bars(enemyDataHandler.current_healt)
-	
+	current_health = enemyDataHandler.current_healt
 	if enemyDataHandler.current_healt > 0:
 		health.text = "max_healt: " + str(enemyDataHandler.current_healt)
 	else:

@@ -1,0 +1,126 @@
+[gd_scene load_steps=9 format=3 uid="uid://b4peykb6dte6l"]
+
+[ext_resource type="Script" uid="uid://1vkl465ttyxo" path="res://HUD/bars.gd" id="1_yiwb4"]
+[ext_resource type="Texture2D" uid="uid://dn3jee7bp7t40" path="res://Assets/Image/HUD FINAL.png" id="2_yiwb4"]
+
+[sub_resource type="Gradient" id="Gradient_yiwb4"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mlmcx"]
+gradient = SubResource("Gradient_yiwb4")
+width = 243
+height = 45
+fill_to = Vector2(0.0145631, 0.0145631)
+
+[sub_resource type="Gradient" id="Gradient_lqolt"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nyamc"]
+gradient = SubResource("Gradient_lqolt")
+width = 243
+height = 45
+fill_to = Vector2(0.0145631, 0)
+
+[sub_resource type="Gradient" id="Gradient_8iwd0"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5inxx"]
+gradient = SubResource("Gradient_8iwd0")
+width = 245
+height = 24
+fill_to = Vector2(0.0145631, 0)
+
+[node name="Bars" type="Node2D"]
+position = Vector2(620, 52)
+script = ExtResource("1_yiwb4")
+
+[node name="Bars" type="Node" parent="."]
+
+[node name="PlayerHealth" type="TextureProgressBar" parent="Bars"]
+offset_left = 208.0
+offset_top = 1.0
+offset_right = 451.0
+offset_bottom = 65.0
+value = 100.0
+fill_mode = 1
+texture_under = SubResource("GradientTexture2D_mlmcx")
+texture_progress = SubResource("GradientTexture2D_nyamc")
+tint_under = Color(0.164706, 1, 1, 1)
+tint_progress = Color(1, 0.231373, 1, 1)
+
+[node name="PlayerShield" type="TextureProgressBar" parent="Bars"]
+offset_left = 209.0
+offset_top = 57.0
+offset_right = 454.0
+offset_bottom = 121.0
+value = 100.0
+fill_mode = 1
+texture_under = SubResource("GradientTexture2D_5inxx")
+texture_progress = SubResource("GradientTexture2D_5inxx")
+tint_under = Color(0.164706, 1, 1, 1)
+tint_progress = Color(1, 0.231373, 1, 1)
+
+[node name="EnemyHealth" type="TextureProgressBar" parent="Bars"]
+offset_left = 790.0
+offset_top = 1.0
+offset_right = 1033.0
+offset_bottom = 65.0
+value = 100.0
+texture_under = SubResource("GradientTexture2D_mlmcx")
+texture_progress = SubResource("GradientTexture2D_nyamc")
+tint_under = Color(0.164706, 1, 1, 1)
+tint_progress = Color(1, 0.231373, 1, 1)
+
+[node name="EnemyShield" type="TextureProgressBar" parent="Bars"]
+offset_left = 783.0
+offset_top = 57.0
+offset_right = 1028.0
+offset_bottom = 121.0
+value = 100.0
+texture_under = SubResource("GradientTexture2D_5inxx")
+texture_progress = SubResource("GradientTexture2D_5inxx")
+tint_under = Color(0.164706, 1, 1, 1)
+tint_progress = Color(1, 0.231373, 1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Bars"]
+position = Vector2(620, 52)
+texture = ExtResource("2_yiwb4")
+
+[node name="Labels" type="Node" parent="."]
+
+[node name="PlayerHealthValue" type="Label" parent="Labels"]
+offset_left = 467.0
+offset_top = 1.0
+offset_right = 507.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 32
+text = "15"
+
+[node name="PlayerShieldValue" type="Label" parent="Labels"]
+offset_left = 484.0
+offset_top = 51.0
+offset_right = 524.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 24
+text = "15"
+
+[node name="EnemyHealthValue" type="Label" parent="Labels"]
+offset_left = 732.0
+offset_top = 1.0
+offset_right = 772.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 32
+text = "15"
+
+[node name="EnemyShieldValue" type="Label" parent="Labels"]
+offset_left = 725.0
+offset_top = 51.0
+offset_right = 765.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 24
+text = "15"
+
+[node name="SanityValue" type="Label" parent="Labels"]
+offset_left = 606.0
+offset_top = 59.0
+offset_right = 646.0
+offset_bottom = 104.0
+theme_override_font_sizes/font_size = 24
+text = "15"

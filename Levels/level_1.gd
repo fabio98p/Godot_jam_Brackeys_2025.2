@@ -2,6 +2,7 @@ extends Node2D
 @onready var player: Node2D = $Player
 var enemy: Node2D
 @onready var background: Sprite2D = $background
+@onready var bars: Node2D = $Bars
 
 # Chose Reward
 @onready var chose_card: Node2D = $ChoseCard
@@ -17,7 +18,7 @@ var enemy: Node2D
 @export var level_resource: LevelResource
 
 func _ready() -> void:
-	player.dead.connect(transition_dead)
+
 #	resetta il deck quando si inizia un nuovo livello
 	#GC.resetDeck()
 #	gestione dello sfondo skjdbgviksdbvskjdbgviksdbvskjdbgviksdbv
@@ -30,6 +31,14 @@ func _ready() -> void:
 	enemyInstance.enemyResource = enemyResource
 	enemy = enemyInstance
 	add_child(enemyInstance)
+#	SETUP HUD BARS
+	#	player_max_h: float, player_max_s: float, enemy_max_h: float, enemy_max_s: float
+	bars.init_stats(player.current_health, 10, enemy.enemyDataHandler.max_healt, 10)
+	bars.set_player_health(player.current_health)
+	bars.set_enemy_health(enemy.enemyDataHandler.max_healt)
+	player.dead.connect(transition_dead)
+	
+	
 	# Setup Rewards
 	chose_card.visible = false
 	reward_1.icon = level_resource.reward1.img
@@ -47,8 +56,10 @@ func applay_card_effect(cadsEffect):
 				var finalMoltiplicator = clamp(1 + (player.attack_multiply*0.25) - (enemy.defense_multiply*0.25),0,3)
 				var final_value= value * finalMoltiplicator
 				enemy.enemy_dmg_taken(final_value)
+				bars.set_enemy_health(enemy.current_health)
 			"heal_self":
 				player.heal_self(value)
+				bars.set_player_health(player.current_health)
 			"apply_self_damage_buff":
 				player.attack_multiply += value
 			"apply_self_defense_buff":
@@ -65,7 +76,7 @@ func applay_card_effect(cadsEffect):
 				player.defense_multiply += value
 			"shield_self":
 				player.shield += value
-				player.health_bars.set_Shield_Value = player.shield
+				bars.set_player_shield(player.shield, "aggiunta")
 
 func _on_skip_round_pressed() -> void:
 	#apply enemy attack
@@ -73,7 +84,7 @@ func _on_skip_round_pressed() -> void:
 	# Shield
 	if enemyAttack.has_shield: 
 		enemy.shield += enemyAttack.shield_value
-		enemy.health_bars.set_Shield_Value = enemy.shield
+		
 		
 	# Heal
 	if enemyAttack.has_heal: 
@@ -98,7 +109,8 @@ func _on_skip_round_pressed() -> void:
 		var finalMoltiplicator = clamp(1 + (enemy.attack_multiply*0.25) - (player.defense_multiply*0.25),0,3)
 		var enemy_attack_damage = enemyAttack.attack_damage * finalMoltiplicator
 		player.dmg_taken(enemy_attack_damage)
-	
+		bars.set_player_health(player.current_health)
+		bars.set_player_shield(player.shield, "danno")
 func _on_enemy_enemy_dead() -> void:
 	if GC.numberOfFight == 10:
 		await get_tree().create_timer(1).timeout

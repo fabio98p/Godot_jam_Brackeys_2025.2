@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dlyutofh3wgrc"]
+[gd_scene load_steps=13 format=3 uid="uid://dlyutofh3wgrc"]
 
 [ext_resource type="PackedScene" uid="uid://bu424fog720wr" path="res://Cards/card_manager.tscn" id="1_3mhv4"]
 [ext_resource type="Script" uid="uid://ccsxyx46s6evw" path="res://Levels/level_1.gd" id="1_rf6l5"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ljnqon2uev35" path="res://Assets/BG Colorato.jpg" id="3_77x7w"]
 [ext_resource type="Texture2D" uid="uid://gmuroxlv2inw" path="res://Assets/icon.svg" id="8_77x7w"]
 [ext_resource type="Texture2D" uid="uid://yr7h47bahev4" path="res://Assets/white.png" id="9_f4pg2"]
+[ext_resource type="PackedScene" uid="uid://b4peykb6dte6l" path="res://HUD/barsHUD.tscn" id="9_xoyoh"]
 [ext_resource type="Texture2D" uid="uid://c6n6tllbmb3uo" path="res://Assets/IMG_8215.jpg" id="10_62b6n"]
 
 [sub_resource type="Animation" id="Animation_xoyoh"]
@@ -204,9 +205,7 @@ libraries = {
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
-[node name="HUD" type="Node" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="HUD"]
+[node name="Bars" parent="." instance=ExtResource("9_xoyoh")]
 
 [connection signal="pressed" from="SkipRound" to="." method="_on_skip_round_pressed"]
 [connection signal="pressed" from="ChoseCard/Reward1" to="." method="_on_reward_1_pressed"]
