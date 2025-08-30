@@ -90,7 +90,7 @@ func _on_skip_round_pressed() -> void:
 		bars.set_enemy_shield(enemy.shield)
 		
 	# Heal
-	if enemyAttack.has_heal: 
+	if enemyAttack.has_heal:
 		enemy.heal += enemyAttack.heal_value
 		
 	# Self Buff
@@ -114,7 +114,7 @@ func _on_skip_round_pressed() -> void:
 		player.dmg_taken(enemy_attack_damage)
 		print("shiels",player.shield)
 		bars.set_player_health(player.current_health)
-		bars.set_player_shield(player.shiel)
+		bars.set_player_shield(player.shield)
 func _on_enemy_enemy_dead() -> void:
 	if GC.numberOfFight == 10:
 		await get_tree().create_timer(1).timeout

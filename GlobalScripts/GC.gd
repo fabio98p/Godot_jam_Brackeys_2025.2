@@ -58,7 +58,6 @@ func pickenemy():
 			var index = randi_range(0, Pools.poolBaseEnemy.size() - 1)
 			var enemy = Pools.poolBaseEnemy[index]
 			Pools.poolBaseEnemy.remove_at(index)
-			
 			return enemy
 	if numberOfFight == 4:
 		print("resitng 4")
