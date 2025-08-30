@@ -6,8 +6,21 @@ var max_health: float:
 		texture_progress_bar.max_value = value
 		texture_progress_bar.value = value
 
+var set_Shield_Value: float:
+	set(value):
+		print(value)
+		if value <= 0:
+			icon_shield.visible = false
+		else:	
+			icon_shield.visible = true
+			shieldValue.text = str(value)
+
+@onready var icon_shield: Sprite2D = $Sprite2D
+@onready var shieldValue: Label = $Sprite2D/Label
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	icon_shield.visible = false
 	texture_progress_bar.max_value = max_health
 	texture_progress_bar.value =  max_health
 

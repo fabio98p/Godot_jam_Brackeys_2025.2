@@ -66,6 +66,7 @@ func applay_card_effect(cadsEffect):
 				player.defense_multiply += value
 			"shield_self":
 				player.shield += value
+				player.health_bars.set_Shield_Value = player.shield
 
 func _on_skip_round_pressed() -> void:
 	#apply enemy attack

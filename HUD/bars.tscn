@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://sdbmp6ijqpfo"]
+[gd_scene load_steps=5 format=3 uid="uid://sdbmp6ijqpfo"]
 
 [ext_resource type="Script" uid="uid://1vkl465ttyxo" path="res://HUD/bars.gd" id="1_5inxx"]
+[ext_resource type="Texture2D" uid="uid://gmuroxlv2inw" path="res://Assets/icon.svg" id="2_2nes5"]
 
 [sub_resource type="Gradient" id="Gradient_8iwd0"]
 
@@ -29,3 +30,18 @@ texture_under = SubResource("GradientTexture2D_5inxx")
 texture_progress = SubResource("GradientTexture2D_5inxx")
 tint_under = Color(0.164706, 1, 1, 1)
 tint_progress = Color(1, 0.231373, 1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 32)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_2nes5")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -25.0
+offset_top = -122.5
+offset_right = 21.0
+offset_bottom = -67.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "10"
