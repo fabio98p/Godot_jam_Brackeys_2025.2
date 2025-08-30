@@ -9,7 +9,7 @@ var card_being_dragged
 var is_hovering_on_card
 
 var card_scenes = {
-	"story": "res://Levels/level_1.tscn",
+	"story": "res://Levels/StoryMode/StoryMode.tscn",
 	"start": "res://Levels/level_1.tscn",
 	"option": "res://Levels/level_1.tscn",
 	"exit": "res://Levels/level_1.tscn"
@@ -75,7 +75,10 @@ func finish_drag():
 		drop_zone.card_in_drop_zone = true
 		Utils.play_sfx("res://Assets/SFX/SFX/BitesFinal.mp3", "SFX")
 		if card_scenes.has(card_being_dragged.name):
-			GC.willingAudio(preload("res://Assets/Music/Music/GamePlayBGMLoop.mp3"))
+			if card_being_dragged.name == "story":
+				GC.willingAudio(preload("res://Assets/Music/Music/GamePlayBGMLoop.mp3"),0.1)
+			else:
+				GC.willingAudio(preload("res://Assets/Music/Music/GamePlayBGMLoop.mp3"))
 			await_change_scene(card_being_dragged.name)
 	else:
 		Utils.play_sfx(Pools.PutCoocky[randi_range(0,Pools.PutCoocky.size()-1)], "SFX")
