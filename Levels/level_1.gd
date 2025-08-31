@@ -22,6 +22,12 @@ var running_turn: bool = false
 
 @export var level_resource: LevelResource
 
+# Icons for show buff
+@onready var player_buff: TextureRect = $effects/PlayerBuffGrid/PlayerBuff
+@onready var player_debuff: TextureRect = $effects/PlayerBuffGrid/PlayerDebuff
+@onready var enemy_buff: TextureRect = $effects/EnemyBuffGrid/EnemyBuff
+@onready var enemy_debuff: TextureRect = $effects/EnemyBuffGrid/EnemyDebuff
+
 func _ready() -> void:
 	GC.new_turn = true
 	GC.new_turn_click = true
@@ -55,8 +61,77 @@ func _ready() -> void:
 	level_resource.reward2 = Pools.RewardPool[randi_range(0, Pools.RewardPool.size()-1)].duplicate()
 	reward_2.icon = level_resource.reward2.img
 	#reward_1.scale = level_resource.reward1.img_size
-	
-	
+
+func _process(delta: float) -> void:
+	#print(player.attack_multiply, player.defense_multiply)
+	if player.attack_multiply != 0 or player.defense_multiply != 0:
+		#BUFF
+		if player.attack_multiply > 0 or player.defense_multiply > 0:
+			player_buff.visible = true
+			#attack
+			if player.attack_multiply > 0:
+				player_buff.attackValue = "Attack Buff: " + str(player.attack_multiply)
+			else:
+				player_buff.attackValue = ""
+			#defense
+			if player.defense_multiply > 0:
+				player_buff.defenseValue = "Defense Buff: " + str(player.defense_multiply)
+			else:
+				player_buff.defenseValue = ""
+		else:
+			player_buff.visible = false
+		#DEBUFF
+		if player.attack_multiply < 0 or player.defense_multiply < 0:
+			player_debuff.visible = true
+			#attack
+			if player.attack_multiply < 0:
+				player_debuff.attackValue = "Attack Debuff: " + str(player.attack_multiply)
+			else:
+				player_debuff.attackValue = ""
+			#defense
+			if player.defense_multiply < 0:
+				player_debuff.defenseValue = "Attack Debuff: " + str(player.defense_multiply)
+			else:
+				player_debuff.defenseValue = ""
+		else:
+			player_debuff.visible = false
+	else:
+		player_debuff.visible = false
+		player_buff.visible = false
+	if enemy.attack_multiply != 0 or enemy.defense_multiply != 0:
+		#BUFF
+		if enemy.attack_multiply > 0 or enemy.defense_multiply > 0:
+			enemy_buff.visible = true
+			#attack
+			if enemy.attack_multiply > 0:
+				enemy_buff.attackValue = "Attack Buff: " + str(enemy.attack_multiply)
+			else:
+				enemy_buff.attackValue = ""
+			#defense
+			if enemy.defense_multiply > 0:
+				enemy_buff.defenseValue = "Defense Buff: " + str(enemy.defense_multiply)
+			else:
+				enemy_buff.defenseValue = ""
+		else:
+			enemy_buff.visible = false
+		#DEBUFF
+		if enemy.attack_multiply < 0 or enemy.defense_multiply < 0:
+			enemy_debuff.visible = true
+			#attack
+			if enemy.attack_multiply < 0:
+				enemy_debuff.attackValue = "Attack Debuff: " + str(enemy.attack_multiply)
+			else:
+				enemy_debuff.attackValue = ""
+			#defense
+			if enemy.defense_multiply < 0:
+				enemy_debuff.defenseValue = "Attack Debuff: " + str(enemy.defense_multiply)
+			else:
+				enemy_debuff.defenseValue = ""
+		else:
+			enemy_debuff.visible = false
+	else:
+		enemy_debuff.visible = false
+		enemy_buff.visible = false
 func applay_card_effect(cadsEffect):
 	print(cadsEffect)
 	for key in cadsEffect.keys():
@@ -81,7 +156,10 @@ func applay_card_effect(cadsEffect):
 			"apply_self_damage_buff":
 				player.start_buff_animation()
 				await get_tree().create_timer(1.5).timeout
+				print("fkdhas",player.attack_multiply)
 				player.attack_multiply += value
+				print("fkdhas",player.attack_multiply)
+				
 			"apply_self_defense_buff":
 				player.start_buff_animation()
 				await get_tree().create_timer(1.5).timeout

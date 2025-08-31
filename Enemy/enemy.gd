@@ -21,11 +21,11 @@ var shield: int = 0:
 # every multiply is a x0.25 of damage for a max of *1.75 or 
 var attack_multiply: float = 0:
 	set(value):
-		attack_multiply = clamp(attack_multiply + value,-3,3)
+		attack_multiply = clamp(value,-3,3)
 		attack_multi.text =  "attack multy: " + str(attack_multiply)
 var defense_multiply: float = 0:
 	set(value):
-		defense_multiply = clamp(defense_multiply + value,-3,3)
+		defense_multiply = clamp(value,-3,3)
 		defense_multi.text = "defense multy: " + str(defense_multiply)
 var current_health: float
 

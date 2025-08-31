@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://btha5q845rj6j"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://c2lqx37ffjt1y"]
 
-[ext_resource type="Texture2D" uid="uid://dlypmm5vty78t" path="res://Assets/CardsImg/macaron.png" id="1_f2iih"]
-[ext_resource type="Script" uid="uid://bu8tp3x63dsa1" path="res://Cards/cardResource.gd" id="2_l3pmf"]
+[ext_resource type="Texture2D" uid="uid://dlypmm5vty78t" path="res://Assets/CardsImg/macaron.png" id="1_7jtbd"]
+[ext_resource type="Script" uid="uid://bu8tp3x63dsa1" path="res://Cards/cardResource.gd" id="2_clrkd"]
 
 [resource]
-script = ExtResource("2_l3pmf")
+script = ExtResource("2_clrkd")
 name = "attack"
 description = "solo attacco"
-img = ExtResource("1_f2iih")
+img = ExtResource("1_7jtbd")
 img_size = Vector2(0.26, 0.26)
 sanity_cost = 7
 has_attack = false
@@ -19,14 +19,14 @@ has_heal = false
 heal_value = 0.0
 has_self_buff = true
 has_damage_buff = true
-damage_buff_value = -3.0
+damage_buff_value = 3.0
 has_defense_buff = true
-defense_buff_value = -3.0
+defense_buff_value = 3.0
 has_enemy_debuff = true
 has_enemy_attack_debuff = true
-enemy_attack_debuff_value = -3.0
+enemy_attack_debuff_value = 3.0
 has_enemy_defense_debuff = true
-enemy_defense_debuff_value = -3.0
+enemy_defense_debuff_value = 3.0
 has_enemy_damage_poison = false
 enemy_damage_poison_value = 5.0
 has_self_debuff = false

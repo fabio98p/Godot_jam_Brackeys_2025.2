@@ -9,7 +9,10 @@ var new_turn_click: bool = false
 var cards_drawn_this_turn: int = 0
 
 var initialDeck: Array[CardResource] = [
-#load("res://Cards/Resources/attack.tres") as CardResource,
+#load("res://Cards/Resources/attack3.tres") as CardResource,
+#load("res://Cards/Resources/attack3.tres") as CardResource,
+#load("res://Cards/Resources/attack2.tres") as CardResource,
+#load("res://Cards/Resources/attack2.tres") as CardResource,
 load("res://Cards/Resources/Hardtack.tres") as CardResource,
 load("res://Cards/Resources/Hardtack.tres") as CardResource,
 load("res://Cards/Resources/Hardtack.tres") as CardResource,

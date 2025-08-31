@@ -28,12 +28,12 @@ var original_position: Vector2
 # moltiplicatori di attacco/difesa
 var attack_multiply: float = 0:
 	set(value):
-		attack_multiply = clamp(attack_multiply + value, -3, 3)
+		attack_multiply = clamp(value, -3, 3)
 		attack_multi.text = "attack multy: " + str(attack_multiply)
 
 var defense_multiply: float = 0:
 	set(value):
-		defense_multiply = clamp(defense_multiply + value, -3, 3)
+		defense_multiply = clamp(value, -3, 3)
 		defense_multi.text = "defense multy: " + str(defense_multiply)
 
 # texture

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dlyutofh3wgrc"]
+[gd_scene load_steps=20 format=3 uid="uid://dlyutofh3wgrc"]
 
 [ext_resource type="PackedScene" uid="uid://bu424fog720wr" path="res://Cards/card_manager.tscn" id="1_3mhv4"]
 [ext_resource type="Script" uid="uid://ccsxyx46s6evw" path="res://Levels/level_1.gd" id="1_rf6l5"]
@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://do0iy20jwghcs" path="res://Assets/CardsImg/alfajor.png" id="9_rs4xw"]
 [ext_resource type="PackedScene" uid="uid://30bkaphh1yvg" path="res://HUD/barsHUD.tscn" id="9_xoyoh"]
 [ext_resource type="Shader" uid="uid://2gmlt0rihwyd" path="res://Levels/level_1.gdshader" id="10_f4pg2"]
+[ext_resource type="Texture2D" uid="uid://gmamb5ceq8jl" path="res://Assets/CardsImg/IMG_8223.png" id="12_lk57d"]
+[ext_resource type="Texture2D" uid="uid://chi5t3p04jubk" path="res://Assets/CardsImg/IMG_8224.png" id="13_2hkqn"]
+[ext_resource type="Script" uid="uid://fkybrlk07rmt" path="res://Levels/description.gd" id="13_34erp"]
 
 [sub_resource type="Animation" id="Animation_xoyoh"]
 length = 0.001
@@ -234,6 +237,119 @@ visible = false
 [node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_62b6n")
 mesh = SubResource("QuadMesh_rs4xw")
+
+[node name="effects" type="Node2D" parent="."]
+position = Vector2(252, 102)
+
+[node name="PlayerBuffGrid" type="HBoxContainer" parent="effects"]
+offset_left = 214.0
+offset_top = -9.0
+offset_right = 2042.0
+offset_bottom = 930.0
+scale = Vector2(0.05, 0.05)
+alignment = 2
+
+[node name="PlayerBuff" type="TextureRect" parent="effects/PlayerBuffGrid"]
+visible = false
+layout_mode = 2
+texture = ExtResource("12_lk57d")
+script = ExtResource("13_34erp")
+
+[node name="Defense" type="Label" parent="effects/PlayerBuffGrid/PlayerBuff"]
+layout_mode = 0
+offset_left = -39.9994
+offset_top = 940.0
+offset_right = 1064.0
+offset_bottom = 1349.0
+theme_override_font_sizes/font_size = 300
+text = "fksjckhj"
+
+[node name="Attack" type="Label" parent="effects/PlayerBuffGrid/PlayerBuff"]
+layout_mode = 0
+offset_left = -19.9994
+offset_top = 1300.0
+offset_right = 1084.0
+offset_bottom = 1709.0
+theme_override_font_sizes/font_size = 300
+text = "fksjckhj"
+
+[node name="PlayerDebuff" type="TextureRect" parent="effects/PlayerBuffGrid"]
+visible = false
+layout_mode = 2
+texture = ExtResource("13_2hkqn")
+script = ExtResource("13_34erp")
+
+[node name="Defense" type="Label" parent="effects/PlayerBuffGrid/PlayerDebuff"]
+offset_left = -39.9994
+offset_top = 940.0
+offset_right = 1064.0
+offset_bottom = 1349.0
+theme_override_font_sizes/font_size = 300
+text = "fksjckhj"
+
+[node name="Attack" type="Label" parent="effects/PlayerBuffGrid/PlayerDebuff"]
+offset_left = -19.9994
+offset_top = 1300.0
+offset_right = 1084.0
+offset_bottom = 1709.0
+theme_override_font_sizes/font_size = 300
+text = "fksjckhj"
+
+[node name="EnemyBuffGrid" type="HBoxContainer" parent="effects"]
+offset_left = 432.0
+offset_top = -8.0
+offset_right = 2260.0
+offset_bottom = 931.0
+scale = Vector2(0.05, 0.05)
+alignment = 2
+
+[node name="EnemyBuff" type="TextureRect" parent="effects/EnemyBuffGrid"]
+visible = false
+layout_mode = 2
+texture = ExtResource("12_lk57d")
+script = ExtResource("13_34erp")
+
+[node name="Defense" type="Label" parent="effects/EnemyBuffGrid/EnemyBuff"]
+visible = false
+offset_left = -39.9994
+offset_top = 940.0
+offset_right = 1064.0
+offset_bottom = 1349.0
+theme_override_font_sizes/font_size = 300
+text = "fksjckhj"
+
+[node name="Attack" type="Label" parent="effects/EnemyBuffGrid/EnemyBuff"]
+visible = false
+offset_left = -19.9994
+offset_top = 1300.0
+offset_right = 1084.0
+offset_bottom = 1709.0
+theme_override_font_sizes/font_size = 300
+text = "fksjckhj"
+
+[node name="EnemyDebuff" type="TextureRect" parent="effects/EnemyBuffGrid"]
+visible = false
+layout_mode = 2
+texture = ExtResource("13_2hkqn")
+script = ExtResource("13_34erp")
+
+[node name="Defense" type="Label" parent="effects/EnemyBuffGrid/EnemyDebuff"]
+visible = false
+offset_left = -39.9994
+offset_top = 940.0
+offset_right = 1064.0
+offset_bottom = 1349.0
+theme_override_font_sizes/font_size = 300
+text = "fksjckhj"
+
+[node name="Attack" type="Label" parent="effects/EnemyBuffGrid/EnemyDebuff"]
+visible = false
+offset_left = -19.9994
+offset_top = 1300.0
+offset_right = 1084.0
+offset_bottom = 1709.0
+theme_override_font_sizes/font_size = 300
+text = "fksjckhj"
 
 [connection signal="pressed" from="SkipRound" to="." method="_on_skip_round_pressed"]
 [connection signal="pressed" from="ChoseCard/Reward1" to="." method="_on_reward_1_pressed"]
