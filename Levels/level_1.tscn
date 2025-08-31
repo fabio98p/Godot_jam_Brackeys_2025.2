@@ -15,8 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://bqncmyem6b104" path="res://Assets/CardsImg/IMG_8221.png" id="12_k2bse"]
 [ext_resource type="Texture2D" uid="uid://gmamb5ceq8jl" path="res://Assets/CardsImg/IMG_8223.png" id="12_lk57d"]
 [ext_resource type="Texture2D" uid="uid://chi5t3p04jubk" path="res://Assets/CardsImg/IMG_8224.png" id="13_2hkqn"]
-[ext_resource type="Script" path="res://Levels/description.gd" id="13_34erp"]
-[ext_resource type="Script" path="res://Levels/Next_attack.gd" id="13_c7pbv"]
+[ext_resource type="Script" uid="uid://fkybrlk07rmt" path="res://Levels/description.gd" id="13_34erp"]
+[ext_resource type="Script" uid="uid://bt87ns08itktx" path="res://Levels/Next_attack.gd" id="13_c7pbv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34erp"]
 bg_color = Color(0.6, 0.6, 0.6, 0)

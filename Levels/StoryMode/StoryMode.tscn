@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cd0c487lwk3lj" path="res://Levels/StoryMode/story_mode.gd" id="1_u5pr3"]
 [ext_resource type="Texture2D" uid="uid://d1f30qeupmt0i" path="res://Assets/Image/BGFINALE.jpg" id="2_jjg1b"]
-[ext_resource type="Texture2D" uid="uid://b6anbvt86aro" path="res://Assets/alice.jpg" id="3_xq2kc"]
+[ext_resource type="Texture2D" uid="uid://b7ptxtpm6g32e" path="res://Levels/StoryMode/Image/image1.png" id="3_jjg1b"]
 [ext_resource type="Texture2D" uid="uid://fe07nl7i763x" path="res://Assets/Image/NEXT.png" id="4_el530"]
 
 [node name="StoryMode" type="Node2D"]
@@ -14,8 +14,9 @@ scale = Vector2(0.67, 0.708)
 texture = ExtResource("2_jjg1b")
 
 [node name="Image" type="Sprite2D" parent="."]
-position = Vector2(894, 336)
-texture = ExtResource("3_xq2kc")
+position = Vector2(937, 371)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_jjg1b")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 87.0
