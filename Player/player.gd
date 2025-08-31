@@ -235,7 +235,7 @@ func jump_animation(up_offset: float = -40.0, prep_time: float = 0.15, hold_time
 	var tween = create_tween()
 	var original_pos = position
 
-
+	Utils.play_sfx("res://Assets/SFX/SFX/DebuffFinal.mp3", "SFX")
 	tween.tween_property(self, "position", original_pos + Vector2(0, up_offset), prep_time)\
 		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 

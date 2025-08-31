@@ -6,6 +6,7 @@ signal left_mouse_button_release
 const COLLISION_MASK_CARD = 1
 const COLLISION_MASK_DECK = 4
 @onready var deck_reference: Node2D = $"../Deck"
+@onready var player_hands: Node2D = $"../PlayerHands"
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -30,4 +31,6 @@ func raycast_at_cursor():
 				get_parent().start_drag(card_found)
 #				clicco del deck
 		elif result_collision_mask == COLLISION_MASK_DECK:
-			deck_reference.draw_card()
+			if GC.new_turn_click:
+				deck_reference.draw_card()
+				GC.new_turn_click = false

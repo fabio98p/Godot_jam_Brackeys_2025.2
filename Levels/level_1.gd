@@ -20,7 +20,9 @@ var running_turn: bool = false
 @export var level_resource: LevelResource
 
 func _ready() -> void:
-	
+	GC.new_turn = true
+	GC.new_turn_click = true
+	GC.cards_drawn_this_turn=0
 #	resetta il deck quando si inizia un nuovo livello
 	#GC.resetDeck()
 #	gestione dello sfondo skjdbgviksdbvskjdbgviksdbvskjdbgviksdbv
@@ -154,6 +156,9 @@ func _on_skip_round_pressed() -> void:
 			bars.set_player_shield(player.shield)
 		running_turn = false
 		skip_round.modulate = Color(1, 1, 1, 1)
+	GC.new_turn = true
+	GC.new_turn_click = true
+	GC.cards_drawn_this_turn=0
 func _on_enemy_enemy_dead() -> void:
 	if GC.numberOfFight == 10:
 		await get_tree().create_timer(1).timeout

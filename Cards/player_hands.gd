@@ -5,6 +5,7 @@ const CARD_WIDTH = 120
 const HAND_Y_POSITION = 626
 const DEFAULT_CARD_SPEED = 0.1
 
+
 var player_hand: Array = []
 var center_screen_x: float
 

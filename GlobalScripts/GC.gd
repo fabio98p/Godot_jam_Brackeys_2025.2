@@ -4,6 +4,9 @@ var runDeck: Array[CardResource]
 var numberOfFight = 0
 var player_actually_health: float = -1
 var player_actually_sanity: int = -1
+var new_turn: bool = false
+var new_turn_click: bool = false
+var cards_drawn_this_turn: int = 0
 
 var initialDeck: Array[CardResource] = [
 #load("res://Cards/Resources/attack.tres") as CardResource,
