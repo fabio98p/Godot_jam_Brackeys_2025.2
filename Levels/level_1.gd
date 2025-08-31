@@ -42,8 +42,10 @@ func _ready() -> void:
 	
 	# Setup Rewards
 	chose_card.visible = false
+	level_resource.reward1 = Pools.RewardPool[randi_range(0, Pools.RewardPool.size()-1)].duplicate()
 	reward_1.icon = level_resource.reward1.img
 	#reward_1.scale = level_resource.reward1.img_size
+	level_resource.reward2 = Pools.RewardPool[randi_range(0, Pools.RewardPool.size()-1)].duplicate()
 	reward_2.icon = level_resource.reward2.img
 	#reward_1.scale = level_resource.reward1.img_size
 	
