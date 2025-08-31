@@ -125,7 +125,7 @@ func create_idle_anim(res: EnemyAnimationResource) -> AnimatedSprite2D:
 func start_charge_attack() -> void:
 	# wrapper che "stacca" la coroutine
 	await get_tree().create_timer(2).timeout
-	await charge_attack()
+	await jump_animation()
 
 
 func charge_attack(forward_offset: float = 15.0, back_offset: float = -40.0, prep_time: float = 0.15, hold_time: float = 0.25, attack_time: float = 0.08, recover_time: float = 0.15) -> void:
@@ -153,3 +153,28 @@ func charge_attack(forward_offset: float = 15.0, back_offset: float = -40.0, pre
 
 	await tween.finished
 	print("Attacco")
+	
+func jump_animation(up_offset: float = -40.0, prep_time: float = 0.15, hold_time: float = 0.1, fall_time: float = 0.2, recover_time: float = 0.1) -> void:
+	var tween = create_tween()
+	var original_pos = position
+
+
+	tween.tween_property(self, "position", original_pos + Vector2(0, up_offset), prep_time)\
+		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+
+	tween.tween_interval(hold_time)
+
+	tween.tween_property(self, "position", original_pos, fall_time)\
+		.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
+
+	tween.tween_property(self, "position", original_pos + Vector2(0, up_offset*0.2), recover_time/2)\
+		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "position", original_pos, recover_time/2)\
+		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+
+	for i in range(2):
+		tween.tween_property(self, "position", original_pos + Vector2(randf_range(-3,3), randf_range(-3,3)), 0.03)
+		tween.tween_property(self, "position", original_pos, 0.03)
+
+	await tween.finished
+	print("Balzo")
