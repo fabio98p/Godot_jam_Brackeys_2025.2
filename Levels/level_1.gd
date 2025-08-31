@@ -4,6 +4,9 @@ var enemy: Node2D
 var running_turn: bool = false
 @onready var background: Sprite2D = $background
 @onready var bars: Node2D = $Bars
+@onready var card_manager: Node2D = $CardManager
+@onready var drop_zone: Node2D = $CardManager/DropZone
+
 # Chose Reward
 @onready var chose_card: Node2D = $ChoseCard
 @onready var reward_1: Button = $ChoseCard/Reward1
@@ -160,6 +163,8 @@ func _on_skip_round_pressed() -> void:
 	GC.new_turn_click = true
 	GC.cards_drawn_this_turn=0
 func _on_enemy_enemy_dead() -> void:
+	drop_zone.queue_free()
+	skip_round.queue_free()
 	if GC.numberOfFight == 10:
 		await get_tree().create_timer(1).timeout
 #		TODO mettere animazioni zoom
