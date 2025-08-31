@@ -114,7 +114,8 @@ func finish_drag():
 
 func toggle_drop_zone(drop_zone_found, card_being_dragged):
 	await get_tree().create_timer(1).timeout
-	drop_zone_found.card_in_drop_zone = false
+	if is_instance_valid(drop_zone_found):
+		drop_zone_found.card_in_drop_zone = false
 	card_being_dragged.destroy_card()
 
 

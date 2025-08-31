@@ -2,6 +2,7 @@ extends Node2D
 @onready var player: Node2D = $Player
 var enemy: Node2D
 var running_turn: bool = false
+var enemy_is_dead: bool = false
 @onready var background: Sprite2D = $background
 @onready var bars: Node2D = $Bars
 @onready var card_manager: Node2D = $CardManager
@@ -33,6 +34,7 @@ var running_turn: bool = false
 @onready var next_attack: TextureRect = $NextAttack
 
 func _ready() -> void:
+	enemy_is_dead = false
 	GC.new_turn = true
 	GC.new_turn_click = true
 	GC.cards_drawn_this_turn=0
@@ -254,18 +256,21 @@ func _on_skip_round_pressed() -> void:
 	GC.new_turn_click = true
 	GC.cards_drawn_this_turn=0
 func _on_enemy_enemy_dead() -> void:
-	drop_zone.queue_free()
-	skip_round.queue_free()
-	next_attack.visible = false
-	if GC.numberOfFight == 10:
-		await get_tree().create_timer(1).timeout
-#		TODO mettere animazioni zoom
-		if player.current_sanity == 1:
-			get_tree().change_scene_to_file("res://Levels/Ending/Parents.tscn")
-		if player.current_sanity > 1:
-			get_tree().change_scene_to_file("res://Levels/Ending/Good.tscn")
-	else:
-		chose_card.visible = true
+	if !enemy_is_dead:
+		enemy_is_dead = true
+		drop_zone.queue_free()
+		skip_round.queue_free()
+		next_attack.visible = false
+		if GC.numberOfFight == 10:
+			await get_tree().create_timer(1).timeout
+	#		TODO mettere animazioni zoom
+			if player.current_sanity == 1:
+				get_tree().change_scene_to_file("res://Levels/Ending/Parents.tscn")
+			if player.current_sanity > 1:
+				get_tree().change_scene_to_file("res://Levels/Ending/Good.tscn")
+		else:
+			chose_card.visible = true
+	
 	
 func _on_reward_1_pressed() -> void:
 	GC.runDeck.append(level_resource.reward1)

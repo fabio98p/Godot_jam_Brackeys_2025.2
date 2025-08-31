@@ -4,3 +4,4 @@
 
 [node name="AudioLevel" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_k0816")
+bus = &"Music"

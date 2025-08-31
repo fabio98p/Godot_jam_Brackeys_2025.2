@@ -36,6 +36,7 @@ autowrap_mode = 3
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_rwh8t")
 autoplay = true
+bus = &"Narrator"
 
 [node name="Button" type="Button" parent="."]
 offset_left = 1022.0

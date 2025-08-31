@@ -14,7 +14,6 @@ func _on_next_page_pressed() -> void:
 	
 	Utils.play_sfx(Pools.BookmarksPageFlip[randi_range(0,Pools.BookmarksPageFlip.size()-1)], "SFX")
 	get_tree().change_scene_to_file("res://Menus/Main_menu_cards.tscn")
-	
 
 func _on_previus_page_pressed() -> void:
 	currentPage -= 1

@@ -201,6 +201,7 @@ scale = Vector2(0.6, 0.6)
 icon = ExtResource("9_rs4xw")
 
 [node name="Bookmarcs" type="Node2D" parent="."]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Bookmarcs"]
 visible = false
