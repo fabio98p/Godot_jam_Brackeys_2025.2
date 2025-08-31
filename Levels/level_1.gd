@@ -70,12 +70,12 @@ func _process(delta: float) -> void:
 			player_buff.visible = true
 			#attack
 			if player.attack_multiply > 0:
-				player_buff.attackValue = "Attack Buff: " + str(player.attack_multiply)
+				player_buff.attackValue = "Attack Buff: " + str(player.attack_multiply * 25) + "%"
 			else:
 				player_buff.attackValue = ""
 			#defense
 			if player.defense_multiply > 0:
-				player_buff.defenseValue = "Defense Buff: " + str(player.defense_multiply)
+				player_buff.defenseValue = "Defense Buff: " + str(player.defense_multiply * 25) + "%"
 			else:
 				player_buff.defenseValue = ""
 		else:
@@ -85,12 +85,12 @@ func _process(delta: float) -> void:
 			player_debuff.visible = true
 			#attack
 			if player.attack_multiply < 0:
-				player_debuff.attackValue = "Attack Debuff: " + str(player.attack_multiply)
+				player_debuff.attackValue = "Attack Debuff: " + str(player.attack_multiply * 25) + "%"
 			else:
 				player_debuff.attackValue = ""
 			#defense
 			if player.defense_multiply < 0:
-				player_debuff.defenseValue = "Attack Debuff: " + str(player.defense_multiply)
+				player_debuff.defenseValue = "Attack Debuff: " + str(player.defense_multiply * 25) + "%"
 			else:
 				player_debuff.defenseValue = ""
 		else:
@@ -104,12 +104,12 @@ func _process(delta: float) -> void:
 			enemy_buff.visible = true
 			#attack
 			if enemy.attack_multiply > 0:
-				enemy_buff.attackValue = "Attack Buff: " + str(enemy.attack_multiply)
+				enemy_buff.attackValue = "Attack Buff: " + str(enemy.attack_multiply * 25) + "%"
 			else:
 				enemy_buff.attackValue = ""
 			#defense
 			if enemy.defense_multiply > 0:
-				enemy_buff.defenseValue = "Defense Buff: " + str(enemy.defense_multiply)
+				enemy_buff.defenseValue = "Defense Buff: " + str(enemy.defense_multiply * 25) + "%"
 			else:
 				enemy_buff.defenseValue = ""
 		else:
@@ -119,12 +119,12 @@ func _process(delta: float) -> void:
 			enemy_debuff.visible = true
 			#attack
 			if enemy.attack_multiply < 0:
-				enemy_debuff.attackValue = "Attack Debuff: " + str(enemy.attack_multiply)
+				enemy_debuff.attackValue = "Attack Debuff: " + str(enemy.attack_multiply * 25) + "%"
 			else:
 				enemy_debuff.attackValue = ""
 			#defense
 			if enemy.defense_multiply < 0:
-				enemy_debuff.defenseValue = "Attack Debuff: " + str(enemy.defense_multiply)
+				enemy_debuff.defenseValue = "Attack Debuff: " + str(enemy.defense_multiply * 25) + "%"
 			else:
 				enemy_debuff.defenseValue = ""
 		else:
