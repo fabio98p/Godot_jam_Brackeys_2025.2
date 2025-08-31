@@ -61,27 +61,44 @@ func applay_card_effect(cadsEffect):
 			"attack_enemy":
 				var finalMoltiplicator = clamp(1 + (player.attack_multiply*0.25) - (enemy.defense_multiply*0.25),0,3)
 				var final_value= value * finalMoltiplicator
+				await get_tree().create_timer(1.5).timeout
 				enemy.enemy_dmg_taken(final_value)
 				bars.set_enemy_health(enemy.current_health)
 				bars.set_enemy_shield(enemy.shield)
 			"heal_self":
+				player.start_buff_animation()
+				await get_tree().create_timer(1.5).timeout
 				player.heal_self(value)
 				bars.set_player_health(player.current_health)
 			"apply_self_damage_buff":
+				player.start_buff_animation()
+				await get_tree().create_timer(1.5).timeout
 				player.attack_multiply += value
 			"apply_self_defense_buff":
+				player.start_buff_animation()
+				await get_tree().create_timer(1.5).timeout
 				player.defense_multiply += value
 			"apply_enemy_attack_debuff":
+				player.start_buff_animation()
+				await get_tree().create_timer(1.5).timeout
 				enemy.attack_multiply += value
 			"apply_enemy_defense_debuff":
+				player.start_buff_animation()
+				await get_tree().create_timer(1.5).timeout
 				enemy.defense_multiply += value
 			#"apply_enemy_poison":
 				#player.defense_multiply = value
 			"apply_self_damage_debuff":
+				player.start_buff_animation()
+				await get_tree().create_timer(1.5).timeout
 				player.attack_multiply += value
 			"apply_self_defense_debuff":
+				player.start_buff_animation()
+				await get_tree().create_timer(1.5).timeout
 				player.defense_multiply += value
 			"shield_self":
+				player.start_buff_animation()
+				await get_tree().create_timer(1.5).timeout
 				player.shield += value
 				bars.set_player_shield(player.shield)
 
@@ -90,15 +107,21 @@ func _on_skip_round_pressed() -> void:
 	var enemyAttack:EnemyAttack = enemy.applay_next_attack()
 	# Shield
 	if enemyAttack.has_shield: 
+		enemy.start_buff_animation()
+		await get_tree().create_timer(1.5).timeout
 		enemy.shield += enemyAttack.shield_value
 		bars.set_enemy_shield(enemy.shield)
 		
 	# Heal
 	if enemyAttack.has_heal:
+		enemy.start_buff_animation()
+		await get_tree().create_timer(1.5).timeout
 		enemy.current_health += enemyAttack.heal_value
 		bars.set_enemy_health(enemy.current_health)
 	# Self Buff
 	if enemyAttack.has_self_buff:
+		enemy.start_buff_animation()
+		await get_tree().create_timer(1.5).timeout
 		if enemyAttack.has_self_attack_buff:
 			player.attack_multiply += enemyAttack.self_attack_buff 
 		if enemyAttack.has_self_defense_buff:
@@ -106,6 +129,8 @@ func _on_skip_round_pressed() -> void:
 	
 	# Player Debuff
 	if enemyAttack.has_player_debuff: 
+		enemy.start_buff_animation()
+		await get_tree().create_timer(1.5).timeout
 		if enemyAttack.has_player_attack_debuff:
 			player.attack_multiply += enemyAttack.player_attack_debuff 
 		if enemyAttack.has_player_defense_debuff:
@@ -115,6 +140,8 @@ func _on_skip_round_pressed() -> void:
 	if enemyAttack.has_attack: 
 		var finalMoltiplicator = clamp(1 + (enemy.attack_multiply*0.25) - (player.defense_multiply*0.25),0,3)
 		var enemy_attack_damage = enemyAttack.attack_damage * finalMoltiplicator
+		enemy.start_charge_attack()
+		await get_tree().create_timer(2.5).timeout
 		player.dmg_taken(enemy_attack_damage)
 		print("shiels",player.shield)
 		bars.set_player_health(player.current_health)

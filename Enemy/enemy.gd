@@ -47,7 +47,6 @@ func _ready() -> void:
 	defense_multi.text = "defense multy: " + str(defense_multiply)
 	shieldLabel.text = "Shield: " + str(shield)
 	
-	start_charge_attack()
 	#handle animation
 	var anim := create_idle_anim(enemyDataHandler.animation)
 	anim.scale = enemyDataHandler.animation.scale
@@ -125,8 +124,11 @@ func create_idle_anim(res: EnemyAnimationResource) -> AnimatedSprite2D:
 func start_charge_attack() -> void:
 	# wrapper che "stacca" la coroutine
 	await get_tree().create_timer(2).timeout
-	await jump_animation()
+	await charge_attack()
 
+func start_buff_animation() -> void:
+	await get_tree().create_timer(1).timeout
+	await jump_animation()
 
 func charge_attack(forward_offset: float = 15.0, back_offset: float = -40.0, prep_time: float = 0.15, hold_time: float = 0.25, attack_time: float = 0.08, recover_time: float = 0.15) -> void:
 	var tween = create_tween()

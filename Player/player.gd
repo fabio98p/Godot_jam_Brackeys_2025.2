@@ -48,6 +48,7 @@ func _ready() -> void:
 	shieldLabel.text = "shield value: " + str(shield)
 	sprite_2d.texture = NORMAL_TEXTURE
 	original_position = sprite_2d.position
+	
 
 
 func shake_sprite(intensity: float = 2.0, duration: float = 0.2, bounce: float = 3.0) -> void:
@@ -152,6 +153,7 @@ func sanity_taken(value: int) -> void:
 	sprite_2d.texture = SANITY_HURT_TEXTURE
 	insane_shake(0.5, 0.4, 0.5)  # tremolio pazzoide
 	reset_skin_later()
+	start_charge_attack()
 
 	if current_sanity <= 0:
 		sanity.text = "max_sanity: dead sanity"
@@ -180,3 +182,64 @@ func heal_self(value: int) -> void:
 	if current_health < max_health:
 		current_health = min(current_health + value, max_health)
 		health.text = "max_health: " + str(current_health)
+
+func start_charge_attack() -> void:
+	# wrapper che "stacca" la coroutine
+	await get_tree().create_timer(1).timeout
+	await player_charge_attack()
+func start_buff_animation() -> void:
+	await get_tree().create_timer(1).timeout
+	await jump_animation()
+
+func player_charge_attack(forward_offset: float = -15.0, back_offset: float = 40.0, prep_time: float = 0.15, hold_time: float = 0.25, attack_time: float = 0.08, recover_time: float = 0.15) -> void:
+	var tween = create_tween()
+	var original_pos = position
+
+	# Slide iniziale (preparazione)
+	tween.tween_property(self, "position", original_pos + Vector2(forward_offset, 0), prep_time)\
+		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+
+	# Pausa in preparazione
+	tween.tween_interval(hold_time)
+
+	# Scatto violento nella direzione opposta
+	tween.tween_property(self, "position", original_pos + Vector2(back_offset, 0), attack_time)\
+		.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
+
+	# Ritorno alla posizione originale
+	tween.tween_property(self, "position", original_pos, recover_time)\
+		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+
+	# Shake finale per impatto
+	for i in range(2):
+		tween.tween_property(self, "position", original_pos + Vector2(randf_range(-3, 3), randf_range(-2, 2)), 0.03)
+		tween.tween_property(self, "position", original_pos, 0.03)
+
+	await tween.finished
+	print("Attacco completato!")
+
+
+func jump_animation(up_offset: float = -40.0, prep_time: float = 0.15, hold_time: float = 0.1, fall_time: float = 0.2, recover_time: float = 0.1) -> void:
+	var tween = create_tween()
+	var original_pos = position
+
+
+	tween.tween_property(self, "position", original_pos + Vector2(0, up_offset), prep_time)\
+		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+
+	tween.tween_interval(hold_time)
+
+	tween.tween_property(self, "position", original_pos, fall_time)\
+		.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
+
+	tween.tween_property(self, "position", original_pos + Vector2(0, up_offset*0.2), recover_time/2)\
+		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "position", original_pos, recover_time/2)\
+		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+
+	for i in range(2):
+		tween.tween_property(self, "position", original_pos + Vector2(randf_range(-3,3), randf_range(-3,3)), 0.03)
+		tween.tween_property(self, "position", original_pos, 0.03)
+
+	await tween.finished
+	print("Balzo")
