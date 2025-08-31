@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dlyutofh3wgrc"]
+[gd_scene load_steps=17 format=3 uid="uid://dlyutofh3wgrc"]
 
 [ext_resource type="PackedScene" uid="uid://bu424fog720wr" path="res://Cards/card_manager.tscn" id="1_3mhv4"]
 [ext_resource type="Script" uid="uid://ccsxyx46s6evw" path="res://Levels/level_1.gd" id="1_rf6l5"]
@@ -6,9 +6,10 @@
 [ext_resource type="Resource" uid="uid://dnvku0fr2rffq" path="res://Levels/Resources/level_1.tres" id="2_xoyoh"]
 [ext_resource type="Texture2D" uid="uid://ljnqon2uev35" path="res://Assets/BG Colorato.jpg" id="3_77x7w"]
 [ext_resource type="Texture2D" uid="uid://fe07nl7i763x" path="res://Assets/Image/NEXT.png" id="6_xoyoh"]
+[ext_resource type="Texture2D" uid="uid://b1swilytagrb3" path="res://Assets/CardsImg/charcoal.png" id="8_62b6n"]
 [ext_resource type="Texture2D" uid="uid://yr7h47bahev4" path="res://Assets/white.png" id="9_f4pg2"]
+[ext_resource type="Texture2D" uid="uid://do0iy20jwghcs" path="res://Assets/CardsImg/alfajor.png" id="9_rs4xw"]
 [ext_resource type="PackedScene" uid="uid://30bkaphh1yvg" path="res://HUD/barsHUD.tscn" id="9_xoyoh"]
-[ext_resource type="Texture2D" uid="uid://c6n6tllbmb3uo" path="res://Assets/IMG_8215.jpg" id="10_62b6n"]
 [ext_resource type="Shader" uid="uid://2gmlt0rihwyd" path="res://Levels/level_1.gdshader" id="10_f4pg2"]
 
 [sub_resource type="Animation" id="Animation_xoyoh"]
@@ -161,7 +162,6 @@ scale = Vector2(0.319998, 0.319998)
 icon = ExtResource("6_xoyoh")
 
 [node name="ChoseCard" type="Node2D" parent="."]
-visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="ChoseCard"]
 modulate = Color(0, 0, 0, 0.352941)
@@ -170,20 +170,20 @@ scale = Vector2(41.4688, 24)
 texture = ExtResource("9_f4pg2")
 
 [node name="Reward1" type="Button" parent="ChoseCard"]
-offset_left = 380.0
-offset_top = 224.0
-offset_right = 4108.0
-offset_bottom = 5488.0
-scale = Vector2(0.05, 0.05)
-icon = ExtResource("10_62b6n")
+offset_left = 260.0
+offset_top = 189.0
+offset_right = 768.0
+offset_bottom = 897.0
+scale = Vector2(0.6, 0.6)
+icon = ExtResource("8_62b6n")
 
 [node name="Reward2" type="Button" parent="ChoseCard"]
-offset_left = 717.0
-offset_top = 222.0
-offset_right = 4445.0
-offset_bottom = 5486.0
-scale = Vector2(0.05, 0.05)
-icon = ExtResource("10_62b6n")
+offset_left = 711.0
+offset_top = 188.0
+offset_right = 1219.0
+offset_bottom = 896.0
+scale = Vector2(0.6, 0.6)
+icon = ExtResource("9_rs4xw")
 
 [node name="Bookmarcs" type="Node2D" parent="."]
 visible = false
