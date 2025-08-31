@@ -79,6 +79,8 @@ func finish_drag():
 				GC.willingAudio(preload("res://Assets/Music/Music/GamePlayBGMLoop.mp3"),0.1)
 			else:
 				GC.willingAudio(preload("res://Assets/Music/Music/GamePlayBGMLoop.mp3"))
+			if card_being_dragged.name == "exit":
+				get_tree().quit()
 			await_change_scene(card_being_dragged.name)
 	else:
 		Utils.play_sfx(Pools.PutCoocky[randi_range(0,Pools.PutCoocky.size()-1)], "SFX")

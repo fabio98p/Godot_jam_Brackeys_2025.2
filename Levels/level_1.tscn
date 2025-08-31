@@ -126,12 +126,14 @@ shader = ExtResource("10_f4pg2")
 shader_parameter/firefly_count = 20
 shader_parameter/firefly_size = 0.02
 shader_parameter/glow_intensity = 0.8
-shader_parameter/border_darkness = 0.6
 shader_parameter/movement_speed = 0.1
 shader_parameter/movement_range = 0.2
 shader_parameter/flicker_speed = 3.0
 shader_parameter/flicker_rhythm = 1.5
 shader_parameter/disappear_chance = 0.05
+shader_parameter/darken_factor = 0.25
+shader_parameter/vignette_power = 3.5
+shader_parameter/border_darkness = 0.6
 
 [sub_resource type="QuadMesh" id="QuadMesh_rs4xw"]
 size = Vector2(1280, 720)

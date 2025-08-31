@@ -93,8 +93,8 @@ func _on_skip_round_pressed() -> void:
 		
 	# Heal
 	if enemyAttack.has_heal:
-		enemy.heal += enemyAttack.heal_value
-		
+		enemy.current_health += enemyAttack.heal_value
+		bars.set_enemy_health(enemy.current_health)
 	# Self Buff
 	if enemyAttack.has_self_buff:
 		if enemyAttack.has_self_attack_buff:
