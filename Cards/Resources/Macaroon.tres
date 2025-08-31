@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://cc7jt84xtj6r3"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://b2snu2jx1aly"]
 
 [ext_resource type="Texture2D" uid="uid://nmvg8fm5na7t" path="res://Assets/CardsImg/macaroon.png" id="1_0lnh7"]
 [ext_resource type="Script" uid="uid://bu8tp3x63dsa1" path="res://Cards/cardResource.gd" id="2_rs1w1"]
@@ -13,10 +13,10 @@ sanity_cost = 4
 has_attack = false
 attack_damage_value = 0.0
 attack_target_type = 0.0
-has_shield = true
+has_shield = false
 shield_value = 10
-has_heal = false
-heal_value = 0.0
+has_heal = true
+heal_value = 6.0
 has_self_buff = false
 has_damage_buff = false
 damage_buff_value = 0.0

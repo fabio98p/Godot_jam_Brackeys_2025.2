@@ -35,6 +35,12 @@ var RewardPool: Array[CardResource] = [
 	load("res://Cards/Resources/Shortbread.tres") as CardResource,
 	load("res://Cards/Resources/Crinkie.tres") as CardResource,
 	load("res://Cards/Resources/Pizelle.tres") as CardResource,
+	
+	load("res://Cards/Resources/BlackAndWhite.tres") as CardResource,
+	#load("res://Cards/Resources/Charcoal.tres") as CardResource,
+	load("res://Cards/Resources/Macaron.tres") as CardResource,
+	load("res://Cards/Resources/Macaroon.tres") as CardResource,
+	load("res://Cards/Resources/Cracker.tres") as CardResource,
 ]
 
 

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://bqcadk376hhtx"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://dyodxqf2wlf0m"]
 
 [ext_resource type="Texture2D" uid="uid://dlypmm5vty78t" path="res://Assets/CardsImg/macaron.png" id="1_o3a4o"]
 [ext_resource type="Script" uid="uid://bu8tp3x63dsa1" path="res://Cards/cardResource.gd" id="2_yggg3"]
@@ -11,11 +11,11 @@ img = ExtResource("1_o3a4o")
 img_size = Vector2(0.26, 0.26)
 sanity_cost = 4
 has_attack = true
-attack_damage_value = 0.0
+attack_damage_value = 3.0
 attack_target_type = 0.0
 has_shield = false
 shield_value = 0
-has_heal = false
+has_heal = true
 heal_value = 4.0
 has_self_buff = false
 has_damage_buff = false

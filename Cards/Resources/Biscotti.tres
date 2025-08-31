@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://dmfimsvdc4wtp"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://cum2i0a05v74q"]
 
 [ext_resource type="Texture2D" uid="uid://cqldpiykqjpca" path="res://Assets/CardsImg/biscotti.png" id="1_xyqtc"]
 [ext_resource type="Script" uid="uid://bu8tp3x63dsa1" path="res://Cards/cardResource.gd" id="2_d2da4"]

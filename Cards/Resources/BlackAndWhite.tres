@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://dedrf5oxxr3u8"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://nyledl5bsdx0"]
 
 [ext_resource type="Texture2D" uid="uid://ck47e4kbembd7" path="res://Assets/CardsImg/black and white.png" id="1_5qqsc"]
 [ext_resource type="Script" uid="uid://bu8tp3x63dsa1" path="res://Cards/cardResource.gd" id="2_c4jp7"]

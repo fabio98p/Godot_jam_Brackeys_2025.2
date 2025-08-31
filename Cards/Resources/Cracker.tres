@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://3wschpkh1nln"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://cm3oaqtwe4alw"]
 
 [ext_resource type="Texture2D" uid="uid://do4663qw6u5uh" path="res://Assets/CardsImg/cracker.png" id="1_h7hlt"]
 [ext_resource type="Script" uid="uid://bu8tp3x63dsa1" path="res://Cards/cardResource.gd" id="2_7kmh2"]
@@ -11,7 +11,7 @@ img = ExtResource("1_h7hlt")
 img_size = Vector2(0.26, 0.26)
 sanity_cost = 4
 has_attack = true
-attack_damage_value = 0.0
+attack_damage_value = 1.0
 attack_target_type = 0.0
 has_shield = false
 shield_value = 0
@@ -22,7 +22,7 @@ has_damage_buff = false
 damage_buff_value = 0.0
 has_defense_buff = false
 defense_buff_value = 0.0
-has_enemy_debuff = false
+has_enemy_debuff = true
 has_enemy_attack_debuff = true
 enemy_attack_debuff_value = 0.75
 has_enemy_defense_debuff = false

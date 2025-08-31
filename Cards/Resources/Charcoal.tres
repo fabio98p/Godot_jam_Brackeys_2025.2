@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://vmre2di6gh3g"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://bbqkud58f7ywu"]
 
 [ext_resource type="Texture2D" uid="uid://b1swilytagrb3" path="res://Assets/CardsImg/charcoal.png" id="1_f832w"]
 [ext_resource type="Script" uid="uid://bu8tp3x63dsa1" path="res://Cards/cardResource.gd" id="2_lcpvu"]
@@ -13,8 +13,8 @@ sanity_cost = 7
 has_attack = false
 attack_damage_value = 0.0
 attack_target_type = 0.0
-has_shield = false
-shield_value = 0
+has_shield = true
+shield_value = 6
 has_heal = false
 heal_value = 0.0
 has_self_buff = false
