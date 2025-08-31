@@ -7,3 +7,5 @@ func _ready() -> void:
 	GC.resetDeck()
 	GC.numberOfFight = 0
 	GC.willingAudio(preload("res://Assets/Music/Music/GoodEnding.mp3"), 0.1)
+	Pools.poolBaseEnemy = Pools.BaseCardEnemyPool.duplicate()
+	Pools.poolChessEnemy = Pools.BaseChessEnemyPool.duplicate()

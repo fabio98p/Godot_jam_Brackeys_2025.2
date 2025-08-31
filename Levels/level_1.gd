@@ -16,11 +16,11 @@ var running_turn: bool = false
 
 # Bookmarks
 @onready var bookmarcs: Node2D = $Bookmarcs
-@onready var bookmark_1: Button = $Bookmarcs/Bookmark1
-@onready var bookmark_2: Button = $Bookmarcs/Bookmark2
+@onready var Rest: Button = $Bookmarcs/Bookmark1
+@onready var Next: Button = $Bookmarcs/Bookmark2
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var label: Label = $Bookmarcs/Label
-@onready var label_2: Label = $Bookmarcs/Label2
+@onready var Next_label: Label = $Bookmarcs/Label
+@onready var Rest_label: Label = $Bookmarcs/Label2
 
 @export var level_resource: LevelResource
 
@@ -50,7 +50,7 @@ func _ready() -> void:
 	add_child(enemyInstance)
 #	SETUP HUD BARS
 	#	player_max_h: float, player_max_s: float, enemy_max_h: float, enemy_max_s: float
-	bars.init_stats(player.current_health, 10, enemy.enemyDataHandler.max_healt, 10)
+	bars.init_stats(player.max_health, 10, enemy.enemyDataHandler.max_healt, 10)
 	bars.set_player_health(player.current_health)
 	bars.set_enemy_health(enemy.enemyDataHandler.max_healt)
 	bars.set_player_sanity(player.current_sanity)
@@ -273,15 +273,16 @@ func _on_reward_1_pressed() -> void:
 	await get_tree().create_timer(0.5).timeout
 	chose_card.visible = false
 	bookmarcs.visible=true
-	if GC.numberOfFight == 2 or GC.numberOfFight == 8:
-		bookmark_1.visible = true
-		label_2.visible= true
-	bookmark_2.visible = true
-	bookmark_1.visible = true
-	#bookmark_1.visible = false
-	label_2.visible= false
-	label.visible= true
-
+	if GC.numberOfFight == 3 or GC.numberOfFight == 8:
+		Rest.visible = true
+		Rest_label.visible= true
+		Next.visible = false
+		Next_label.visible = false
+	else:
+		Rest.visible = false
+		Rest_label.visible= false
+		Next.visible = true
+		Next_label.visible = true
 
 func _on_reward_2_pressed() -> void:
 	GC.runDeck.append(level_resource.reward2)
@@ -289,13 +290,16 @@ func _on_reward_2_pressed() -> void:
 	await get_tree().create_timer(0.5).timeout
 	chose_card.visible = false
 	bookmarcs.visible=true
-	if GC.numberOfFight == 2 or GC.numberOfFight == 8:
-		label_2.visible= true
-	bookmark_2.visible = true
-	bookmark_1.visible = true
-	#bookmark_1.visible = false
-	label_2.visible= false
-	label.visible= true
+	if GC.numberOfFight == 3 or GC.numberOfFight == 8:
+		Rest.visible = true
+		Rest_label.visible= true
+		Next.visible = false
+		Next_label.visible = false
+	else:
+		Rest.visible = false
+		Rest_label.visible= false
+		Next.visible = true
+		Next_label.visible = true
 
 func _on_bookmark_1_pressed() -> void:
 	

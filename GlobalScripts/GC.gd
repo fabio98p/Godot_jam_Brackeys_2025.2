@@ -62,13 +62,14 @@ func willingAudio(audio: AudioStreamMP3, durationWilling: float = 5.0):
 		
 
 func pickenemy():
+	print(Pools.poolBaseEnemy.size(), " size pool carte")
 	numberOfFight += 1
 	print(numberOfFight)
 	if numberOfFight <= 3:
 		if Pools.poolBaseEnemy.size() > 0:
 			var index = randi_range(0, Pools.poolBaseEnemy.size() - 1)
 			var enemy = Pools.poolBaseEnemy[index]
-			Pools.poolBaseEnemy.remove_at(index)
+			#Pools.poolBaseEnemy.remove_at(index)
 			return enemy
 	if numberOfFight == 4:
 		print("resitng 4")
@@ -79,7 +80,7 @@ func pickenemy():
 		if Pools.poolChessEnemy.size() > 0:
 			var index = randi_range(0, Pools.poolChessEnemy.size() - 1)
 			var enemy = Pools.poolChessEnemy[index]
-			Pools.poolChessEnemy.remove_at(index)
+			#Pools.poolChessEnemy.remove_at(index)
 			return enemy
 	if numberOfFight == 9:
 		print("resitng 9")
