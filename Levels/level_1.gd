@@ -90,7 +90,7 @@ func _process(delta: float) -> void:
 				player_debuff.attackValue = ""
 			#defense
 			if player.defense_multiply < 0:
-				player_debuff.defenseValue = "Attack Debuff: " + str(player.defense_multiply * 25) + "%"
+				player_debuff.defenseValue = "Defense Debuff: " + str(player.defense_multiply * 25) + "%"
 			else:
 				player_debuff.defenseValue = ""
 		else:
@@ -124,7 +124,7 @@ func _process(delta: float) -> void:
 				enemy_debuff.attackValue = ""
 			#defense
 			if enemy.defense_multiply < 0:
-				enemy_debuff.defenseValue = "Attack Debuff: " + str(enemy.defense_multiply * 25) + "%"
+				enemy_debuff.defenseValue = "Defense Debuff: " + str(enemy.defense_multiply * 25) + "%"
 			else:
 				enemy_debuff.defenseValue = ""
 		else:
