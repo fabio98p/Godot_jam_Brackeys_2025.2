@@ -229,6 +229,7 @@ libraries = {
 [node name="Bars" parent="." instance=ExtResource("9_xoyoh")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_62b6n")
