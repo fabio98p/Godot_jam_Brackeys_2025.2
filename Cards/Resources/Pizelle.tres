@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://ctmox8tj8em8i"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://c14to2xj0rhn5"]
 
 [ext_resource type="Texture2D" uid="uid://h3tgjhv0fv4k" path="res://Assets/CardsImg/pizzelle.png" id="1_nu42c"]
 [ext_resource type="Script" uid="uid://bu8tp3x63dsa1" path="res://Cards/cardResource.gd" id="2_6wr58"]
@@ -22,7 +22,7 @@ has_damage_buff = false
 damage_buff_value = 0.0
 has_defense_buff = false
 defense_buff_value = 0.0
-has_enemy_debuff = false
+has_enemy_debuff = true
 has_enemy_attack_debuff = true
 enemy_attack_debuff_value = 0.75
 has_enemy_defense_debuff = false

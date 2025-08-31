@@ -8,6 +8,7 @@ var card
 var card_being_dragged
 var is_hovering_on_card
 var drag_offset = Vector2.ZERO
+var runDeck: Array[CardResource]
 @export var scaleX: float
 @export var scaleY: float
 @onready var player_hand_reference: Node2D = $PlayerHands
@@ -133,4 +134,4 @@ func _process(delta: float) -> void:
 		card_being_dragged.global_position = Vector2(
 			clamp(mouse_pos.x + drag_offset.x, 0, screen_size.x),
 			clamp(mouse_pos.y + drag_offset.y, 0, screen_size.y)
-		)
+		)	

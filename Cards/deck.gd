@@ -10,8 +10,8 @@ var player_deck: Array[CardResource]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	player_deck = GC.runDeck.duplicate()
-	rich_text_label.text = str(player_deck.size())
+	runDeckDuplicator()
+	#rich_text_label.text = str(player_deck.size())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,13 +19,18 @@ func _process(delta: float) -> void:
 	pass
 
 func draw_card():
-	var card_drawn: CardResource = player_deck[0]
-	player_deck.erase(card_drawn)
+	# Scelgo un indice casuale dal mazzo
+	var random_index: int = randi() % player_deck.size()
+	# Pesco la carta usando l'indice casuale
+	var card_drawn: CardResource = player_deck[random_index]
+	# Rimuovo la carta pescata dal mazzo
+	player_deck.remove_at(random_index)
 	if player_deck.size() == 0:
-		collision_shape_2d.disabled = true
-		sprite_2d.visible = false
-		rich_text_label.visible = false
-	rich_text_label.text = str(player_deck.size())
+		runDeckDuplicator()
+		#collision_shape_2d.disabled = true
+		#sprite_2d.visible = false
+		#rich_text_label.visible = false
+	#rich_text_label.text = str(player_deck.size())
 	var card_scene = preload(CARD_SCENE_PATH)
 
 	var new_card = card_scene.instantiate()
@@ -35,3 +40,6 @@ func draw_card():
 	$"../Cards".add_child(new_card)
 	player_hands.add_card_to_hand(new_card, CARD_DRAW_SPEED)
 	Utils.play_sfx(Pools.GetCocky[randi_range(0,Pools.GetCocky.size()-1)], "SFX")
+
+func runDeckDuplicator():
+	player_deck = GC.runDeck.duplicate()

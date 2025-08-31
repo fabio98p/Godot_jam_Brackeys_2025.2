@@ -20,7 +20,7 @@ scaleY = 1.2
 script = ExtResource("3_hdhnw")
 
 [node name="DropZone" parent="." instance=ExtResource("3_ajkw5")]
-position = Vector2(646, 185)
+position = Vector2(620, 185)
 scale = Vector2(9.88, 1.76)
 
 [node name="Deck" type="Node2D" parent="."]
@@ -40,6 +40,7 @@ scale = Vector2(6.36, 6.2)
 shape = SubResource("RectangleShape2D_hdhnw")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Deck"]
+visible = false
 modulate = Color(0, 0, 0, 1)
 offset_left = -10.0
 offset_top = -25.0

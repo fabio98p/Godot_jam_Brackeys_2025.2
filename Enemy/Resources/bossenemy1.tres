@@ -119,6 +119,6 @@ script = ExtResource("3_43rgr")
 enemy_name = "gino"
 description = ""
 animation = SubResource("Resource_43rgr")
-max_healt = 70.0
+max_healt = 35.0
 attack_list = Array[ExtResource("1_6uppx")]([SubResource("Resource_jl84t"), SubResource("Resource_buxya"), SubResource("Resource_5xvf8"), SubResource("Resource_p7ne3"), SubResource("Resource_6cgt1")])
 metadata/_custom_type_script = "uid://blb8oufwqiukd"

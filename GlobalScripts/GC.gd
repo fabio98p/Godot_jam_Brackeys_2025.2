@@ -2,6 +2,8 @@ extends Node
 
 var runDeck: Array[CardResource]
 var numberOfFight = 0
+var player_actually_health: float = -1
+var player_actually_sanity: int = -1
 
 var initialDeck: Array[CardResource] = [
 #load("res://Cards/Resources/attack.tres") as CardResource,

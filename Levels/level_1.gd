@@ -1,13 +1,15 @@
 extends Node2D
 @onready var player: Node2D = $Player
 var enemy: Node2D
+var running_turn: bool = false
 @onready var background: Sprite2D = $background
 @onready var bars: Node2D = $Bars
-
 # Chose Reward
 @onready var chose_card: Node2D = $ChoseCard
 @onready var reward_1: Button = $ChoseCard/Reward1
 @onready var reward_2: Button = $ChoseCard/Reward2
+# button
+@onready var skip_round: Button = $SkipRound
 
 # Bookmarks
 @onready var bookmarcs: Node2D = $Bookmarcs
@@ -18,7 +20,7 @@ var enemy: Node2D
 @export var level_resource: LevelResource
 
 func _ready() -> void:
-
+	
 #	resetta il deck quando si inizia un nuovo livello
 	#GC.resetDeck()
 #	gestione dello sfondo skjdbgviksdbvskjdbgviksdbvskjdbgviksdbv
@@ -48,6 +50,7 @@ func _ready() -> void:
 	level_resource.reward2 = Pools.RewardPool[randi_range(0, Pools.RewardPool.size()-1)].duplicate()
 	reward_2.icon = level_resource.reward2.img
 	#reward_1.scale = level_resource.reward1.img_size
+	
 	
 func applay_card_effect(cadsEffect):
 	print(cadsEffect)
@@ -103,49 +106,54 @@ func applay_card_effect(cadsEffect):
 				bars.set_player_shield(player.shield)
 
 func _on_skip_round_pressed() -> void:
-	#apply enemy attack
-	var enemyAttack:EnemyAttack = enemy.applay_next_attack()
-	# Shield
-	if enemyAttack.has_shield: 
-		enemy.start_buff_animation()
-		await get_tree().create_timer(1.5).timeout
-		enemy.shield += enemyAttack.shield_value
-		bars.set_enemy_shield(enemy.shield)
+	if !running_turn:
+		running_turn = true
+		skip_round.modulate = Color(1, 1, 1, 0.5)
+		#apply enemy attack
+		var enemyAttack:EnemyAttack = enemy.applay_next_attack()
+		# Shield
+		if enemyAttack.has_shield: 
+			enemy.start_buff_animation()
+			await get_tree().create_timer(1.5).timeout
+			enemy.shield += enemyAttack.shield_value
+			bars.set_enemy_shield(enemy.shield)
+			
+		# Heal
+		if enemyAttack.has_heal:
+			enemy.start_buff_animation()
+			await get_tree().create_timer(1.5).timeout
+			enemy.current_health += enemyAttack.heal_value
+			bars.set_enemy_health(enemy.current_health)
+		# Self Buff
+		if enemyAttack.has_self_buff:
+			enemy.start_buff_animation()
+			await get_tree().create_timer(1.5).timeout
+			if enemyAttack.has_self_attack_buff:
+				player.attack_multiply += enemyAttack.self_attack_buff 
+			if enemyAttack.has_self_defense_buff:
+				player.defense_multiply += enemyAttack.self_defense_buff 
 		
-	# Heal
-	if enemyAttack.has_heal:
-		enemy.start_buff_animation()
-		await get_tree().create_timer(1.5).timeout
-		enemy.current_health += enemyAttack.heal_value
-		bars.set_enemy_health(enemy.current_health)
-	# Self Buff
-	if enemyAttack.has_self_buff:
-		enemy.start_buff_animation()
-		await get_tree().create_timer(1.5).timeout
-		if enemyAttack.has_self_attack_buff:
-			player.attack_multiply += enemyAttack.self_attack_buff 
-		if enemyAttack.has_self_defense_buff:
-			player.defense_multiply += enemyAttack.self_defense_buff 
-	
-	# Player Debuff
-	if enemyAttack.has_player_debuff: 
-		enemy.start_buff_animation()
-		await get_tree().create_timer(1.5).timeout
-		if enemyAttack.has_player_attack_debuff:
-			player.attack_multiply += enemyAttack.player_attack_debuff 
-		if enemyAttack.has_player_defense_debuff:
-			player.defense_multiply += enemyAttack.player_defense_debuff 
-	
-	# Attack must be the last
-	if enemyAttack.has_attack: 
-		var finalMoltiplicator = clamp(1 + (enemy.attack_multiply*0.25) - (player.defense_multiply*0.25),0,3)
-		var enemy_attack_damage = enemyAttack.attack_damage * finalMoltiplicator
-		enemy.start_charge_attack()
-		await get_tree().create_timer(2.5).timeout
-		player.dmg_taken(enemy_attack_damage)
-		print("shiels",player.shield)
-		bars.set_player_health(player.current_health)
-		bars.set_player_shield(player.shield)
+		# Player Debuff
+		if enemyAttack.has_player_debuff: 
+			enemy.start_buff_animation()
+			await get_tree().create_timer(1.5).timeout
+			if enemyAttack.has_player_attack_debuff:
+				player.attack_multiply += enemyAttack.player_attack_debuff 
+			if enemyAttack.has_player_defense_debuff:
+				player.defense_multiply += enemyAttack.player_defense_debuff 
+		
+		# Attack must be the last
+		if enemyAttack.has_attack: 
+			var finalMoltiplicator = clamp(1 + (enemy.attack_multiply*0.25) - (player.defense_multiply*0.25),0,3)
+			var enemy_attack_damage = enemyAttack.attack_damage * finalMoltiplicator
+			enemy.start_charge_attack()
+			await get_tree().create_timer(2.5).timeout
+			player.dmg_taken(enemy_attack_damage)
+			print("shiels",player.shield)
+			bars.set_player_health(player.current_health)
+			bars.set_player_shield(player.shield)
+		running_turn = false
+		skip_round.modulate = Color(1, 1, 1, 1)
 func _on_enemy_enemy_dead() -> void:
 	if GC.numberOfFight == 10:
 		await get_tree().create_timer(1).timeout
@@ -172,6 +180,10 @@ func _on_reward_2_pressed() -> void:
 	bookmarcs.visible = true
 
 func _on_bookmark_1_pressed() -> void:
+	
+	GC.player_actually_health = player.current_health + 5
+	GC.player_actually_sanity = player.current_sanity + 5
+	
 	Utils.play_sfx(Pools.BookmarksPageFlip[randi_range(0,Pools.BookmarksPageFlip.size()-1)], "SFX")
 	if GC.numberOfFight == 3 or GC.numberOfFight == 8:
 		get_tree().change_scene_to_file("res://Levels/Falo.tscn")
@@ -179,6 +191,9 @@ func _on_bookmark_1_pressed() -> void:
 		get_tree().change_scene_to_file("res://Levels/level_1.tscn")
 
 func _on_bookmark_2_pressed() -> void:
+	
+	GC.player_actually_health = player.current_health + 5
+	GC.player_actually_sanity = player.current_sanity + 5
 	Utils.play_sfx(Pools.BookmarksPageFlip[randi_range(0,Pools.BookmarksPageFlip.size()-1)], "SFX")
 	if GC.numberOfFight == 3 or GC.numberOfFight == 8:
 		get_tree().change_scene_to_file("res://Levels/Falo.tscn")

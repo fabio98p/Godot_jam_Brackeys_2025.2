@@ -14,8 +14,12 @@ signal dead
 @onready var sanity: Label = $sanity
 @onready var shieldLabel: Label = $Shield
 
-var current_health: float
-var current_sanity: int
+var current_health: float:
+	set(value):
+		current_health = clamp(value, 0, max_health)
+var current_sanity: int:
+	set(value):
+		current_sanity = clamp(value, 0, max_sanity)
 var shield: int = 0:
 	set(value):
 		shield = clamp(value, 0, 10)
@@ -38,9 +42,17 @@ const SANITY_HURT_TEXTURE: Texture2D = preload("res://Assets/Alice_Sanity_Hurt.p
 const NORMAL_TEXTURE: Texture2D = preload("res://Assets/Alice_Normal.png")
 
 func _ready() -> void:
+	
+	if GC.player_actually_health != max_health and GC.player_actually_health > 0:
+		current_health = GC.player_actually_health
 	#health_bars.max_health = max_health
-	current_health = max_health
-	current_sanity = max_sanity
+	else:
+		current_health = max_health
+	
+	if GC.player_actually_sanity != max_sanity and GC.player_actually_sanity > 0:
+		current_sanity = GC.player_actually_sanity
+	else:
+		current_sanity = max_sanity
 	health.text = "max_health: " + str(current_health)
 	sanity.text = "max_sanity: " + str(current_sanity)
 	attack_multi.text = "attack multy: " + str(attack_multiply)
