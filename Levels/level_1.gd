@@ -190,6 +190,7 @@ func applay_card_effect(cadsEffect):
 
 func _on_skip_round_pressed() -> void:
 	if !running_turn:
+		drop_zone.get_node("Area2D/CollisionShape2D").disabled = true
 		running_turn = true
 		skip_round.modulate = Color(1, 1, 1, 0.5)
 		#apply enemy attack
@@ -235,8 +236,10 @@ func _on_skip_round_pressed() -> void:
 			print("shiels",player.shield)
 			bars.set_player_health(player.current_health)
 			bars.set_player_shield(player.shield)
+		
 		running_turn = false
 		skip_round.modulate = Color(1, 1, 1, 1)
+	drop_zone.get_node("Area2D/CollisionShape2D").disabled = false
 	GC.new_turn = true
 	GC.new_turn_click = true
 	GC.cards_drawn_this_turn=0

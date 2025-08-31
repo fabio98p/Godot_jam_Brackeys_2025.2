@@ -13,7 +13,7 @@
 [ext_resource type="Shader" uid="uid://2gmlt0rihwyd" path="res://Levels/level_1.gdshader" id="10_f4pg2"]
 [ext_resource type="Texture2D" uid="uid://gmamb5ceq8jl" path="res://Assets/CardsImg/IMG_8223.png" id="12_lk57d"]
 [ext_resource type="Texture2D" uid="uid://chi5t3p04jubk" path="res://Assets/CardsImg/IMG_8224.png" id="13_2hkqn"]
-[ext_resource type="Script" uid="uid://fkybrlk07rmt" path="res://Levels/description.gd" id="13_34erp"]
+[ext_resource type="Script" path="res://Levels/description.gd" id="13_34erp"]
 
 [sub_resource type="Animation" id="Animation_xoyoh"]
 length = 0.001
@@ -280,6 +280,7 @@ texture = ExtResource("13_2hkqn")
 script = ExtResource("13_34erp")
 
 [node name="Defense" type="Label" parent="effects/PlayerBuffGrid/PlayerDebuff"]
+layout_mode = 0
 offset_left = -39.9994
 offset_top = 940.0
 offset_right = 1064.0
@@ -288,6 +289,7 @@ theme_override_font_sizes/font_size = 300
 text = "fksjckhj"
 
 [node name="Attack" type="Label" parent="effects/PlayerBuffGrid/PlayerDebuff"]
+layout_mode = 0
 offset_left = -19.9994
 offset_top = 1300.0
 offset_right = 1084.0
@@ -311,6 +313,7 @@ script = ExtResource("13_34erp")
 
 [node name="Defense" type="Label" parent="effects/EnemyBuffGrid/EnemyBuff"]
 visible = false
+layout_mode = 0
 offset_left = -39.9994
 offset_top = 940.0
 offset_right = 1064.0
@@ -320,6 +323,7 @@ text = "fksjckhj"
 
 [node name="Attack" type="Label" parent="effects/EnemyBuffGrid/EnemyBuff"]
 visible = false
+layout_mode = 0
 offset_left = -19.9994
 offset_top = 1300.0
 offset_right = 1084.0
@@ -335,6 +339,7 @@ script = ExtResource("13_34erp")
 
 [node name="Defense" type="Label" parent="effects/EnemyBuffGrid/EnemyDebuff"]
 visible = false
+layout_mode = 0
 offset_left = -39.9994
 offset_top = 940.0
 offset_right = 1064.0
@@ -344,6 +349,7 @@ text = "fksjckhj"
 
 [node name="Attack" type="Label" parent="effects/EnemyBuffGrid/EnemyDebuff"]
 visible = false
+layout_mode = 0
 offset_left = -19.9994
 offset_top = 1300.0
 offset_right = 1084.0
