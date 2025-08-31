@@ -8,6 +8,8 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GC.pickenemy()
+	GC.player_actually_health = -1
+	GC.player_actually_sanity = -1
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

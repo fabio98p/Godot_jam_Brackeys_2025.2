@@ -86,41 +86,41 @@ texture = ExtResource("2_yiwb4")
 [node name="Labels" type="Node" parent="."]
 
 [node name="PlayerHealthValue" type="Label" parent="Labels"]
-offset_left = 467.0
-offset_top = 1.0
-offset_right = 507.0
-offset_bottom = 46.0
+offset_left = 470.0
+offset_top = -1.0
+offset_right = 510.0
+offset_bottom = 44.0
 theme_override_font_sizes/font_size = 32
 text = "15"
 
 [node name="PlayerShieldValue" type="Label" parent="Labels"]
-offset_left = 484.0
-offset_top = 51.0
-offset_right = 524.0
-offset_bottom = 96.0
+offset_left = 489.0
+offset_top = 52.0
+offset_right = 529.0
+offset_bottom = 97.0
 theme_override_font_sizes/font_size = 24
 text = "15"
 
 [node name="EnemyHealthValue" type="Label" parent="Labels"]
 offset_left = 732.0
-offset_top = 1.0
+offset_top = -1.0
 offset_right = 772.0
-offset_bottom = 46.0
+offset_bottom = 44.0
 theme_override_font_sizes/font_size = 32
 text = "15"
 
 [node name="EnemyShieldValue" type="Label" parent="Labels"]
-offset_left = 725.0
-offset_top = 51.0
-offset_right = 765.0
-offset_bottom = 96.0
+offset_left = 723.0
+offset_top = 52.0
+offset_right = 763.0
+offset_bottom = 97.0
 theme_override_font_sizes/font_size = 24
 text = "15"
 
 [node name="SanityValue" type="Label" parent="Labels"]
 offset_left = 606.0
-offset_top = 59.0
+offset_top = 60.0
 offset_right = 646.0
-offset_bottom = 104.0
+offset_bottom = 105.0
 theme_override_font_sizes/font_size = 24
 text = "15"

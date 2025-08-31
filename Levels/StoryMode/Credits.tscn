@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://1mnyjdbl8m10"]
+
+[ext_resource type="Script" uid="uid://cd0c487lwk3lj" path="res://Levels/StoryMode/story_mode.gd" id="1_6n6mb"]
+[ext_resource type="Texture2D" uid="uid://d1f30qeupmt0i" path="res://Assets/Image/BGFINALE.jpg" id="2_4etvg"]
+[ext_resource type="Texture2D" uid="uid://b6anbvt86aro" path="res://Assets/alice.jpg" id="3_8760r"]
+[ext_resource type="Texture2D" uid="uid://fe07nl7i763x" path="res://Assets/Image/NEXT.png" id="4_t467d"]
+
+[node name="Option" type="Node2D"]
+script = ExtResource("1_6n6mb")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(637, 383)
+scale = Vector2(0.67, 0.708)
+texture = ExtResource("2_4etvg")
+
+[node name="Image" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(894, 336)
+texture = ExtResource("3_8760r")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 87.0
+offset_top = 133.0
+offset_right = 777.0
+offset_bottom = 832.0
+scale = Vector2(0.758168, 0.758168)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "CARDINAL INSANI-TEA
+
+A game by Fabio, Mirko, Crimsoniac, and Kermit420
+Created in 7 days for Brackeys Game Jam 2025.2, under the theme: “Risk it for the Biscuit.”
+
+THE GAMEPLAY...
+Play biscuits as cards to strike back at Wonderland’s twisted foes.
+Every card has a price—the stronger the bite, the more sanity you lose.
+Keep your wits about you! If sanity hits zero, Alice goes mad.
+Defeat the Red Queen, and maybe—just maybe—make it home in time for tea.
+CREDITS...
+Fabio & Mirko — Programming, Game Design
+Kermit420 — Art, Card Design, Game Design
+Crimsoniac — Music, Sound Effects, Narration
+"
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 699.0
+offset_top = 104.0
+offset_right = 1389.0
+offset_bottom = 841.0
+scale = Vector2(0.758168, 0.758168)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "
+THE GAMEPLAY...
+Play biscuits as cards to strike back at Wonderland’s twisted foes.
+Every card has a price—the stronger the bite, the more sanity you lose.
+Keep your wits about you! If sanity hits zero, Alice goes mad.
+Defeat the Red Queen, and maybe—just maybe—make it home in time for tea.
+"
+autowrap_mode = 3
+
+[node name="NextPage" type="Button" parent="."]
+offset_left = 1078.0
+offset_top = 538.0
+offset_right = 1288.0
+offset_bottom = 746.0
+scale = Vector2(0.7, 0.7)
+icon = ExtResource("4_t467d")
+
+[connection signal="pressed" from="NextPage" to="." method="_on_next_page_pressed"]

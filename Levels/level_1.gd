@@ -19,6 +19,8 @@ var running_turn: bool = false
 @onready var bookmark_1: Button = $Bookmarcs/Bookmark1
 @onready var bookmark_2: Button = $Bookmarcs/Bookmark2
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var label: Label = $Bookmarcs/Label
+@onready var label_2: Label = $Bookmarcs/Label2
 
 @export var level_resource: LevelResource
 
@@ -269,14 +271,30 @@ func _on_reward_1_pressed() -> void:
 	Utils.play_sfx(Pools.GetCocky[randi_range(0,Pools.GetCocky.size()-1)], "SFX")
 	await get_tree().create_timer(0.5).timeout
 	chose_card.visible = false
-	bookmarcs.visible = true
+	bookmarcs.visible=true
+	if GC.numberOfFight == 2 or GC.numberOfFight == 8:
+		bookmark_1.visible = true
+		label_2.visible= true
+	bookmark_2.visible = true
+	bookmark_1.visible = true
+	#bookmark_1.visible = false
+	label_2.visible= false
+	label.visible= true
+
 
 func _on_reward_2_pressed() -> void:
 	GC.runDeck.append(level_resource.reward2)
 	Utils.play_sfx(Pools.GetCocky[randi_range(0,Pools.GetCocky.size()-1)], "SFX")
 	await get_tree().create_timer(0.5).timeout
 	chose_card.visible = false
-	bookmarcs.visible = true
+	bookmarcs.visible=true
+	if GC.numberOfFight == 2 or GC.numberOfFight == 8:
+		label_2.visible= true
+	bookmark_2.visible = true
+	bookmark_1.visible = true
+	#bookmark_1.visible = false
+	label_2.visible= false
+	label.visible= true
 
 func _on_bookmark_1_pressed() -> void:
 	
@@ -284,20 +302,14 @@ func _on_bookmark_1_pressed() -> void:
 	GC.player_actually_sanity = player.current_sanity + 5
 	
 	Utils.play_sfx(Pools.BookmarksPageFlip[randi_range(0,Pools.BookmarksPageFlip.size()-1)], "SFX")
-	if GC.numberOfFight == 3 or GC.numberOfFight == 8:
-		get_tree().change_scene_to_file("res://Levels/Falo.tscn")
-	else:
-		get_tree().change_scene_to_file("res://Levels/level_1.tscn")
+	get_tree().change_scene_to_file("res://Levels/Falo.tscn")
 
 func _on_bookmark_2_pressed() -> void:
 	
 	GC.player_actually_health = player.current_health + 5
 	GC.player_actually_sanity = player.current_sanity + 5
 	Utils.play_sfx(Pools.BookmarksPageFlip[randi_range(0,Pools.BookmarksPageFlip.size()-1)], "SFX")
-	if GC.numberOfFight == 3 or GC.numberOfFight == 8:
-		get_tree().change_scene_to_file("res://Levels/Falo.tscn")
-	else:
-		get_tree().change_scene_to_file("res://Levels/level_1.tscn")
+	get_tree().change_scene_to_file("res://Levels/level_1.tscn")
 
 
 

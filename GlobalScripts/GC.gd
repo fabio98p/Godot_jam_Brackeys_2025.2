@@ -80,7 +80,6 @@ func pickenemy():
 			var index = randi_range(0, Pools.poolChessEnemy.size() - 1)
 			var enemy = Pools.poolChessEnemy[index]
 			Pools.poolChessEnemy.remove_at(index)
-			
 			return enemy
 	if numberOfFight == 9:
 		print("resitng 9")
@@ -88,3 +87,4 @@ func pickenemy():
 	if numberOfFight == 10:
 		#numberOfFight = 0
 		return Pools.BossEnemyPool[randi_range(0, Pools.BossEnemyPool.size()-1)]
+		

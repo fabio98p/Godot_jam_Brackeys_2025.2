@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dlyutofh3wgrc"]
+[gd_scene load_steps=23 format=3 uid="uid://dlyutofh3wgrc"]
 
 [ext_resource type="PackedScene" uid="uid://bu424fog720wr" path="res://Cards/card_manager.tscn" id="1_3mhv4"]
 [ext_resource type="Script" uid="uid://ccsxyx46s6evw" path="res://Levels/level_1.gd" id="1_rf6l5"]
@@ -10,12 +10,19 @@
 [ext_resource type="Texture2D" uid="uid://yr7h47bahev4" path="res://Assets/white.png" id="9_f4pg2"]
 [ext_resource type="Texture2D" uid="uid://do0iy20jwghcs" path="res://Assets/CardsImg/alfajor.png" id="9_rs4xw"]
 [ext_resource type="PackedScene" uid="uid://30bkaphh1yvg" path="res://HUD/barsHUD.tscn" id="9_xoyoh"]
+[ext_resource type="Texture2D" uid="uid://3gab7x4wkhvh" path="res://Assets/Image/Bookmark.png" id="10_34erp"]
 [ext_resource type="Shader" uid="uid://2gmlt0rihwyd" path="res://Levels/level_1.gdshader" id="10_f4pg2"]
 [ext_resource type="Texture2D" uid="uid://bqncmyem6b104" path="res://Assets/CardsImg/IMG_8221.png" id="12_k2bse"]
 [ext_resource type="Texture2D" uid="uid://gmamb5ceq8jl" path="res://Assets/CardsImg/IMG_8223.png" id="12_lk57d"]
 [ext_resource type="Texture2D" uid="uid://chi5t3p04jubk" path="res://Assets/CardsImg/IMG_8224.png" id="13_2hkqn"]
 [ext_resource type="Script" uid="uid://fkybrlk07rmt" path="res://Levels/description.gd" id="13_34erp"]
 [ext_resource type="Script" uid="uid://bt87ns08itktx" path="res://Levels/Next_attack.gd" id="13_c7pbv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34erp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k2bse"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="Animation" id="Animation_xoyoh"]
 length = 0.001
@@ -194,7 +201,6 @@ scale = Vector2(0.6, 0.6)
 icon = ExtResource("9_rs4xw")
 
 [node name="Bookmarcs" type="Node2D" parent="."]
-visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Bookmarcs"]
 visible = false
@@ -204,22 +210,61 @@ scale = Vector2(41.4688, 24)
 texture = ExtResource("9_f4pg2")
 
 [node name="Bookmark2" type="Button" parent="Bookmarcs"]
-modulate = Color(1, 0, 1, 1)
-offset_left = 1140.0
+modulate = Color(0, 0, 0, 1)
+offset_left = 1078.0
 offset_top = 184.0
-offset_right = 3648.0
-offset_bottom = 1384.0
-scale = Vector2(0.05, 0.05)
-icon = ExtResource("9_f4pg2")
+offset_right = 1409.0
+offset_bottom = 276.0
+scale = Vector2(0.49, 0.637)
+theme_override_styles/focus = SubResource("StyleBoxFlat_34erp")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_34erp")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_34erp")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_34erp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_34erp")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_34erp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_34erp")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_34erp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_34erp")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_34erp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_34erp")
+icon = ExtResource("10_34erp")
 
 [node name="Bookmark1" type="Button" parent="Bookmarcs"]
-modulate = Color(1, 1, 0, 1)
-offset_left = 1146.0
-offset_top = 290.0
-offset_right = 3654.0
-offset_bottom = 1490.0
-scale = Vector2(0.05, 0.05)
-icon = ExtResource("9_f4pg2")
+modulate = Color(0, 0, 0, 1)
+offset_left = 1074.0
+offset_top = 295.0
+offset_right = 1405.0
+offset_bottom = 387.0
+scale = Vector2(0.49, 0.637)
+theme_override_styles/focus = SubResource("StyleBoxFlat_k2bse")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_k2bse")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_k2bse")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_k2bse")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_k2bse")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_k2bse")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k2bse")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_k2bse")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k2bse")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_k2bse")
+theme_override_styles/normal = SubResource("StyleBoxFlat_k2bse")
+icon = ExtResource("10_34erp")
+
+[node name="Label" type="Label" parent="Bookmarcs"]
+offset_left = 1122.0
+offset_top = 192.0
+offset_right = 1177.0
+offset_bottom = 226.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "Next"
+
+[node name="Label2" type="Label" parent="Bookmarcs"]
+offset_left = 1126.0
+offset_top = 305.0
+offset_right = 1176.0
+offset_bottom = 339.0
+theme_override_font_sizes/font_size = 24
+text = "Rest"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(640, 360)

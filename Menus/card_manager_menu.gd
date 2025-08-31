@@ -11,7 +11,7 @@ var is_hovering_on_card
 var card_scenes = {
 	"story": "res://Levels/StoryMode/StoryMode.tscn",
 	"start": "res://Levels/level_1.tscn",
-	"option": "res://Levels/level_1.tscn",
+	"option": "res://Levels/StoryMode/Credits.tscn",
 	"exit": "res://Levels/level_1.tscn"
 }
 
