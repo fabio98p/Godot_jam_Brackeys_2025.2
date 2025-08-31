@@ -39,17 +39,17 @@ void fragment() {
     vec2 uv = SCREEN_UV;
     vec2 center = vec2(0.5);
 
-  
+
     vec3 base_color = texture(screen_tex, uv).rgb;
     base_color *= (1.0 - darken_factor);
 
-   
+
     vec2 vuv = (uv - center);
     float dist = length(vuv);
     float vignette = clamp(pow(dist, vignette_power) * border_darkness, 0.0, 1.0);
     base_color *= (1.0 - vignette);
 
-   
+
     vec3 firefly_color = vec3(0.0);
 
     for (int i = 0; i < firefly_count; i++) {
