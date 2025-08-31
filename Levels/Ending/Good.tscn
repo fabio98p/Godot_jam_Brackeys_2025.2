@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dppaiqtu3jgex"]
 
 [ext_resource type="Script" uid="uid://cqm2hwcgpgder" path="res://Levels/Ending/good.gd" id="1_fwra3"]
-[ext_resource type="Texture2D" uid="uid://b6anbvt86aro" path="res://Assets/alice.jpg" id="2_7bpme"]
 [ext_resource type="Texture2D" uid="uid://d1f30qeupmt0i" path="res://Assets/Image/BGFINALE.jpg" id="2_7gdtm"]
+[ext_resource type="Texture2D" uid="uid://cj6t7j2ctd64g" path="res://Assets/Image/IMG_8332.png" id="3_7gdtm"]
 [ext_resource type="AudioStream" uid="uid://b08mh3v8kq34r" path="res://Assets/Narration/NarrationGoodEnding.mp3" id="4_opa5c"]
 [ext_resource type="Texture2D" uid="uid://fe07nl7i763x" path="res://Assets/Image/NEXT.png" id="5_7gdtm"]
 
@@ -15,8 +15,9 @@ scale = Vector2(0.67, 0.67)
 texture = ExtResource("2_7gdtm")
 
 [node name="Image" type="Sprite2D" parent="."]
-position = Vector2(894, 336)
-texture = ExtResource("2_7bpme")
+position = Vector2(950, 347)
+scale = Vector2(0.512876, 0.512876)
+texture = ExtResource("3_7gdtm")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 153.0

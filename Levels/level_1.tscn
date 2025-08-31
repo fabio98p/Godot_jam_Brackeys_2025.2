@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dlyutofh3wgrc"]
+[gd_scene load_steps=24 format=3 uid="uid://dlyutofh3wgrc"]
 
 [ext_resource type="PackedScene" uid="uid://bu424fog720wr" path="res://Cards/card_manager.tscn" id="1_3mhv4"]
 [ext_resource type="Script" uid="uid://ccsxyx46s6evw" path="res://Levels/level_1.gd" id="1_rf6l5"]
@@ -12,11 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://30bkaphh1yvg" path="res://HUD/barsHUD.tscn" id="9_xoyoh"]
 [ext_resource type="Texture2D" uid="uid://3gab7x4wkhvh" path="res://Assets/Image/Bookmark.png" id="10_34erp"]
 [ext_resource type="Shader" uid="uid://2gmlt0rihwyd" path="res://Levels/level_1.gdshader" id="10_f4pg2"]
-[ext_resource type="Texture2D" uid="uid://bqncmyem6b104" path="res://Assets/CardsImg/IMG_8221.png" id="12_k2bse"]
 [ext_resource type="Texture2D" uid="uid://gmamb5ceq8jl" path="res://Assets/CardsImg/IMG_8223.png" id="12_lk57d"]
 [ext_resource type="Texture2D" uid="uid://chi5t3p04jubk" path="res://Assets/CardsImg/IMG_8224.png" id="13_2hkqn"]
-[ext_resource type="Script" path="res://Levels/description.gd" id="13_34erp"]
-[ext_resource type="Script" path="res://Levels/Next_attack.gd" id="13_c7pbv"]
+[ext_resource type="Script" uid="uid://fkybrlk07rmt" path="res://Levels/description.gd" id="13_34erp"]
+[ext_resource type="Script" uid="uid://bt87ns08itktx" path="res://Levels/Next_attack.gd" id="13_c7pbv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34erp"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -287,38 +286,54 @@ material = SubResource("ShaderMaterial_62b6n")
 mesh = SubResource("QuadMesh_rs4xw")
 
 [node name="NextAttack" type="TextureRect" parent="."]
-offset_left = 705.0
-offset_top = 332.0
-offset_right = 1617.0
-offset_bottom = 1271.0
+offset_left = 1131.0
+offset_top = 87.0
+offset_right = 2560.0
+offset_bottom = 2016.0
 scale = Vector2(0.07, 0.07)
-texture = ExtResource("12_k2bse")
 script = ExtResource("13_c7pbv")
 
-[node name="Label" type="Label" parent="NextAttack"]
+[node name="Label4" type="Label" parent="NextAttack"]
 layout_mode = 0
-offset_left = -940.0
-offset_top = -1160.0
-offset_right = 1896.0
-offset_bottom = -751.0
+offset_left = 357.143
+offset_top = -471.429
+offset_right = 1257.14
+offset_bottom = 890.571
+theme_override_colors/font_color = Color(0.894118, 0.776471, 0.701961, 1)
+theme_override_font_sizes/font_size = 1000
+text = "!"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="NextAttack"]
+z_index = 25
+layout_mode = 0
+offset_left = -3328.57
+offset_top = 157.143
+offset_right = -492.571
+offset_bottom = 566.143
+theme_override_constants/outline_size = 100
 theme_override_font_sizes/font_size = 300
 text = "Next Enemy Attack:"
 
 [node name="Label2" type="Label" parent="NextAttack"]
+z_index = 25
 layout_mode = 0
-offset_left = -920.0
-offset_top = -780.0
-offset_right = 1916.0
-offset_bottom = -371.0
+offset_left = -3308.57
+offset_top = 537.143
+offset_right = -472.571
+offset_bottom = 946.143
+theme_override_constants/outline_size = 100
 theme_override_font_sizes/font_size = 300
 text = "Next Enemy Attack:"
 
 [node name="Label3" type="Label" parent="NextAttack"]
+z_index = 25
 layout_mode = 0
-offset_left = -900.0
-offset_top = -420.0
-offset_right = 1936.0
-offset_bottom = -11.0
+offset_left = -3288.57
+offset_top = 897.143
+offset_right = -452.571
+offset_bottom = 1306.14
+theme_override_constants/outline_size = 100
 theme_override_font_sizes/font_size = 300
 text = "Next Enemy Attack:"
 

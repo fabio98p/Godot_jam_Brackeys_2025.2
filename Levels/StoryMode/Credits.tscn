@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://1mnyjdbl8m10"]
 
-[ext_resource type="Script" path="res://Levels/StoryMode/credits_mode.gd" id="1_6n6mb"]
+[ext_resource type="Script" uid="uid://bpb5d12pnj73" path="res://Levels/StoryMode/credits_mode.gd" id="1_6n6mb"]
 [ext_resource type="Texture2D" uid="uid://d1f30qeupmt0i" path="res://Assets/Image/BGFINALE.jpg" id="2_4etvg"]
 [ext_resource type="Texture2D" uid="uid://b6anbvt86aro" path="res://Assets/alice.jpg" id="3_8760r"]
 [ext_resource type="Texture2D" uid="uid://fe07nl7i763x" path="res://Assets/Image/NEXT.png" id="4_t467d"]
