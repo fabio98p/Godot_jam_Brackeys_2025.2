@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://blt1iy4s22cuy"]
 
 [ext_resource type="Script" uid="uid://baccahtoae2ch" path="res://Levels/Ending/parents.gd" id="1_yhdmd"]
-[ext_resource type="Texture2D" uid="uid://bq5lhd801dxs1" path="res://Assets/46f825710e6a6121cadf1a0187d142a1.jpg" id="2_nvp2m"]
 [ext_resource type="Texture2D" uid="uid://d1f30qeupmt0i" path="res://Assets/Image/BGFINALE.jpg" id="2_qs38o"]
+[ext_resource type="Texture2D" uid="uid://p7dr32twdea0" path="res://Assets/Image/Untitled_Artwork.png" id="3_qs38o"]
 [ext_resource type="AudioStream" uid="uid://bnof5gv30r1yt" path="res://Assets/Narration/Narration1SanityPoint.mp3" id="4_rwh8t"]
 [ext_resource type="Texture2D" uid="uid://fe07nl7i763x" path="res://Assets/Image/NEXT.png" id="5_qs38o"]
 
@@ -15,8 +15,9 @@ scale = Vector2(0.67, 0.67)
 texture = ExtResource("2_qs38o")
 
 [node name="Image" type="Sprite2D" parent="."]
-position = Vector2(880, 325)
-texture = ExtResource("2_nvp2m")
+position = Vector2(934, 347)
+scale = Vector2(0.522532, 0.522532)
+texture = ExtResource("3_qs38o")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 137.0
@@ -36,7 +37,6 @@ autowrap_mode = 3
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_rwh8t")
 autoplay = true
-bus = &"Narrator"
 
 [node name="Button" type="Button" parent="."]
 offset_left = 1022.0
