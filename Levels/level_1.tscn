@@ -164,6 +164,7 @@ scale = Vector2(0.319998, 0.319998)
 icon = ExtResource("6_xoyoh")
 
 [node name="ChoseCard" type="Node2D" parent="."]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="ChoseCard"]
 modulate = Color(0, 0, 0, 0.352941)
@@ -172,18 +173,18 @@ scale = Vector2(41.4688, 24)
 texture = ExtResource("9_f4pg2")
 
 [node name="Reward1" type="Button" parent="ChoseCard"]
-offset_left = 260.0
-offset_top = 189.0
-offset_right = 768.0
-offset_bottom = 897.0
+offset_left = 265.0
+offset_top = 127.0
+offset_right = 773.0
+offset_bottom = 835.0
 scale = Vector2(0.6, 0.6)
 icon = ExtResource("8_62b6n")
 
 [node name="Reward2" type="Button" parent="ChoseCard"]
-offset_left = 711.0
-offset_top = 188.0
-offset_right = 1219.0
-offset_bottom = 896.0
+offset_left = 712.0
+offset_top = 128.0
+offset_right = 1220.0
+offset_bottom = 836.0
 scale = Vector2(0.6, 0.6)
 icon = ExtResource("9_rs4xw")
 
