@@ -28,6 +28,8 @@ var running_turn: bool = false
 @onready var enemy_buff: TextureRect = $effects/EnemyBuffGrid/EnemyBuff
 @onready var enemy_debuff: TextureRect = $effects/EnemyBuffGrid/EnemyDebuff
 
+@onready var next_attack: TextureRect = $NextAttack
+
 func _ready() -> void:
 	GC.new_turn = true
 	GC.new_turn_click = true
@@ -52,6 +54,9 @@ func _ready() -> void:
 	bars.set_player_sanity(player.current_sanity)
 	player.dead.connect(transition_dead)
 	
+	# enemy next attack
+	next_attack.visible = true
+	next_attack.updateNewtAttack(enemy.new_attack)
 	
 	# Setup Rewards
 	chose_card.visible = false
@@ -193,6 +198,7 @@ func _on_skip_round_pressed() -> void:
 		drop_zone.get_node("Area2D/CollisionShape2D").disabled = true
 		running_turn = true
 		skip_round.modulate = Color(1, 1, 1, 0.5)
+		next_attack.visible = false
 		#apply enemy attack
 		var enemyAttack:EnemyAttack = enemy.applay_next_attack()
 		# Shield
@@ -239,6 +245,8 @@ func _on_skip_round_pressed() -> void:
 		
 		running_turn = false
 		skip_round.modulate = Color(1, 1, 1, 1)
+		next_attack.visible = true
+		next_attack.updateNewtAttack(enemy.new_attack)
 	drop_zone.get_node("Area2D/CollisionShape2D").disabled = false
 	GC.new_turn = true
 	GC.new_turn_click = true
