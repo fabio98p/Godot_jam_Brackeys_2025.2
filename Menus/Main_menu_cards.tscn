@@ -184,7 +184,7 @@ text = "EXIT"
 
 [node name="DropZone" parent="." instance=ExtResource("5_k616j")]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(949, 238)
+position = Vector2(978, 339)
 scale = Vector2(2.16, 1.8)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

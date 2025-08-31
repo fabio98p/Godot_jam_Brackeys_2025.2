@@ -152,8 +152,8 @@ texture = ExtResource("3_77x7w")
 
 [node name="Player" parent="." instance=ExtResource("2_3mhv4")]
 position = Vector2(345, 367)
-max_health = 110.0
-max_sanity = 300
+max_health = 15.0
+max_sanity = 30
 
 [node name="SkipRound" type="Button" parent="."]
 offset_left = 1179.0
