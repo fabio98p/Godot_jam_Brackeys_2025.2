@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bmnkj1vme0vjt"]
 
 [ext_resource type="Script" uid="uid://c5ldkw175ixns" path="res://Levels/Ending/sanity.gd" id="1_6tkjv"]
-[ext_resource type="Texture2D" uid="uid://bftu7ihywk67q" path="res://Assets/Image/sfondo.png" id="2_5xu5f"]
-[ext_resource type="Texture2D" uid="uid://dq3aj4yhl8a08" path="res://Assets/Mad-Hatter-PNG-HD.png" id="2_6tkjv"]
+[ext_resource type="Texture2D" uid="uid://d1f30qeupmt0i" path="res://Assets/Image/BGFINALE.jpg" id="2_5xu5f"]
+[ext_resource type="Texture2D" uid="uid://57ppm5ef6tg8" path="res://Assets/Image/INSANITY ENDING.png" id="3_5xu5f"]
 [ext_resource type="AudioStream" uid="uid://bdo5fcxwgnboc" path="res://Assets/Narration/NarrationInsanityEnding.mp3" id="4_wbr5c"]
 [ext_resource type="Texture2D" uid="uid://fe07nl7i763x" path="res://Assets/Image/NEXT.png" id="5_5xu5f"]
 
@@ -10,17 +10,17 @@
 script = ExtResource("1_6tkjv")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(600, 356)
-scale = Vector2(1.19474, 1.19474)
+position = Vector2(637, 362)
+scale = Vector2(0.67, 0.67)
 texture = ExtResource("2_5xu5f")
 
 [node name="Image" type="Sprite2D" parent="."]
 
 [node name="Label" type="Label" parent="."]
-offset_left = 149.0
-offset_top = 36.0
-offset_right = 591.0
-offset_bottom = 735.0
+offset_left = 121.0
+offset_top = 115.0
+offset_right = 563.0
+offset_bottom = 814.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Lost among the twisting woods, Alice stumbled onward. Brambles tore at her dress, thorns tugged her hair, and every turn led only deeper into the maze of whispering trees. The moonlight fractured between the branches, silver paths leading everywhere—and nowhere.
 At last she burst into a clearing where the smell of tea and sugared cakes lingered in the air. There sat the Mad Hatter, grinning wide, his teacup poised in mid-toast as if he had been waiting all along.
@@ -32,8 +32,9 @@ In Wonderland, a new Hatter had been crowned.
 autowrap_mode = 3
 
 [node name="Mad-hatter-png-hd" type="Sprite2D" parent="."]
-position = Vector2(890, 346)
-texture = ExtResource("2_6tkjv")
+position = Vector2(933, 335)
+scale = Vector2(0.644046, 0.644046)
+texture = ExtResource("3_5xu5f")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_wbr5c")

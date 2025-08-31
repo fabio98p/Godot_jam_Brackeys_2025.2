@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://baccahtoae2ch" path="res://Levels/Ending/parents.gd" id="1_yhdmd"]
 [ext_resource type="Texture2D" uid="uid://bq5lhd801dxs1" path="res://Assets/46f825710e6a6121cadf1a0187d142a1.jpg" id="2_nvp2m"]
-[ext_resource type="Texture2D" uid="uid://bftu7ihywk67q" path="res://Assets/Image/sfondo.png" id="2_qs38o"]
+[ext_resource type="Texture2D" uid="uid://d1f30qeupmt0i" path="res://Assets/Image/BGFINALE.jpg" id="2_qs38o"]
 [ext_resource type="AudioStream" uid="uid://bnof5gv30r1yt" path="res://Assets/Narration/Narration1SanityPoint.mp3" id="4_rwh8t"]
 [ext_resource type="Texture2D" uid="uid://fe07nl7i763x" path="res://Assets/Image/NEXT.png" id="5_qs38o"]
 
@@ -10,8 +10,8 @@
 script = ExtResource("1_yhdmd")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(600, 356)
-scale = Vector2(1.32478, 1.32478)
+position = Vector2(637, 362)
+scale = Vector2(0.67, 0.67)
 texture = ExtResource("2_qs38o")
 
 [node name="Image" type="Sprite2D" parent="."]
@@ -20,9 +20,10 @@ texture = ExtResource("2_nvp2m")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 137.0
-offset_top = 27.0
+offset_top = 101.0
 offset_right = 594.0
-offset_bottom = 726.0
+offset_bottom = 800.0
+scale = Vector2(0.884559, 0.884559)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "At last, after so much peril and sorrow, Alice stumbled upon a looking-glass shining faintly between two twisted oaks. Her heart leapt—home! She pressed her palms to the glass, and it yielded, rippling like water, until she tumbled through and landed once more in her familiar room.
 But the world felt different now. The ticking clock struck too loudly. The shadows leaned too long across the floor. Wonderland’s cracks and horrors clung to her mind like cobwebs that would not shake free.

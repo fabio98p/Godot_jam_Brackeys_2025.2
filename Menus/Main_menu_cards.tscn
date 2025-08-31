@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://4gxl80juhov" path="res://Menus/main_menu_cards.gd" id="1_fnipk"]
 [ext_resource type="PackedScene" uid="uid://dm2rmqggvb0dl" path="res://Cards/CardMenu.tscn" id="1_iqxob"]
-[ext_resource type="Texture2D" uid="uid://bftu7ihywk67q" path="res://Assets/Image/sfondo.png" id="2_fnipk"]
+[ext_resource type="Texture2D" uid="uid://d1f30qeupmt0i" path="res://Assets/Image/BGFINALE.jpg" id="2_cfbi3"]
 [ext_resource type="Script" uid="uid://cwogr7p3uyewg" path="res://Menus/card_manager_menu.gd" id="2_iqxob"]
 [ext_resource type="Texture2D" uid="uid://co5urvcobdafx" path="res://Assets/Image/IMG_8319.png" id="3_cfbi3"]
 [ext_resource type="Texture2D" uid="uid://dxqvceiw4bkey" path="res://Assets/Image/MENU ALICE.png" id="3_fnipk"]
@@ -16,12 +16,13 @@
 script = ExtResource("1_fnipk")
 
 [node name="BG" type="Sprite2D" parent="."]
-position = Vector2(622, 321)
-scale = Vector2(1.3, 1.3)
-texture = ExtResource("2_fnipk")
+position = Vector2(637, 362)
+scale = Vector2(0.67, 0.67)
+texture = ExtResource("2_cfbi3")
 
 [node name="Title" type="Sprite2D" parent="."]
-position = Vector2(375, 195)
+position = Vector2(344, 195)
+scale = Vector2(0.92, 0.92)
 texture = ExtResource("3_cfbi3")
 
 [node name="Alice" type="Sprite2D" parent="."]
@@ -30,15 +31,16 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_fnipk")
 
 [node name="info" type="Label" parent="."]
-offset_left = 215.0
-offset_top = 366.0
-offset_right = 748.0
-offset_bottom = 454.0
+offset_left = 196.0
+offset_top = 431.0
+offset_right = 729.0
+offset_bottom = 519.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Give Alice the biscuit "
 
 [node name="CardManagerMenu" type="Node2D" parent="."]
+position = Vector2(-17, 0)
 script = ExtResource("2_iqxob")
 
 [node name="story" parent="CardManagerMenu" instance=ExtResource("1_iqxob")]
