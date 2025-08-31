@@ -256,6 +256,7 @@ func _on_skip_round_pressed() -> void:
 func _on_enemy_enemy_dead() -> void:
 	drop_zone.queue_free()
 	skip_round.queue_free()
+	next_attack.visible = false
 	if GC.numberOfFight == 10:
 		await get_tree().create_timer(1).timeout
 #		TODO mettere animazioni zoom
