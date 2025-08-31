@@ -9,23 +9,19 @@ var currentPage = 1
 
 func _ready() -> void:
 	loadNewPage()
-	#await get_tree().create_timer(20).timeout
-	#get_tree().change_scene_to_file("res://Menus/Main_menu_cards.tscn")
-	previus_page_button.visible = false
 
 func _on_next_page_pressed() -> void:
 	currentPage += 1
 	if currentPage >= 5:
+		GC.willingAudio(preload("res://Assets/Music/Music/GamePlayBGMLoop.mp3"),0.1)
 		get_tree().change_scene_to_file("res://Levels/level_1.tscn")
-	loadNewPage()
-	previus_page_button.visible = true
+		return
 	Utils.play_sfx(Pools.BookmarksPageFlip[randi_range(0,Pools.BookmarksPageFlip.size()-1)], "SFX")
+	loadNewPage()
 
 func _on_previus_page_pressed() -> void:
 	currentPage -= 1
 	loadNewPage()
-	if currentPage == 1:
-		previus_page_button.visible = false
 	Utils.play_sfx(Pools.BookmarksPageFlip[randi_range(0,Pools.BookmarksPageFlip.size()-1)], "SFX")
 
 func getFileThing(path: String):

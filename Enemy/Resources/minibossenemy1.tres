@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnemyResource" load_steps=9 format=3 uid="uid://dlnnaibls17ky"]
 
-[ext_resource type="Script" path="res://Enemy/enemyAnimationResource.gd" id="1_fqkdp"]
+[ext_resource type="Script" uid="uid://dvrp4fo5kk2hp" path="res://Enemy/enemyAnimationResource.gd" id="1_fqkdp"]
 [ext_resource type="Script" uid="uid://blnkk5r71x700" path="res://Enemy/enemyAttackResource.gd" id="1_ulavc"]
 [ext_resource type="Texture2D" uid="uid://doups3ewdi6cc" path="res://Assets/Image/Enemy/IMG_8304-ezgif.com-gif-to-sprite-converter.png" id="2_gq44y"]
 [ext_resource type="Script" uid="uid://blb8oufwqiukd" path="res://Enemy/enemyResource.gd" id="3_gq44y"]
@@ -11,7 +11,7 @@ sprite_sheet = ExtResource("2_gq44y")
 frame_size = Vector2i(745, 668)
 fps = 3
 scale = Vector2(0.7, 0.7)
-position = Vector2(1030, 300)
+position = Vector2(1050, 300)
 metadata/_custom_type_script = "uid://dvrp4fo5kk2hp"
 
 [sub_resource type="Resource" id="Resource_jl84t"]

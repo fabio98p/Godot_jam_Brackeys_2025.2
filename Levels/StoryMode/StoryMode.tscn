@@ -1,27 +1,28 @@
 [gd_scene load_steps=5 format=3 uid="uid://h811d0411mau"]
 
 [ext_resource type="Script" uid="uid://cd0c487lwk3lj" path="res://Levels/StoryMode/story_mode.gd" id="1_u5pr3"]
-[ext_resource type="Texture2D" uid="uid://cvjfkhp878psc" path="res://Assets/13844017-vecchio-libro-aperto-isolato-su-bianca-sfondo-foto.jpg" id="2_0p5mx"]
+[ext_resource type="Texture2D" uid="uid://bftu7ihywk67q" path="res://Assets/Image/sfondo.png" id="2_el530"]
 [ext_resource type="Texture2D" uid="uid://b6anbvt86aro" path="res://Assets/alice.jpg" id="3_xq2kc"]
-[ext_resource type="Texture2D" uid="uid://gmuroxlv2inw" path="res://Assets/icon.svg" id="4_jjg1b"]
+[ext_resource type="Texture2D" uid="uid://fe07nl7i763x" path="res://Assets/Image/NEXT.png" id="4_el530"]
 
 [node name="StoryMode" type="Node2D"]
 script = ExtResource("1_u5pr3")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(600, 356)
-scale = Vector2(0.474745, 0.474745)
-texture = ExtResource("2_0p5mx")
+position = Vector2(649.576, 393.92)
+scale = Vector2(1.17571, 1.24309)
+texture = ExtResource("2_el530")
 
 [node name="Image" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(894, 336)
 texture = ExtResource("3_xq2kc")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 158.0
-offset_top = 36.0
-offset_right = 573.0
-offset_bottom = 735.0
+offset_left = 308.0
+offset_top = 133.0
+offset_right = 998.0
+offset_bottom = 832.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Alice sat quietly in her chair, the late afternoon light dimmingbehind the curtains. Her teacup rattled, though her hands did not shake. A soft ticking filled the room—though there was no clock to be seen.
 Then came a sudden crack, as though silver had splintered. The mirror across from her rippled, the surface quivering like water disturbed by a stone. From its depths leapt a familiar figure: the White Rabbit, waistcoat torn, ears trembling, eyes wide with urgency.
@@ -31,18 +32,11 @@ Before she could answer, the glass stretched open like a mouth. The Rabbit vanis
 autowrap_mode = 3
 
 [node name="NextPage" type="Button" parent="."]
-offset_left = 1087.0
-offset_top = 566.0
-offset_right = 1223.0
-offset_bottom = 702.0
-icon = ExtResource("4_jjg1b")
-
-[node name="PreviusPage" type="Button" parent="."]
-offset_left = 47.0
-offset_top = 568.0
-offset_right = 183.0
-offset_bottom = 704.0
-icon = ExtResource("4_jjg1b")
+offset_left = 1078.0
+offset_top = 538.0
+offset_right = 1288.0
+offset_bottom = 746.0
+scale = Vector2(0.7, 0.7)
+icon = ExtResource("4_el530")
 
 [connection signal="pressed" from="NextPage" to="." method="_on_next_page_pressed"]
-[connection signal="pressed" from="PreviusPage" to="." method="_on_previus_page_pressed"]
