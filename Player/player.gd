@@ -42,7 +42,7 @@ const SANITY_HURT_TEXTURE: Texture2D = preload("res://Assets/Alice_Sanity_Hurt.p
 const NORMAL_TEXTURE: Texture2D = preload("res://Assets/Alice_Normal.png")
 
 func _ready() -> void:
-	
+	sprite_2d.visible = false
 	if GC.player_actually_health != max_health and GC.player_actually_health > 0:
 		current_health = GC.player_actually_health
 	#health_bars.max_health = max_health
@@ -174,9 +174,11 @@ func sanity_taken(value: int) -> void:
 
 func reset_skin_later() -> void:
 	scale = Vector2(1.0, 1.0)
+	sprite_2d.visible = true
 	animated_sprite_2d.visible = false
 	await get_tree().create_timer(0.5).timeout
 	scale = Vector2(0.5, 0.5)
+	sprite_2d.visible = false
 	animated_sprite_2d.visible = true
 	if current_health > 0 and current_sanity > 0:
 		#sprite_2d.texture = NORMAL_TEXTURE
@@ -185,6 +187,7 @@ func reset_skin_later() -> void:
 		insane_shake_exponential(6.4, 4.0, 5.0) 
 	if current_health <=0:
 		animated_sprite_2d.stop()
+		sprite_2d.visible = true
 		animated_sprite_2d.visible = false
 		scale = Vector2(1.0, 1.0)
 		sprite_2d.texture = HURT_TEXTURE

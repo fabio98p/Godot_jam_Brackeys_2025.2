@@ -14,8 +14,8 @@
 [ext_resource type="Shader" uid="uid://2gmlt0rihwyd" path="res://Levels/level_1.gdshader" id="10_f4pg2"]
 [ext_resource type="Texture2D" uid="uid://gmamb5ceq8jl" path="res://Assets/CardsImg/IMG_8223.png" id="12_lk57d"]
 [ext_resource type="Texture2D" uid="uid://chi5t3p04jubk" path="res://Assets/CardsImg/IMG_8224.png" id="13_2hkqn"]
-[ext_resource type="Script" uid="uid://fkybrlk07rmt" path="res://Levels/description.gd" id="13_34erp"]
-[ext_resource type="Script" uid="uid://bt87ns08itktx" path="res://Levels/Next_attack.gd" id="13_c7pbv"]
+[ext_resource type="Script" path="res://Levels/description.gd" id="13_34erp"]
+[ext_resource type="Script" path="res://Levels/Next_attack.gd" id="13_c7pbv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34erp"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -308,19 +308,19 @@ horizontal_alignment = 1
 z_index = 25
 layout_mode = 0
 offset_left = -3328.57
-offset_top = 271.429
+offset_top = 185.714
 offset_right = -492.571
-offset_bottom = 680.429
+offset_bottom = 594.714
 theme_override_constants/outline_size = 100
 theme_override_font_sizes/font_size = 300
-text = "Next Enemy Attack:"
+text = "Hey, pssst… next enemy attack!"
 
 [node name="Label2" type="Label" parent="NextAttack"]
 z_index = 25
 layout_mode = 0
-offset_left = -3308.57
+offset_left = -3328.57
 offset_top = 537.143
-offset_right = -472.571
+offset_right = -492.572
 offset_bottom = 946.143
 theme_override_constants/outline_size = 100
 theme_override_font_sizes/font_size = 300
@@ -329,9 +329,9 @@ text = "Next Enemy Attack:"
 [node name="Label3" type="Label" parent="NextAttack"]
 z_index = 25
 layout_mode = 0
-offset_left = -3288.57
+offset_left = -3328.57
 offset_top = 897.143
-offset_right = -452.571
+offset_right = -492.573
 offset_bottom = 1306.14
 theme_override_constants/outline_size = 100
 theme_override_font_sizes/font_size = 300
