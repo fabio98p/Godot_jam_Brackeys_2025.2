@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://eyb7c66wf3hx"]
+[gd_scene load_steps=7 format=3 uid="uid://eyb7c66wf3hx"]
 
 [ext_resource type="Script" uid="uid://c7fteyximhq87" path="res://Levels/falo.gd" id="1_8gmai"]
 [ext_resource type="Texture2D" uid="uid://d1f30qeupmt0i" path="res://Assets/Image/BGFINALE.jpg" id="2_8gmai"]
 [ext_resource type="Texture2D" uid="uid://yr7h47bahev4" path="res://Assets/white.png" id="2_n4y8x"]
 [ext_resource type="Texture2D" uid="uid://3gab7x4wkhvh" path="res://Assets/Image/Bookmark.png" id="4_igylp"]
+[ext_resource type="Texture2D" uid="uid://dj0b6ma3q4q6" path="res://Assets/Image/fire.png" id="5_d8aeq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igylp"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -66,6 +67,21 @@ offset_bottom = 222.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
 text = "Rest Zone"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 189.0
+offset_top = 290.0
+offset_right = 493.0
+offset_bottom = 398.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "May you rest peacefully and recover your health and sanity."
+autowrap_mode = 3
+
+[node name="Fire" type="Sprite2D" parent="."]
+position = Vector2(943, 457)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("5_d8aeq")
 
 [connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
